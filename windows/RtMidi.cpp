@@ -174,7 +174,7 @@ struct WinMidiData {
   DWORD lastTime;
   RtMidiIn::MidiMessage message;
   LPMIDIHDR sysexBuffer[RT_SYSEX_BUFFER_COUNT];
-};
+}
 
 //*********************************************************************//
 //  API: Windows MM

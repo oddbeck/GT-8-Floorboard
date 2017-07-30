@@ -148,7 +148,7 @@ floorBoard::floorBoard(QWidget *parent,
             this->setSize(minSize);
             this->colapseState = false;
             emit setCollapseState(false);
-        };
+        }
     }
     else
     {
@@ -156,7 +156,7 @@ floorBoard::floorBoard(QWidget *parent,
         this->setSize(minSize);
         this->colapseState = false;
         emit setCollapseState(false);
-    };
+    }
 
     emit updateSignal();
 
@@ -172,7 +172,7 @@ floorBoard::~floorBoard()
     else
     {
         preferences->setPreferences("Window", "Collapsed", "width", "");
-    };
+    }
     preferences->setPreferences("Window", "Collapsed", "bool", QString(this->colapseState?"true":"false"));
     preferences->savePreferences();
 }
@@ -228,7 +228,7 @@ void floorBoard::setFloorBoard() {
     {
         QRectF target(fxPos.at(i).x(), fxPos.at(i).y(), imagestompBG.width(), imagestompBG.height());
         painter.drawPixmap(target, imagestompBG, source);
-    };
+    }
     painter.end();
 
     this->baseImage = buffer;
@@ -263,10 +263,10 @@ void floorBoard::dragEnterEvent(QDragEnterEvent *event)
             event->accept();
         } else {
             event->acceptProposedAction();
-        };
+        }
     } else {
         event->ignore();
-    };
+    }
 }
 
 void floorBoard::dragMoveEvent(QDragMoveEvent *event)
@@ -284,10 +284,10 @@ void floorBoard::dragMoveEvent(QDragMoveEvent *event)
             event->accept();
         } else {
             //event->acceptProposedAction();
-        };
+        }
     } else {
         event->ignore();
-    };
+    }
 }
 
 void floorBoard::dropEvent(QDropEvent *event)
@@ -320,8 +320,8 @@ void floorBoard::dropEvent(QDropEvent *event)
                      && lastDropRect.contains(dragPoint))
             {
                 destIndex = fx.indexOf(fx.at(x)) + 1;
-            };
-        };
+            }
+        }
 
 
         if(destIndex > -1 && destIndex < fx.size() + 1)
@@ -333,7 +333,7 @@ void floorBoard::dropEvent(QDropEvent *event)
                 for(int i=orgIndex;i<destIndex ;i++)
                 {
                     setStompPos(fx.at(i + 1), i);
-                };
+                }
                 setStompPos(stompId, destIndex );
             }
             else if( orgIndex > destIndex )
@@ -341,9 +341,9 @@ void floorBoard::dropEvent(QDropEvent *event)
                 for(int i=orgIndex;i>destIndex;i--)
                 {
                     setStompPos(fx.at(i - 1), i);
-                };
+                }
                 setStompPos(stompId, destIndex);
-            };
+            }
 
             if(orgIndex != destIndex) // Prevent sending data when stomp was dropped in the same place.
             {
@@ -355,14 +355,14 @@ void floorBoard::dropEvent(QDropEvent *event)
                     if(fxHexValue.length() < 2) fxHexValue.prepend("0");
 
                     hexData.append(fxHexValue);
-                };
+                }
                 sysxIO->setFileSource("Structure", chainAddress, "00", "00", hexData);
-            };
+            }
         }
         else
         {
             event->ignore();
-        };
+        }
     }
     else
     {
@@ -393,18 +393,18 @@ void floorBoard::dropEvent(QDropEvent *event)
                 else
                 {
                     event->ignore();
-                };
+                }
             }
             else
             {
                 event->ignore();
-            };
+            }
         }
         else
         {
             event->ignore();
-        };
-    };
+        }
+    }
 }
 
 void floorBoard::initSize(QSize floorSize)
@@ -424,9 +424,9 @@ void floorBoard::initSize(QSize floorSize)
         {
             y = y + stompSize.height() + spacingV;
             x = x - (( stompSize.width() + spacingH ) * 7);
-        };
+        }
         fxPos.append(QPoint(offset + x, y - (this->infoBarHeight/2)));
-    };
+    }
 
     this->fxPos = fxPos;
     this->setFixedSize(floorSize);
@@ -451,7 +451,7 @@ void floorBoard::setCollapse()
         this->setSize(l_floorSize);
         emit setCollapseState(true);
         this->colapseState = true;
-    };
+    }
 }
 
 void floorBoard::setSize(QSize newSize)
@@ -464,7 +464,7 @@ void floorBoard::setSize(QSize newSize)
     for(int i=0;i<fxPos.size();i++)
     {
         fxPos[i] = fxPos[i] + QPoint(offset - oldOffset, 0);
-    };
+    }
     emit updateStompOffset(offset - oldOffset);
 
     QPoint newPanelBarPos = QPoint(offset - panelBarOffset, panelBarPos.y());
@@ -522,7 +522,7 @@ void floorBoard::setWidth(int dist)
         this->l_floorSize = newSize;
         this->colapseState = true;
         emit setCollapseState(true);
-    };
+    }
     this->setSize(newSize);
 }
 
@@ -548,7 +548,7 @@ void floorBoard::initStomps()
         bool ok;
         fxID.append(midimap.level.at(i).value.toInt(&ok, 16));
         fxNAMES.append(midimap.level.at(i).name);
-    };
+    }
 
     /* FX1 */
     stompBox *fx1 = new stompbox_fx1(this);
@@ -656,7 +656,7 @@ void floorBoard::setStomps(QList<QString> stompOrder)
         QString name = stompOrder.at(i);
         setStompPos(name, i);
         this->fx.replace(i, stompNames.indexOf(name));
-    };
+    }
 }
 
 void floorBoard::setStompPos(QString name, int order)
@@ -681,7 +681,7 @@ void floorBoard::updateStompBoxes()
     for(int i=sysxDataOffset;i<fxChain.size() - 2;i++ )
     {
         stompOrder.append( midiTable->getMidiMap("Structure", chainAddress, "00", "00", fxChain.at(i)).name );
-    };
+    }
     setStomps(stompOrder);
 }
 

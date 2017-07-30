@@ -53,9 +53,9 @@ summaryDialog::summaryDialog(QWidget *parent)
             hex = data.at(x);
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-            if(hex == "F7"){ sysxMsg.append("<br>"); };
-        };
-    };
+            if(hex == "F7"){ sysxMsg.append("<br>"); }
+        }
+    }
     /******************************************************
   ******QString "sysxMsg" contains current patch data *****
   ******************************************************/
@@ -77,7 +77,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     /*text.append(tr("<br><br><b>Patch Mode Output Select = </b>"));
   int value = sysxIO->getSourceValue("Structure", "00", "00", "11");
   QString valueHex = QString::number(value, 16).toUpper();
-  if(valueHex.length() < 2) {valueHex.prepend("0"); };
+  if(valueHex.length() < 2) {valueHex.prepend("0"); }
   text.append(midiTable->getValue("Structure", "00", "00", "11", valueHex) ); */
 
     QList<QString> fxChain = sysxIO->getFileSource("Structure", "11", "00");
@@ -89,7 +89,7 @@ summaryDialog::summaryDialog(QWidget *parent)
         chain.append(" [");
         chain.append( midiTable->getMidiMap("Structure", "11", "00", "00", fxChain.at(i)).name );
         chain.append("]");
-    };
+    }
     chain.replace("PRE", "PreAmp");
     chain.replace("LP", "Send/Return");
     chain.replace("CS", "Comp");
@@ -122,7 +122,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 40;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Compressor***********</b></u>";
@@ -131,7 +131,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 9;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Distortion***********</b></u>";
@@ -140,7 +140,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 8;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Equalizer***********</b></u>";
@@ -149,7 +149,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 13;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Delay***********</b></u>";
@@ -158,7 +158,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 26;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Chorus***********</b></u>";
@@ -167,7 +167,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 9;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Reverb***********</b></u>";
@@ -176,7 +176,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 10;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Wah***********</b></u>";
@@ -185,7 +185,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 5;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "on";
     text = "<br><br><b><u>**********Pedal & Misc***********</b></u>";
@@ -210,7 +210,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 1;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Master***********</b></u>";
@@ -219,7 +219,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 9;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Noise Suppressor***********</b></u>";
@@ -228,7 +228,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 4;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Loop***********</b></u>";
@@ -249,7 +249,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 2;
     makeList();
     large_text.append(text2);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
     this->filter = "off";
 
     this->effect = "off";
@@ -264,7 +264,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 92;
     makeList();
     large_text.append(text2);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
     this->filter = "off";
     
     this->effect = "off";
@@ -274,7 +274,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Assign 2***********</b></u>";
@@ -283,7 +283,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Assign 3***********</b></u>";
@@ -292,7 +292,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Assign 4***********</b></u>";
@@ -301,7 +301,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Assign 5***********</b></u>";
@@ -310,7 +310,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Assign 6***********</b></u>";
@@ -319,7 +319,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Assign 7***********</b></u>";
@@ -328,7 +328,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     this->effect = "off";
     text = "<br><br><b><u>**********Assign 8***********</b></u>";
@@ -337,7 +337,7 @@ summaryDialog::summaryDialog(QWidget *parent)
     finish = 17;
     makeList();
     large_text.append(text);
-    if(effect == "on") { small_text.append(text); };
+    if(effect == "on") { small_text.append(text); }
 
     text = "<br><br><b><u>**********Patch Data***********</b></u><br>";
     text.append(sysxMsg);
@@ -405,21 +405,21 @@ void summaryDialog::makeList()
     {
         QString temp;
         QString pos = QString::number(i, 16).toUpper();
-        if(pos.size()<2){ pos.prepend("0"); };
+        if(pos.size()<2){ pos.prepend("0"); }
         QString txt = midiTable->getMidiMap("Structure", address, "00", pos).customdesc;  //trawl through midi.xml
         if(!txt.isEmpty() && txt != "") // skip the empty midi.xml .desc section and move to the next.
         {
             QString pretxt =  midiTable->getMidiMap("Structure", address, "00", pos).desc;
             int value = sysxIO->getSourceValue("Structure", address, "00", pos);
             QString valueHex = QString::number(value, 16).toUpper();
-            if(valueHex.length() < 2) {valueHex.prepend("0"); };
+            if(valueHex.length() < 2) {valueHex.prepend("0"); }
             temp.append("<br>");
             temp.append("[");
-            if(!pretxt.isEmpty() && txt != "") { temp.append(pretxt + " "); };
+            if(!pretxt.isEmpty() && txt != "") { temp.append(pretxt + " "); }
             temp.append(txt);
             temp.append("] = ");
             //QString x = midiTable->getValue("Structure", address, "00", pos, valueHex);
-            //{temp.append(x); };
+            //{temp.append(x); }
             QString x;
             if(pretxt.contains("Assign") && (txt.contains("Target")) )
             {
@@ -445,18 +445,18 @@ void summaryDialog::makeList()
             else
             {
                 temp.append(midiTable->getValue("Structure", address, "00", pos, valueHex));
-            };
+            }
             text2.append(temp);
 
             if (this->filter != "off")
             {
-                if (pretxt.contains(this->filter)) { text.append(temp); };
-            } else if(!pretxt.contains("Custom:")){text.append(temp); };
-            if(i == start && x == "On") { this->effect = "on"; }; // first byte is usually the effect on/off switch
+                if (pretxt.contains(this->filter)) { text.append(temp); }
+            } else if(!pretxt.contains("Custom:")){text.append(temp); }
+            if(i == start && x == "On") { this->effect = "on"; } // first byte is usually the effect on/off switch
             if((pretxt == "FX1:" || pretxt == "FX2:") && (txt == "Type"))
-            {this->filter = midiTable->getMidiMap("Structure", address, "00", pos, valueHex).desc;};
-        };
-    };
+            {this->filter = midiTable->getMidiMap("Structure", address, "00", pos, valueHex).desc;}
+        }
+    }
 }
 
 summaryDialog::~summaryDialog()
@@ -475,7 +475,7 @@ void summaryDialog::view()
     {
         textDialog->setText(small_text);
         this->mode = "Compact";
-    };
+    }
 }
 
 void summaryDialog::cancel()
@@ -492,7 +492,7 @@ void summaryDialog::printFile()
     //QPrintPreviewDialog *dialog = new QPrintPreviewDialog(&printer, this);
     dialog->setWindowTitle(tr("Print Document"));
     if (dialog->exec() != QDialog::Accepted) { return; }
-    else { textDialog->print(&printer); };
+    else { textDialog->print(&printer); }
 #endif
 }
 
@@ -505,7 +505,7 @@ void summaryDialog::printPreview()
     QPrintPreviewDialog *dialog = new QPrintPreviewDialog(&printer, this);
     dialog->setWindowTitle(tr("Print Preview"));
     if (dialog->exec() != QDialog::Accepted) { return; }
-    else { textDialog->print(&printer); };
+    else { textDialog->print(&printer); }
 #endif
 }
 
@@ -525,7 +525,7 @@ void summaryDialog::saveAs()
         if(!fileName.contains(".txt"))
         {
             fileName.append(".txt");
-        };
+        }
         QFile file(fileName);
 
         QByteArray out;
@@ -544,11 +544,11 @@ void summaryDialog::saveAs()
         {
             QString str(text.at(x));
             out.append(str);
-        };
+        }
 
         if (file.open(QIODevice::WriteOnly))
         {
             file.write(out);
-        };
-    };
+        }
+    }
 }

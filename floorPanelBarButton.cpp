@@ -42,7 +42,7 @@ floorPanelBarButton::floorPanelBarButton(bool collapsed, QPoint buttonPos, QWidg
                 this, SLOT( setCollapseState(bool) ) );
 
 	this->setCursor(Qt::ArrowCursor);
-};
+}
 
 void floorPanelBarButton::paintEvent(QPaintEvent *)
 {
@@ -52,21 +52,21 @@ void floorPanelBarButton::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);
-};
+}
 
 void floorPanelBarButton::setOffset(signed int imageNr)
 {
 	this->xOffset = imageNr*buttonSize.width();
 	this->update();
-};
+}
 
 void floorPanelBarButton::mousePressEvent(QMouseEvent *event)
 {
 	if ( event->button() == Qt::LeftButton )
 	{	
 		this->dragStartPosition = event->pos();
-	};
-};
+	}
+}
 
 void floorPanelBarButton::mouseReleaseEvent(QMouseEvent *event) 
 { 
@@ -74,13 +74,13 @@ void floorPanelBarButton::mouseReleaseEvent(QMouseEvent *event)
 		(event->pos() - dragStartPosition).manhattanLength() < QApplication::startDragDistance() ) 
 	{
 		emit collapseSignal();
-	}; 
-};
+	} 
+}
 
 void floorPanelBarButton::mouseMoveEvent(QMouseEvent *event)
 {
         //event;
-};
+}
 
 void floorPanelBarButton::setCollapseState(bool collapsed)
 {
@@ -91,5 +91,5 @@ void floorPanelBarButton::setCollapseState(bool collapsed)
 	else
 	{
 		setOffset(0);
-	};
-};
+	}
+}

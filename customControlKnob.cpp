@@ -38,7 +38,7 @@ customControlKnob::customControlKnob(QWidget *parent,
 	this->area = background;
 
 	MidiTable *midiTable = MidiTable::Instance();
-	if (area == "normal" || area == "turbo" || area.isEmpty()) {this->area = "Structure";};
+	if (area == "normal" || area == "turbo" || area.isEmpty()) {this->area = "Structure";}
 	
 	Midi items;
 	QString hex0 = area;
@@ -47,7 +47,7 @@ customControlKnob::customControlKnob(QWidget *parent,
 	} else {
 	hex0.remove("System");
   items = midiTable->getMidiMap("System", hex0, hex1, hex2, hex3);
-  };
+  }
 	
 	this->label->setText(items.customdesc);
 	this->label->setUpperCase(true);
@@ -124,7 +124,7 @@ customControlKnob::customControlKnob(QWidget *parent,
 
 		this->setLayout(mainLayout);
 		this->setFixedHeight(this->knob->height() + 15 + 12);
-	 };
+	 }
 
 
 	QObject::connect(this->parent(), SIGNAL( dialogUpdateSignal() ),
@@ -135,7 +135,7 @@ customControlKnob::customControlKnob(QWidget *parent,
 
 	QObject::connect(this, SIGNAL( updateDisplay(QString) ),
                 this->display, SLOT( setText(QString) ));
-};
+}
 
 void customControlKnob::paintEvent(QPaintEvent *)
 {
@@ -147,7 +147,7 @@ void customControlKnob::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);*/
-};
+}
 
 void customControlKnob::dialogUpdateSignal()
 {
@@ -165,4 +165,4 @@ void customControlKnob::dialogUpdateSignal()
 	//this->display->setText(valueStr);
 	emit updateDisplay(valueStr);
 	//this->valueChanged(value, this->hex1, this->hex2, this->hex3);
-};
+}

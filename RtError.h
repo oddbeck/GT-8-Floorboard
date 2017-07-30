@@ -44,7 +44,7 @@ public:
   RtError(const std::string& message, Type type = RtError::UNSPECIFIED) : message_(message), type_(type) {}
 
   //! The destructor.
-  virtual ~RtError(void) {};
+  virtual ~RtError(void) {}
    
   //! Prints thrown error message to stderr.
   virtual void printMessage(void) { 

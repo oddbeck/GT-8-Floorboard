@@ -39,7 +39,7 @@ public:
 	XmlWriter(QIODevice* device, QTextCodec* codec = 0, bool writeEncoding = true);
 	virtual ~XmlWriter();
 
-	enum LineBreakType { Unix, Windows, Macintosh };
+    enum LineBreakType { Unix, Windows, Macintosh };
 
 	void writeString(const QString& string);
 	void writeLine();

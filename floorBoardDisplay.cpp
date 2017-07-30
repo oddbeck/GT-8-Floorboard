@@ -215,7 +215,7 @@ floorBoardDisplay::floorBoardDisplay(QWidget *parent, QPoint pos)
     set_temp();
     QString midiIn = preferences->getPreferences("Midi", "MidiIn", "device");
     QString midiOut = preferences->getPreferences("Midi", "MidiOut", "device");
-    if(midiIn!="" && midiOut!="") {autoconnect(); };
+    if(midiIn!="" && midiOut!="") {autoconnect(); }
 }
 
 QPoint floorBoardDisplay::getPos()
@@ -244,7 +244,7 @@ void floorBoardDisplay::setPatchDisplay(QString patchName)
         this->patchDisplay->setMainText(patchName);
         this->patchDisplay->setSubText(fileName.section('/', -1, -1));
         this->patchName = patchName;
-    };
+    }
     if(sysxIO->getFileName() == tr("init patch") || sysxIO->getFileName() == ":default.syx")
     {
         sysxIO->setFileName("");
@@ -272,10 +272,10 @@ void floorBoardDisplay::setPatchDisplay(QString patchName)
 
                 sysxIO->setBank(0);
                 sysxIO->setPatch(0);
-            };
-        };
+            }
+        }
         this->initPatch->setIndex(0);
-    };
+    }
 }
 
 void floorBoardDisplay::setPatchNumDisplay(int bank, int patch)
@@ -291,18 +291,18 @@ void floorBoardDisplay::setPatchNumDisplay(int bank, int patch)
         {
             this->patchNumDisplay->setAllColor(QColor(255,0,0));
             this->patchNumDisplay->setSubText(tr("Preset"));
-        };
+        }
         QString str;
         if(bank < 36)
         {
             str.append("U");
-            if(bank < 10) {	str.append("0"); };
+            if(bank < 10) {	str.append("0"); }
             str.append(QString::number(bank, 10));
         }
         else
         { str.append("P");
             str.append(QString::number(bank, 10));
-        };
+        }
         str.append(":");
         str.append(QString::number(patch, 10));
         this->patchNumDisplay->setMainText(str, Qt::AlignCenter);
@@ -314,7 +314,7 @@ void floorBoardDisplay::setPatchNumDisplay(int bank, int patch)
         QString str = tr("Buffer");
         this->patchNumDisplay->setMainText(str, Qt::AlignCenter);
 
-    };
+    }
 }
 
 void floorBoardDisplay::set_temp()
@@ -325,7 +325,7 @@ void floorBoardDisplay::set_temp()
 
     QFile file1("temp-1.syx");   // Read the default GT-8 sysx file so we don't start empty handed.
     if (file1.open(QIODevice::ReadOnly))
-    {	data = file1.readAll(); };
+    {	data = file1.readAll(); }
 
     QList<QString> sysxBuffer;
     for(int i=0;i<data.size();i++)
@@ -335,7 +335,7 @@ void floorBoardDisplay::set_temp()
         QString hex = QString::number(n, 16).toUpper();     // convert QByteArray to QString
         if (hex.length() < 2) hex.prepend("0");
         sysxBuffer.append(hex);
-    };
+    }
     if( data.size() == patchSize)
     {
         QString patchText;
@@ -345,15 +345,15 @@ void floorBoardDisplay::set_temp()
         {
             r = (char)data[a+b];
             patchText.append(r);         // extract the text characters from the current patch name.
-        };
+        }
         this->temp1Display->setMainText(patchText, Qt::AlignCenter);
         sysxIO->temp1_sysxMsg = sysxBuffer;
-    };
+    }
 
     data.clear();
     QFile file2("temp-2.syx");   // Read the default GT-8 sysx file so we don't start empty handed.
     if (file2.open(QIODevice::ReadOnly))
-    {	data = file2.readAll(); };
+    {	data = file2.readAll(); }
 
     sysxBuffer.clear();
     for(int i=0;i<data.size();i++)
@@ -363,7 +363,7 @@ void floorBoardDisplay::set_temp()
         QString hex = QString::number(n, 16).toUpper();     // convert QByteArray to QString
         if (hex.length() < 2) hex.prepend("0");
         sysxBuffer.append(hex);
-    };
+    }
     if( data.size() == patchSize)
     {
         QString patchText;
@@ -373,15 +373,15 @@ void floorBoardDisplay::set_temp()
         {
             r = (char)data[a+b];
             patchText.append(r);         // extract the text characters from the current patch name.
-        };
+        }
         this->temp2Display->setMainText(patchText, Qt::AlignCenter);
         sysxIO->temp2_sysxMsg = sysxBuffer;
-    };
+    }
 
     data.clear();
     QFile file3("temp-3.syx");   // Read the default GT-8 sysx file so we don't start empty handed.
     if (file3.open(QIODevice::ReadOnly))
-    {	data = file3.readAll(); };
+    {	data = file3.readAll(); }
 
     sysxBuffer.clear();
     for(int i=0;i<data.size();i++)
@@ -391,7 +391,7 @@ void floorBoardDisplay::set_temp()
         QString hex = QString::number(n, 16).toUpper();     // convert QByteArray to QString
         if (hex.length() < 2) hex.prepend("0");
         sysxBuffer.append(hex);
-    };
+    }
     if( data.size() == patchSize)
     {
         QString patchText;
@@ -401,15 +401,15 @@ void floorBoardDisplay::set_temp()
         {
             r = (char)data[a+b];
             patchText.append(r);         // extract the text characters from the current patch name.
-        };
+        }
         this->temp3Display->setMainText(patchText, Qt::AlignCenter);
         sysxIO->temp3_sysxMsg = sysxBuffer;
-    };
+    }
 
     data.clear();
     QFile file4("temp-4.syx");   // Read the default GT-8 sysx file so we don't start empty handed.
     if (file4.open(QIODevice::ReadOnly))
-    {	data = file4.readAll(); };
+    {	data = file4.readAll(); }
 
     sysxBuffer.clear();
     for(int i=0;i<data.size();i++)
@@ -419,7 +419,7 @@ void floorBoardDisplay::set_temp()
         QString hex = QString::number(n, 16).toUpper();     // convert QByteArray to QString
         if (hex.length() < 2) hex.prepend("0");
         sysxBuffer.append(hex);
-    };
+    }
     if( data.size() == patchSize)
     {
         QString patchText;
@@ -429,10 +429,10 @@ void floorBoardDisplay::set_temp()
         {
             r = (char)data[a+b];
             patchText.append(r);         // extract the text characters from the current patch name.
-        };
+        }
         this->temp4Display->setMainText(patchText, Qt::AlignCenter);
         sysxIO->temp4_sysxMsg = sysxBuffer;
-    };
+    }
 }
 
 void floorBoardDisplay::temp1_copy(bool value)
@@ -455,11 +455,11 @@ void floorBoardDisplay::temp1_copy(bool value)
             else if(x == sysxAddressOffset + 1)
             {	hex = addr2; }
             else
-            {	hex = data.at(x);	};
+            {	hex = data.at(x);	}
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
-    };
+        }
+    }
     if( sysxMsg.size() == patchSize)
     {
         this->patchName = sysxIO->getCurrentPatchName();
@@ -470,7 +470,7 @@ void floorBoardDisplay::temp1_copy(bool value)
         QApplication::beep();
         QString size = QString::number(sysxMsg.size(), 10);
         sysxIO->emitStatusdBugMessage(tr("in-consistant patch data detected ") + size + tr("bytes: re-save or re-load file to correct"));
-    };
+    }
 }
 
 void floorBoardDisplay::temp1_paste(bool value)
@@ -488,7 +488,7 @@ void floorBoardDisplay::temp1_paste(bool value)
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
+        }
         sysxIO->setFileSource("Structure", sysxMsg);
         emit updateSignal();
         sysxIO->writeToBuffer();
@@ -496,7 +496,7 @@ void floorBoardDisplay::temp1_paste(bool value)
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to Temp-1 clipboard first"));
-    };
+    }
 }
 
 void floorBoardDisplay::temp2_copy(bool value)
@@ -519,11 +519,11 @@ void floorBoardDisplay::temp2_copy(bool value)
             else if(x == sysxAddressOffset + 1)
             {	hex = addr2; }
             else
-            {	hex = data.at(x);	};
+            {	hex = data.at(x);	}
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
-    };
+        }
+    }
     if( sysxMsg.size() == patchSize)
     {
         this->patchName = sysxIO->getCurrentPatchName();
@@ -534,7 +534,7 @@ void floorBoardDisplay::temp2_copy(bool value)
         QApplication::beep();
         QString size = QString::number(sysxMsg.size(), 10);
         sysxIO->emitStatusdBugMessage(tr("in-consistant patch data detected ") + size + tr("bytes: re-save or re-load file to correct"));
-    };
+    }
 }
 
 void floorBoardDisplay::temp2_paste(bool value)
@@ -552,7 +552,7 @@ void floorBoardDisplay::temp2_paste(bool value)
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
+        }
         sysxIO->setFileSource("Structure", sysxMsg);
         //sysxIO->setFileSource("patch", temp2_sysxMsg);
         emit updateSignal();
@@ -561,7 +561,7 @@ void floorBoardDisplay::temp2_paste(bool value)
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to Temp-2 clipboard first"));
-    };
+    }
 }
 
 void floorBoardDisplay::temp3_copy(bool value)
@@ -584,11 +584,11 @@ void floorBoardDisplay::temp3_copy(bool value)
             else if(x == sysxAddressOffset + 1)
             {	hex = addr2; }
             else
-            {	hex = data.at(x);	};
+            {	hex = data.at(x);	}
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
-    };
+        }
+    }
     if( sysxMsg.size() == patchSize)
     {
         this->patchName = sysxIO->getCurrentPatchName();
@@ -599,7 +599,7 @@ void floorBoardDisplay::temp3_copy(bool value)
         QApplication::beep();
         QString size = QString::number(sysxMsg.size(), 10);
         sysxIO->emitStatusdBugMessage(tr("in-consistant patch data detected ") + size + tr("bytes: re-save or re-load file to correct"));
-    };
+    }
 }
 
 void floorBoardDisplay::temp3_paste(bool value)
@@ -617,7 +617,7 @@ void floorBoardDisplay::temp3_paste(bool value)
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
+        }
         sysxIO->setFileSource("Structure", sysxMsg);
         emit updateSignal();
         sysxIO->writeToBuffer();
@@ -625,7 +625,7 @@ void floorBoardDisplay::temp3_paste(bool value)
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to Temp-3 clipboard first"));
-    };
+    }
 }
 
 void floorBoardDisplay::temp4_copy(bool value)
@@ -648,11 +648,11 @@ void floorBoardDisplay::temp4_copy(bool value)
             else if(x == sysxAddressOffset + 1)
             {	hex = addr2; }
             else
-            {	hex = data.at(x);	};
+            {	hex = data.at(x);	}
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
-    };
+        }
+    }
     if( sysxMsg.size() == patchSize)
     {
         this->patchName = sysxIO->getCurrentPatchName();
@@ -663,7 +663,7 @@ void floorBoardDisplay::temp4_copy(bool value)
         QApplication::beep();
         QString size = QString::number(sysxMsg.size(), 10);
         sysxIO->emitStatusdBugMessage(tr("in-consistant patch data detected ") + size + tr("bytes: re-save or re-load file to correct"));
-    };
+    }
 }
 
 void floorBoardDisplay::temp4_paste(bool value)
@@ -681,7 +681,7 @@ void floorBoardDisplay::temp4_paste(bool value)
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
+        }
         sysxIO->setFileSource("Structure", sysxMsg);
         emit updateSignal();
         sysxIO->writeToBuffer();
@@ -689,7 +689,7 @@ void floorBoardDisplay::temp4_paste(bool value)
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to Temp-4 clipboard first"));
-    };
+    }
 }
 
 void floorBoardDisplay::save_temp(QString fileName, QList<QString> sysxMsg)
@@ -707,9 +707,9 @@ void floorBoardDisplay::save_temp(QString fileName, QList<QString> sysxMsg)
             unsigned int n = str.toInt(&ok, 16);
             out[count] = (char)n;
             count++;
-        };
+        }
         file.write(out);
-    };
+    }
 }
 
 void floorBoardDisplay::updateDisplay()
@@ -736,8 +736,8 @@ void floorBoardDisplay::updateDisplay()
         {
             bool ok;
             name.append( (char)(hexStr.toInt(&ok, 16)) );
-        };
-    };
+        }
+    }
 
     QString patchName = name.trimmed();
     sysxIO->setCurrentPatchName(patchName);
@@ -748,7 +748,7 @@ void floorBoardDisplay::updateDisplay()
     else
     {
         this->patchLoadError = false;
-    };
+    }
 
 
     this->setPatchDisplay(patchName);
@@ -761,7 +761,7 @@ void floorBoardDisplay::updateDisplay()
     else
     {
         this->patchNumDisplay->clearAll();
-    };
+    }
     this->valueDisplay->clearAll();
 
     if(sysxIO->isDevice() )  // comment out from here
@@ -775,7 +775,7 @@ void floorBoardDisplay::updateDisplay()
         {
             this->writeButton->setBlink(false);
             this->writeButton->setValue(true);
-        };
+        }
         int bank = sysxIO->getBank();
         int patch = sysxIO->getPatch();
         this->setPatchNumDisplay(bank, patch);
@@ -786,7 +786,7 @@ void floorBoardDisplay::updateDisplay()
         {
             this->writeButton->setBlink(true);
             this->writeButton->setValue(false);
-        };
+        }
         int bank = sysxIO->getBank();
         int patch = sysxIO->getPatch();
         this->setPatchNumDisplay(bank, patch);
@@ -796,7 +796,7 @@ void floorBoardDisplay::updateDisplay()
         patchNumDisplay->clearAll();
         this->writeButton->setBlink(false);
         this->writeButton->setValue(false);
-    };
+    }
 }
 
 void floorBoardDisplay::autoconnect()
@@ -822,7 +822,7 @@ void floorBoardDisplay::autoconnect()
     {
         emit notConnected();
         sysxIO->setNoError(true);		// Reset the error status (else we could never retry :) ).
-    };
+    }
 }
 
 void floorBoardDisplay::autoConnectionResult(QString sysxMsg)
@@ -846,19 +846,19 @@ void floorBoardDisplay::autoConnectionResult(QString sysxMsg)
             {
                 this->writeButton->setBlink(true);
                 this->writeButton->setValue(false);
-            };
+            }
         }else
         {
             this->connectButton->setBlink(false);
             this->connectButton->setValue(false);
             sysxIO->setConnected(false);
-        };
+        }
     }
     else
     {
         notConnected();
         sysxIO->setNoError(true);		// Reset the error status (else we could never retry :) ).
-    };
+    }
 }
 
 
@@ -886,7 +886,7 @@ void floorBoardDisplay::connectSignal(bool value)
     {
         emit notConnected();
         sysxIO->setNoError(true);		// Reset the error status (else we could never retry :) ).
-    };
+    }
 }
 
 void floorBoardDisplay::connectionResult(QString sysxMsg)
@@ -911,7 +911,7 @@ void floorBoardDisplay::connectionResult(QString sysxMsg)
         {
             this->writeButton->setBlink(true);
             this->writeButton->setValue(false);
-        };
+        }
     }
 
     else if(sysxIO->noError())
@@ -927,7 +927,7 @@ void floorBoardDisplay::connectionResult(QString sysxMsg)
             {
                 this->writeButton->setBlink(true);
                 this->writeButton->setValue(false);
-            };
+            }
         }
         else if(!sysxMsg.isEmpty())
         {
@@ -944,7 +944,7 @@ void floorBoardDisplay::connectionResult(QString sysxMsg)
             msgText.append(tr("The device connected is either not a Boss ") + deviceType + (" Effects Processor.<br>"));
             msgText.append(tr("or the GT-8 device ID is not set to [1]"));
             if (sysxMsg.contains(idRequestString))
-            {msgText.append(tr("<br>Midi loopback detected, ensure midi device 'thru' is switched off.")); };
+            {msgText.append(tr("<br>Midi loopback detected, ensure midi device 'thru' is switched off.")); }
             msgText.append("<b></font>");
             msgBox->setText(msgText);
             msgBox->setStandardButtons(QMessageBox::Ok);
@@ -981,13 +981,13 @@ void floorBoardDisplay::connectionResult(QString sysxMsg)
             emit setStatusSymbol(0);
             emit setStatusProgress(0);
             emit setStatusMessage(tr("Not connected"));
-        };
+        }
     }
     else
     {
         notConnected();
         sysxIO->setNoError(true);		// Reset the error status (else we could never retry :) ).
-    };
+    }
 }
 
 void floorBoardDisplay::writeSignal(bool)
@@ -1032,7 +1032,7 @@ void floorBoardDisplay::writeSignal(bool)
                 int patch = sysxIO->getPatch();
                 bankNum.append(QString::number(bank, 10));
                 patchNum.append(QString::number(patch, 10));
-                if (bankNum.size() < 2){ bankNum.prepend("0"); };
+                if (bankNum.size() < 2){ bankNum.prepend("0"); }
                 bankNum.prepend(" U");
 
                 QMessageBox *msgBox = new QMessageBox();
@@ -1063,15 +1063,15 @@ void floorBoardDisplay::writeSignal(bool)
                     sysxIO->setDeviceReady(true);
                     this->writeButton->setBlink(false);
                     this->writeButton->setValue(true);
-                };
-            };
-        };
+                }
+            }
+        }
     }
 
     if((sysxIO->isConnected() == !true) && sysxIO->deviceReady())
     {
         writeToBuffer();                           // update patch to temp buffer only if not in bulk mode
-    };
+    }
     //sysxIO->getCurrentPatchName();
 }
 
@@ -1126,11 +1126,11 @@ void floorBoardDisplay::writeToMemory()
             else
             {
                 hex = data.at(x);
-            };
+            }
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
-    };
+        }
+    }
     sysxIO->setSyncStatus(true);		// Still in sync
     this->writeButton->setBlink(false); // so no blinking here either...
     this->writeButton->setValue(true);	// ... and still the button will be active also ...
@@ -1159,7 +1159,7 @@ void floorBoardDisplay::resetDevice(QString replyMsg)
     {
         sysxIO->setLoadedBank(sysxIO->getBank());
         sysxIO->setLoadedPatch(sysxIO->getPatch());
-    };
+    }
     emit setStatusProgress(33); // time wasting sinusidal statusbar progress
     SLEEP(100);
     emit setStatusProgress(66);
@@ -1184,7 +1184,7 @@ void floorBoardDisplay::patchSelectSignal(int bank, int patch)
         currentSyncStatus = sysxIO->getSyncStatus();
         sysxIO->setSyncStatus(false);
         writeButton->setBlink(true);
-    };
+    }
 
     //if( sysxIO->getLoadedBank() != bank ||  sysxIO->getLoadedPatch() != patch)
     //{
@@ -1199,12 +1199,12 @@ void floorBoardDisplay::patchSelectSignal(int bank, int patch)
     else
     {
         blinkCount = 0;
-    };
+    }
     //}
     //else
     //{
     //	blinkSellectedPatch(false);
-    //};
+    //}
 }
 
 void floorBoardDisplay::blinkSellectedPatch(bool active)
@@ -1222,7 +1222,7 @@ void floorBoardDisplay::blinkSellectedPatch(bool active)
         else
         {
             setPatchNumDisplay(bank, patch);
-        };
+        }
         blinkCount++;
     }
     else
@@ -1236,9 +1236,9 @@ void floorBoardDisplay::blinkSellectedPatch(bool active)
         if(currentSyncStatus || sysxIO->getLoadedBank() == 0)
         {
             writeButton->setBlink(false);
-        };
+        }
         setPatchNumDisplay(bank,patch);
-    };
+    }
     emit setStatusSymbol(1);
     emit setStatusMessage(tr("Ready"));
 }

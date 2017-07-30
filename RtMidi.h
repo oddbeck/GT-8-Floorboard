@@ -65,7 +65,7 @@ class RtMidi
  protected:
 
   RtMidi();
-  virtual ~RtMidi() {};
+  virtual ~RtMidi() {}
 
   // A basic error reporting function for internal use in the RtMidi
   // subclasses.  The behavior of this function can be modified to

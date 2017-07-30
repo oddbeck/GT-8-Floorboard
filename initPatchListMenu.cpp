@@ -35,7 +35,7 @@ initPatchListMenu::initPatchListMenu(QRect geometry, QWidget *parent)
 {
 	this->available = false;
 	setInitPatchComboBox(geometry);
-};
+}
 
 QDir initPatchListMenu::getInitPatchDir()
 {
@@ -71,11 +71,11 @@ QDir initPatchListMenu::getInitPatchDir()
 		{	/* Add a symlink to the user selected patch directory (if it is set and exists). */
 			QString symlinkPath = QFileInfo( preferencesDir, initPatchesDirName + symlinkExstention ).absoluteFilePath();
 			QFile::link(initPatchesDir.absolutePath(), symlinkPath);
-		};
-	};
+		}
+	}
 
 	return initPatchesDir;
-};
+}
 
 void initPatchListMenu::setInitPatchComboBox(QRect geometry)
 {
@@ -104,12 +104,12 @@ void initPatchListMenu::setInitPatchComboBox(QRect geometry)
 				if(!item.contains("INIT_"))
 				{
 					item.prepend(tr("(My INIT) "));
-				};
+				}
 				item.remove("INIT_");
 				item.replace("_", " ");
 				item.replace("-!-", "/");
 				initPatchComboBox->addItem(item);				// Finished formatting the item name.
-			};	
+			}	
 
 			initPatchComboBox->setGeometry(geometry);
 			initPatchComboBox->setEditable(false);
@@ -120,9 +120,9 @@ void initPatchListMenu::setInitPatchComboBox(QRect geometry)
 					this, SLOT(loadInitPatch(int)));
 			QObject::connect(this, SIGNAL(updateSignal()),
 				this->parent()->parent(), SIGNAL(updateSignal()));
-		};
-	};
-};
+		}
+	}
+}
 
 
 void initPatchListMenu::setIndex(int index)
@@ -130,8 +130,8 @@ void initPatchListMenu::setIndex(int index)
 	if(this->available)
 	{
 		this->initPatchComboBox->setCurrentIndex(index);
-	};
-};
+	}
+}
 
 void initPatchListMenu::loadInitPatch(int index)
 {
@@ -153,7 +153,7 @@ void initPatchListMenu::loadInitPatch(int index)
 				sysxIO->setDevice(false);
 				emit updateSignal();
 				sysxIO->writeToBuffer();
-			};
-		};
-	};
-};
+			}
+		}
+	}
+}

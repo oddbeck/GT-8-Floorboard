@@ -38,7 +38,7 @@ customControlListMenu::customControlListMenu(QWidget *parent,
 	this->hex2 = hex2;
 	this->hex3 = hex3;
 	if (!direction.contains("System")) {this->area = "Structure"; }
-	else {this->area = direction; };
+	else {this->area = direction; }
 
 	MidiTable *midiTable = MidiTable::Instance();
 	Midi items;
@@ -48,7 +48,7 @@ customControlListMenu::customControlListMenu(QWidget *parent,
 	} else {
 	hex0.remove("System");
   items = midiTable->getMidiMap("System", hex0, hex1, hex2, hex3);
-  };
+  }
 	QString labeltxt = items.customdesc;
 	
 	this->label->setUpperCase(true);
@@ -98,7 +98,7 @@ customControlListMenu::customControlListMenu(QWidget *parent,
 		this->setLayout(mainLayout);
 		this->setFixedHeight(12 + 15);
 		
-	};
+	}
 
 	QObject::connect(this->parent(), SIGNAL( dialogUpdateSignal() ), this, SLOT( dialogUpdateSignal() ));
 
@@ -137,7 +137,7 @@ void customControlListMenu::setComboBox()
 	} else {
 	hex0.remove("System");
   items = midiTable->getMidiMap("System", hex0, hex1, hex2, hex3);
-  };
+  }
    
     QString longestItem = "";
 	int itemcount;
@@ -153,12 +153,12 @@ void customControlListMenu::setComboBox()
 		else
 		{
 			item = desc;
-		};		
+		}		
 		if(longestItem.size() < item.size()) longestItem = item; 
 		this->controlListComboBox->addItem(item);
-	};
+	}
 	int maxWidth = QFontMetrics( this->font() ).width( longestItem );
-	if(maxWidth < 25) { maxWidth = 25; };
+	if(maxWidth < 25) { maxWidth = 25; }
 #ifdef Q_OS_WIN
   this->controlListComboBox->setFixedWidth(maxWidth + 25);
 #else
@@ -193,7 +193,7 @@ void customControlListMenu::valueChanged(int index)
 	else
 	{	 
 		sysxIO->setFileSource(this->area, hex1, hex2, hex3, valueHex);
-	};
+	}
 	
 	//emit updateDisplay(valueStr);
 	emit updateSignal();

@@ -31,7 +31,7 @@ renameWidget::renameWidget(QWidget *parent)
 {
 	QObject::connect(this, SIGNAL(nameChanged(QString)), 
 		this->parentWidget(), SLOT(setPatchDisplay(QString)));
-};
+}
 
 void renameWidget::mouseReleaseEvent(QMouseEvent *event)
 {
@@ -40,8 +40,8 @@ void renameWidget::mouseReleaseEvent(QMouseEvent *event)
 		renameDialog *dialog = new renameDialog;
 		connect(dialog, SIGNAL(nameChanged(QString)), this, SLOT(updateName(QString)));
 		dialog->exec();
-	};
-};
+	}
+}
 
 void renameWidget::updateName(QString name)
 {
@@ -67,16 +67,16 @@ void renameWidget::updateName(QString name)
 				QString nameHexValue = QString::number(asciiValue, 16).toUpper();
 				if(nameHexValue.length() < 2) nameHexValue.prepend("0");
 				hexData.append(nameHexValue);
-			};
+			}
 		}
 		else
 		{
 			hexData.append("20");
-		};
-	};
+		}
+	}
 	sysxIO->setFileSource("Structure", "12", "00", "00", hexData);
 	sysxIO->setCurrentPatchName(name);
 
 	emit nameChanged(name);
-};
+}
 

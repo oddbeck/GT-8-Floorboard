@@ -43,7 +43,7 @@ customButton::customButton(bool active, QPoint buttonPos, QWidget *parent, QStri
 	timer = new QTimer(this);
 	QObject::connect(this, SIGNAL( valueChanged(bool, QString, QString, QString) ),
                 this->parent(), SLOT( valueChanged(bool, QString, QString, QString) ));
-};
+}
 
 customButton::customButton(QString text, bool active, QPoint buttonPos, QWidget *parent, 
 						   QString imagePath)
@@ -69,7 +69,7 @@ customButton::customButton(QString text, bool active, QPoint buttonPos, QWidget 
 
 	QObject::connect(this, SIGNAL( valueChanged(bool, QString, QString, QString) ),
                 this->parent(), SLOT( valueChanged(bool, QString, QString, QString) ));
-};
+}
 
 void customButton::paintEvent(QPaintEvent *)
 {
@@ -79,13 +79,13 @@ void customButton::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);
-};
+}
 
 void customButton::setOffset(signed int imageNr)
 {
 	this->yOffset = imageNr*buttonSize.height();
 	this->update();
-};
+}
 
 void customButton::mousePressEvent(QMouseEvent *event)
 {
@@ -99,10 +99,10 @@ void customButton::mousePressEvent(QMouseEvent *event)
 		else
 		{
 			setOffset(1);
-		};
+		}
 		setFocus();
-	};
-};
+	}
+}
 
 void customButton::mouseReleaseEvent(QMouseEvent *event)
 {
@@ -118,10 +118,10 @@ void customButton::mouseReleaseEvent(QMouseEvent *event)
 		{
 			setOffset(2);
 			emitValue(true);
-		};
+		}
 		clearFocus();
-	};
-};
+	}
+}
 
 void customButton::emitValue(bool value)
 {
@@ -135,16 +135,16 @@ void customButton::emitValue(bool value)
 		else
 		{
 			emit valueChanged((bool)value, this->hex1, this->hex2, this->hex3);
-		};
-    //};
-};
+		}
+    //}
+}
 
 void customButton::mouseMoveEvent(QMouseEvent *event)
 {
     if (!(event->buttons() == Qt::LeftButton) && (event->pos() - dragStartPosition).manhattanLength() < QApplication::startDragDistance())
 	{
         return;
-	};
+	}
 	/*if(active)
 	{
 		setOffset(2);
@@ -152,8 +152,8 @@ void customButton::mouseMoveEvent(QMouseEvent *event)
 	else
 	{
 		setOffset(0);
-	};*/
-};
+	}*/
+}
 
 void customButton::setValue(bool value)
 {
@@ -165,9 +165,9 @@ void customButton::setValue(bool value)
 	else
 	{
 		setOffset(0);
-	};
+	}
 	clearFocus();
-};
+}
 
 void customButton::setBlink(bool value)
 {
@@ -185,9 +185,9 @@ void customButton::setBlink(bool value)
 		else
 		{
 			setOffset(0);
-		};
-	 };
-};
+		}
+	 }
+}
 
 void customButton::blink()
 {
@@ -200,6 +200,6 @@ void customButton::blink()
 	{
 		on = true;
 		setOffset(2);
-	};
+	}
 	clearFocus();
-};
+}

@@ -55,25 +55,25 @@ statusBarWidget::statusBarWidget(QWidget *parent)
 	widgetLayout->addStretch(0);
 
 	this->setLayout(widgetLayout);
-};
+}
 
 void statusBarWidget::setStatusMessage(QString message)
 {
 	this->label->setText(message);
-};
+}
 
 void statusBarWidget::setStatusdBugMessage(QString dBug)
 {
 	this->dBuglabel->showMessage(dBug, 3000);
-};
+}
 
 void statusBarWidget::setStatusProgress(int value)
 {
 	this->progressBar->setValue(value);
-};
+}
 
 void statusBarWidget::setStatusSymbol(int value)
 {
 	this->symbol->setValue(value);
-};
+}
 

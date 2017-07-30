@@ -35,7 +35,7 @@ customControlSwitch::customControlSwitch(QWidget *parent,
 	this->hex2 = hex2;
 	this->hex3 = hex3;
   this->area = direction;
-  if (area == "bottom" || area == "middle" || area.isEmpty()){area = "Structure";};
+  if (area == "bottom" || area == "middle" || area.isEmpty()){area = "Structure";}
 	MidiTable *midiTable = MidiTable::Instance();
 	Midi items = midiTable->getMidiMap(this->area, hex1, hex2, hex3);
 	QString labeltxt = items.customdesc;
@@ -85,14 +85,14 @@ customControlSwitch::customControlSwitch(QWidget *parent,
 
 		this->setLayout(mainLayout);
 		this->setFixedHeight(12 + 15);
-	};
+	}
 
 	QObject::connect(this->parent(), SIGNAL( dialogUpdateSignal() ),
                 this, SLOT( dialogUpdateSignal() ));
 
 	QObject::connect(this, SIGNAL( updateSignal() ),
                 this->parent(), SIGNAL( updateSignal() ));
-};
+}
 
 void customControlSwitch::paintEvent(QPaintEvent *)
 {
@@ -104,7 +104,7 @@ void customControlSwitch::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);*/
-};
+}
 
 void customControlSwitch::valueChanged(bool value, QString hex1, QString hex2, QString hex3)
 {
@@ -116,14 +116,14 @@ void customControlSwitch::valueChanged(bool value, QString hex1, QString hex2, Q
 	else
 	{
 		valueHex = "00";
-	};
+	}
 
   SysxIO *sysxIO = SysxIO::Instance();
 	sysxIO->setFileSource(this->area, hex1, hex2, hex3, valueHex);
 
 	//emit updateDisplay(valueStr);
 	emit updateSignal();
-};
+}
 
 void customControlSwitch::dialogUpdateSignal()
 {
@@ -136,6 +136,6 @@ void customControlSwitch::dialogUpdateSignal()
 	else
 	{
 		this->switchbutton->setValue(true);
-	};
+	}
 	//this->valueChanged(value, this->hex1, this->hex2, this->hex3);
-};
+}

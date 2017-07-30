@@ -34,40 +34,40 @@ class customKnobTarget : public QWidget
     Q_OBJECT
 
 public:
-    customKnobTarget(QWidget *parent = 0, 
-		QString hex1 = "void",
-		QString hex2 = "void",
-		QString hex3 = "void",
-		QString hexMsb = "void",
-		QString hexLsb = "void",
-		QString background = "normal");
-	void setValue(int value);
+    customKnobTarget(QWidget *parent = 0,
+                     QString hex1 = "void",
+                     QString hex2 = "void",
+                     QString hex3 = "void",
+                     QString hexMsb = "void",
+                     QString hexLsb = "void",
+                     QString background = "normal");
+    void setValue(int value);
 
 public slots:
-	void valueChanged(int, QString, QString, QString);
-	void knobSignal(QString, QString, QString);
+    void valueChanged(int, QString, QString, QString);
+    void knobSignal(QString, QString, QString);
 
 signals:
-	void updateSignal();
-	void updateDisplayTarget(QString text);
-	void updateDisplayMin(QString text);
-	void updateDisplayMax(QString text);
-	void updateTarget(QString hexMsb, QString hex2, QString hexLsb);
-	void updateHex(QString hexMsb, QString hex2, QString hexLsb);
+    void updateSignal();
+    void updateDisplayTarget(QString text);
+    void updateDisplayMin(QString text);
+    void updateDisplayMax(QString text);
+    void updateTarget(QString hexMsb, QString hex2, QString hexLsb);
+    void updateHex(QString hexMsb, QString hex2, QString hexLsb);
 
 protected:
-	void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event);
 
 private:
-	customTargetDial* knob;
-	QString hex1;
-	QString hex2;
-	QString hex3;
-	QString hexMsb;
-	QString hexLsb;
-	QString background;
-	int range;
-	int rangeMin;
-	};
+    customTargetDial* knob;
+    QString hex1;
+    QString hex2;
+    QString hex3;
+    QString hexMsb;
+    QString hexLsb;
+    QString background;
+    int range;
+    int rangeMin;
+};
 
 #endif // CUSTOMKNOBTARGET_H

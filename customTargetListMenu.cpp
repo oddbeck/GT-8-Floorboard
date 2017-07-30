@@ -40,7 +40,7 @@ customTargetListMenu::customTargetListMenu(QWidget *parent,
 	this->hexMsb = hexMsb;
 	this->hexLsb = hexLsb;
 	if (!direction.contains("System")) {this->area = "Structure"; }
-	else {this->area = direction; };
+	else {this->area = direction; }
 
 	MidiTable *midiTable = MidiTable::Instance();
 	Midi items;
@@ -50,7 +50,7 @@ customTargetListMenu::customTargetListMenu(QWidget *parent,
 	} else {
 	hex0.remove("System");
   items = midiTable->getMidiMap("System", hex0, hex1, hex2, hex3);
-  };
+  }
 	QString labeltxt = ""; //items.customdesc;
 	
 	this->label->setUpperCase(true);
@@ -100,7 +100,7 @@ customTargetListMenu::customTargetListMenu(QWidget *parent,
 		this->setLayout(mainLayout);
 		this->setFixedHeight(12 + 15);
 		
-	};
+	}
 
 //	QObject::connect(this->parent(), SIGNAL( dialogUpdateSignal() ), this, SLOT( dialogUpdateSignal() ));
 
@@ -160,10 +160,10 @@ void customTargetListMenu::setComboBox()
 		else
 		{
 			item = "Out of Range";
-		};		
+		}		
 		if(longestItem.size() < item.size()) longestItem = item; 
 		this->controlListComboBox->addItem(item);
-	};
+	}
 	 items = item_1;
 	itemSize = items.level.size();
 	for(itemcount=0;itemcount<itemSize;itemcount++ )
@@ -177,10 +177,10 @@ void customTargetListMenu::setComboBox()
 		else
 		{
 			item = "Out of Range";
-		};		
+		}		
 		if(longestItem.size() < item.size()) longestItem = item; 
 		this->controlListComboBox->addItem(item);
-	};
+	}
 	
 	 items = item_2;
 	itemSize = items.level.size();
@@ -195,10 +195,10 @@ void customTargetListMenu::setComboBox()
 		else
 		{
 			item = "Out of Range";
-		};		
+		}		
 		if(longestItem.size() < item.size()) longestItem = item; 
 		this->controlListComboBox->addItem(item);
-	};
+	}
 	
 	  items = item_3;
 	itemSize = items.level.size();
@@ -213,14 +213,14 @@ void customTargetListMenu::setComboBox()
 		else
 		{
 			item = "Out of Range";
-		};		
+		}		
 		if(longestItem.size() < item.size()) longestItem = item; 
 		this->controlListComboBox->addItem(item);
-	};     
+	}     
 	
 	
 	int maxWidth = QFontMetrics( this->font() ).width( longestItem );
-	if(maxWidth < 30) { maxWidth = 30; };
+	if(maxWidth < 30) { maxWidth = 30; }
 
   this->controlListComboBox->setFixedWidth(150);
 
@@ -228,7 +228,7 @@ void customTargetListMenu::setComboBox()
 	this->controlListComboBox->setEditable(false);
 	this->controlListComboBox->setFrame(false);
 	this->controlListComboBox->setMaxVisibleItems(itemcount);         
-};
+}
 
 void customTargetListMenu::valueChanged(int index)
 {   
@@ -253,7 +253,7 @@ void customTargetListMenu::valueChanged(int index)
 	else
 	{	 
 		sysxIO->setFileSource(this->area, hex1, hex2, hex3, valueHex);
-	};  
+	}  
 	
 	//emit updateDisplay(valueStr);
 
@@ -284,7 +284,7 @@ void customTargetListMenu::valueChanged(int index)
   emit updateTarget(hexMsb, hex2, hexLsb);                       // hexMsb & hexLsb are lookup address for label value
   emit updateTarget(hexMsb, hex2, hexLsb);
   emit updateSignal();      
-};
+}
 
 void customTargetListMenu::dialogUpdateSignal()
 {
@@ -293,5 +293,5 @@ void customTargetListMenu::dialogUpdateSignal()
 	int index = sysxIO->getSourceValue(this->area, this->hex1, this->hex2, this->hex3);
 	this->controlListComboBox->setCurrentIndex(index);
 	//this->valueChanged(index);      
-};
+}
 

@@ -35,7 +35,7 @@ stompbox_od::stompbox_od(QWidget *parent)
 	setButton("06", "00", "00");
 	editDetails()->patchPos(468, 16, "06", "00");
 	setEditPages();
-};
+}
 
 void stompbox_od::updateSignal()
 {
@@ -43,7 +43,7 @@ void stompbox_od::updateSignal()
 	updateKnob2("06", "00", "06");
 	updateComboBox("06", "00", "02");
 	updateButton("06", "00", "00");
-};
+}
 
 void stompbox_od::setEditPages()
 {
@@ -64,4 +64,4 @@ void stompbox_od::setEditPages()
 	editDetails()->page()->addGroupBox(0, 2, 1, 1);
 
 	editDetails()->addPage();	
-};
+}

@@ -53,7 +53,7 @@ editPage::editPage(QWidget *parent)
 
 	QObject::connect(this, SIGNAL( updateSignal() ),
                 this->parent(), SIGNAL( updateSignal() ));*/
-};
+}
 
 void editPage::paintEvent(QPaintEvent *)
 {
@@ -65,7 +65,7 @@ void editPage::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);*/
-};
+}
 
 void editPage::addKnob(int row, int column, int rowSpan, int columnSpan,
 					   QString hex1, QString hex2, QString hex3, 
@@ -84,8 +84,8 @@ void editPage::addKnob(int row, int column, int rowSpan, int columnSpan,
 	else
 	{
 		this->layout->addWidget(knob, row, column, rowSpan, columnSpan, alignment);
-	};
-};
+	}
+}
 
 void editPage::addTarget(int row, int column, int rowSpan, int columnSpan,
 					   QString hex1, QString hex2, QString hex3, 
@@ -104,8 +104,8 @@ void editPage::addTarget(int row, int column, int rowSpan, int columnSpan,
 	else
 	{
 		this->layout->addWidget(target, row, column, rowSpan, columnSpan, alignment);
-	};
-};
+	}
+}
 
 void editPage::addRange(int row, int column, int rowSpan, int columnSpan,
 					   QString hex1, QString hex2, QString hex3, 
@@ -124,8 +124,8 @@ void editPage::addRange(int row, int column, int rowSpan, int columnSpan,
 	else
 	{
 		this->layout->addWidget(range, row, column, rowSpan, columnSpan, alignment);
-	};
-};
+	}
+}
 
 void editPage::addSwitch(int row, int column, int rowSpan, int columnSpan,
 		QString hex1,
@@ -146,8 +146,8 @@ void editPage::addSwitch(int row, int column, int rowSpan, int columnSpan,
 	else
 	{
 		this->layout->addWidget(switchbutton, row, column, rowSpan, columnSpan, alignment);
-	};
-};
+	}
+}
 
 void editPage::addComboBox(int row, int column, int rowSpan, int columnSpan,
 		QString hex1,
@@ -163,7 +163,7 @@ void editPage::addComboBox(int row, int column, int rowSpan, int columnSpan,
 					this->stackedFields.at(this->stackControlId), SLOT( setCurrentIndex(int) ));
 		QObject::connect(combobox, SIGNAL( currentIndexChanged(int) ),
 					this, SLOT( updateDialog(int) ));
-	};
+	}
 	if(this->groupBoxMode)
 	{
 		this->groupBoxLayout->addWidget(combobox, row, column, rowSpan, columnSpan, alignment);
@@ -175,8 +175,8 @@ void editPage::addComboBox(int row, int column, int rowSpan, int columnSpan,
 	else
 	{
 		this->layout->addWidget(combobox, row, column, rowSpan, columnSpan, alignment);
-	};
-};
+	}
+}
 
 void editPage::addLabel(int row, int column, int rowSpan, int columnSpan, QString text, Qt::Alignment alignment)
 {
@@ -194,8 +194,8 @@ void editPage::addLabel(int row, int column, int rowSpan, int columnSpan, QStrin
 	else
 	{
 		this->layout->addWidget(label, row, column, rowSpan, columnSpan, alignment);
-	};
-};
+	}
+}
 
 void editPage::valueChanged(bool value, QString hex1, QString hex2, QString hex3)
 {
@@ -203,7 +203,7 @@ void editPage::valueChanged(bool value, QString hex1, QString hex2, QString hex3
         hex1 = hex1;
         hex2 = hex2;
         hex3 = hex3;
-}; 
+} 
 
 void editPage::newGroupBox(QString title, Qt::Alignment alignment)
 {
@@ -212,7 +212,7 @@ void editPage::newGroupBox(QString title, Qt::Alignment alignment)
 		if(this->groupBoxIndex == 0 && this->groupBoxLevel != 0)
 		{
 			this->parentBoxDif++;
-		};
+		}
 		this->groupBoxLevel++;
 		this->groupBoxIndex++;
 	}
@@ -221,7 +221,7 @@ void editPage::newGroupBox(QString title, Qt::Alignment alignment)
 		this->groupBoxLevel = 0;
 		this->groupBoxIndex = 0;
 		this->parentBoxDif = 0;
-	};
+	}
 	this->groupBoxIndexList.append(this->groupBoxLevel);
 
 	this->groupBox = new QGroupBox;
@@ -240,7 +240,7 @@ void editPage::newGroupBox(QString title, Qt::Alignment alignment)
 	this->groupBox->setTitle(title);
 	this->groupBox->setObjectName("groupbox");
 	this->groupBoxMode = true;
-};
+}
 
 void editPage::addGroupBox(int row, int column, int rowSpan, int columnSpan)
 {
@@ -255,7 +255,7 @@ void editPage::addGroupBox(int row, int column, int rowSpan, int columnSpan)
 	for(int i = removeIndex; i < this->groupBoxIndexList.size() - 1; ++i)
 	{
 		this->groupBoxIndexList.move(i + 1, i);
-	};
+	}
 
 	QString snork = this->groupBoxes.at(boxesIndex)->title();
 	this->groupBoxes.at(boxesIndex)->setLayout(this->groupBoxLayouts.at(layoutIndex));
@@ -269,7 +269,7 @@ void editPage::addGroupBox(int row, int column, int rowSpan, int columnSpan)
 		else
 		{
 			this->layout->addWidget(this->groupBoxes.at(parentIndex), row, column, rowSpan, columnSpan);
-		};
+		}
 		this->groupBoxLevel = 0;
 		this->groupBoxIndexList.clear();
 		this->groupBoxMode = false;
@@ -279,8 +279,8 @@ void editPage::addGroupBox(int row, int column, int rowSpan, int columnSpan)
 		this->groupBoxLayouts.at(layoutIndex - 1 - this->parentBoxDif)->addWidget(this->groupBoxes.at(boxesIndex), row, column, rowSpan, columnSpan);
 		this->groupBoxLayout = this->groupBoxLayouts.at(layoutIndex - 1 - this->parentBoxDif);
 		this->groupBoxIndex--;
-	};
-};
+	}
+}
 
 void editPage::setGridLayout()
 {
@@ -295,7 +295,7 @@ void editPage::setGridLayout()
 	mainLayout->addStretch();
 	
 	this->setLayout(mainLayout);
-};
+}
 
 void editPage::newStackControl(int id)
 {
@@ -303,12 +303,12 @@ void editPage::newStackControl(int id)
 	this->stackControlId = id;
 	QStackedWidget *newStackField = new QStackedWidget;
 	this->stackedFields.insert(id, newStackField);
-};
+}
 
 void editPage::addStackControl()
 {
 	this->stackControlMode = false;
-};
+}
 
 void editPage::insertStackField(int id,
 	int row, int column, int rowSpan, int columnSpan,
@@ -325,8 +325,8 @@ void editPage::insertStackField(int id,
 	else
 	{
 		this->layout->addWidget(this->stackedFields.at(id), row, column, rowSpan, columnSpan, alignment);
-	};
-};
+	}
+}
 	
 void editPage::newStackField(int id, Qt::Alignment alignment)
 {
@@ -341,7 +341,7 @@ void editPage::newStackField(int id, Qt::Alignment alignment)
 	this->stackField->setMargin(0);
 	this->stackField->setSpacing(5);
 	this->stackField->setAlignment(alignment);
-};
+}
 
 void editPage::addStackField()
 {
@@ -351,10 +351,10 @@ void editPage::addStackField()
 	tmpWidget->setLayout(this->stackField);
 
 	this->stackedFields.at(this->stackFieldId)->addWidget(tmpWidget);
-};
+}
 
 void editPage::updateDialog(int index)
 {
         index = index;
 	emit dialogUpdateSignal();
-};
+}

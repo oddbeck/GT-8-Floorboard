@@ -62,7 +62,7 @@ GeneralPage::GeneralPage(QWidget *parent)
 	mainLayout->addWidget(patchGroup);
 	mainLayout->addStretch(1);
 	setLayout(mainLayout);
-};
+}
 
 MidiPage::MidiPage(QWidget *parent)
 	: QWidget(parent)
@@ -100,11 +100,11 @@ MidiPage::MidiPage(QWidget *parent)
 		QString str(*dev);
 		midiInCombo->addItem(str.toLatin1().data());
 		id++;
-    };
+    }
 	if(!midiInDevice.isEmpty())
 	{
 		midiInCombo->setCurrentIndex(midiInDeviceID + 1); // +1 because there is a default entry at 0
-	};
+	}
 	
 	QComboBox *midiOutCombo = new QComboBox;
 	this->midiOutCombo = midiOutCombo;
@@ -115,11 +115,11 @@ MidiPage::MidiPage(QWidget *parent)
 		QString str(*dev);
 		midiOutCombo->addItem(str.toLatin1().data());
 		id++;
-    };
+    }
 	if(!midiOutDevice.isEmpty())
 	{
 		midiOutCombo->setCurrentIndex(midiOutDeviceID + 1); // +1 because there is a default entry at 0
-	};
+	}
 
 	QVBoxLayout *midiLabelLayout = new QVBoxLayout;
 	midiLabelLayout->addWidget(midiInLabel);
@@ -158,7 +158,7 @@ MidiPage::MidiPage(QWidget *parent)
 	if(dBugScreen=="true")
 	{
 		dBugCheckBox->setChecked(true);
-	};
+	}
 	
 	QSpinBox *sysByteSpinBox1 = new QSpinBox;
 	QSpinBox *sysByteSpinBox2 = new QSpinBox;
@@ -225,7 +225,7 @@ MidiPage::MidiPage(QWidget *parent)
 	mainLayout->addWidget(dBugScreenGroup);
 	mainLayout->addStretch(1);
 	setLayout(mainLayout);
-};
+}
 
 WindowPage::WindowPage(QWidget *parent)
 	: QWidget(parent)
@@ -246,11 +246,11 @@ WindowPage::WindowPage(QWidget *parent)
 	if(windowRestore=="true")
 	{
 		windowCheckBox->setChecked(true);
-	};
+	}
 	if(sidepanelRestore=="true")
 	{
 		sidepanelCheckBox->setChecked(true);
-	};
+	}
 
 	QVBoxLayout *restoreLayout = new QVBoxLayout;
 	restoreLayout->addWidget(restoreDescriptionLabel);
@@ -271,7 +271,7 @@ WindowPage::WindowPage(QWidget *parent)
 	if(splashScreen=="true")
 	{
 		splashCheckBox->setChecked(true);
-	};
+	}
 
 	QVBoxLayout *splashLayout = new QVBoxLayout;
 	splashLayout->addWidget(splashDescriptionLabel);
@@ -290,7 +290,7 @@ WindowPage::WindowPage(QWidget *parent)
 	
 	mainLayout->addStretch(1);
 	setLayout(mainLayout);
-};
+}
 
 LanguagePage::LanguagePage(QWidget *parent)
 	: QWidget(parent)
@@ -310,7 +310,7 @@ LanguagePage::LanguagePage(QWidget *parent)
   if (choice == 3) {chineseButton->setChecked(true); }
   else if (choice == 2) {germanButton->setChecked(true); }
   else if (choice == 1) {frenchButton->setChecked(true); }
-  else {englishButton->setChecked(true); };
+  else {englishButton->setChecked(true); }
  
 	QVBoxLayout *languageLayout = new QVBoxLayout;
 	languageLayout->addWidget(englishButton);
@@ -328,7 +328,7 @@ LanguagePage::LanguagePage(QWidget *parent)
 	mainLayout->addStretch(1);
 	mainLayout->addWidget(note);
 	setLayout(mainLayout);
-};
+}
 
 void GeneralPage::browseDir()
 {
@@ -338,6 +338,6 @@ void GeneralPage::browseDir()
 	if(!dirName.isEmpty())
 	{
 		this->dirEdit->setText(dirName);
-	};
-};
+	}
+}
 

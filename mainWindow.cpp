@@ -55,7 +55,7 @@ mainWindow::mainWindow(QWidget *parent)
         file.open(QFile::ReadOnly);
         QString styleSheet = QLatin1String(file.readAll());
         fxsBoard->setStyleSheet(styleSheet);
-    };
+    }
 #endif
 
 #ifdef Q_OS_LINUX
@@ -68,7 +68,7 @@ mainWindow::mainWindow(QWidget *parent)
         file.open(QFile::ReadOnly);
         QString styleSheet = QLatin1String(file.readAll());
         fxsBoard->setStyleSheet(styleSheet);
-    };
+    }
 #endif
 
 #ifdef Q_OS_MAC
@@ -81,7 +81,7 @@ mainWindow::mainWindow(QWidget *parent)
         file.open(QFile::ReadOnly);
         QString styleSheet = QLatin1String(file.readAll());
         fxsBoard->setStyleSheet(styleSheet);
-    };
+    }
 #endif
 
 
@@ -125,7 +125,7 @@ mainWindow::~mainWindow()
             bool ok;
             width = preferences->getPreferences("Window", "Size", "minwidth");
             posx = QString::number(this->geometry().x()+((this->geometry().width()-width.toInt(&ok,10))/2), 10);
-        };
+        }
         preferences->setPreferences("Window", "Position", "x", posx);
         preferences->setPreferences("Window", "Position", "y", QString::number(this->geometry().y(), 10));
         preferences->setPreferences("Window", "Size", "width", width);
@@ -137,7 +137,7 @@ mainWindow::~mainWindow()
         preferences->setPreferences("Window", "Position", "y", "");
         preferences->setPreferences("Window", "Size", "width", "");
         preferences->setPreferences("Window", "Size", "height", "");
-    };
+    }
     preferences->savePreferences();
 }
 
@@ -345,9 +345,9 @@ void mainWindow::open()
             sysxIO->setDevice(false);
             emit updateSignal();
             if(sysxIO->isConnected())
-            {sysxIO->writeToBuffer(); };
-        };
-    };
+            {sysxIO->writeToBuffer(); }
+        }
+    }
 }
 
 void mainWindow::save()
@@ -370,7 +370,7 @@ void mainWindow::save()
             if(!fileName.contains(".syx"))
             {
                 fileName.append(".syx");
-            };
+            }
             file.writeFile(fileName);
 
             file.setFile(fileName);
@@ -381,13 +381,13 @@ void mainWindow::save()
                 QString area = "Structure";
                 sysxIO->setFileSource(area, file.getFileSource());
                 emit updateSignal();
-            };
-        };
+            }
+        }
     }
     else
     {
         file.writeFile(file.getFileName());
-    };
+    }
 }
 
 void mainWindow::saveAs()
@@ -405,7 +405,7 @@ void mainWindow::saveAs()
         if(!fileName.contains(".syx"))
         {
             fileName.append(".syx");
-        };
+        }
         file.writeFile(fileName);
 
         file.setFile(fileName);
@@ -416,8 +416,8 @@ void mainWindow::saveAs()
             QString area = "Structure";
             sysxIO->setFileSource(area, file.getFileSource());
             emit updateSignal();
-        };
-    };
+        }
+    }
 }
 
 void mainWindow::systemLoad()
@@ -465,9 +465,9 @@ void mainWindow::systemLoad()
             if(msgBox->exec() == QMessageBox::Yes)
             {	// Accepted to overwrite system data.
                 sysxIO->systemWrite();
-            };
-        };
-    };
+            }
+        }
+    }
     if (!sysxIO->isConnected())
     {
         QString snork = tr("DATA TRANSFER REQUIRED<br>");
@@ -478,7 +478,7 @@ void mainWindow::systemLoad()
         msgBox->setText(snork);
         msgBox->setStandardButtons(QMessageBox::Ok);
         msgBox->exec();
-    };
+    }
 }
 
 void mainWindow::systemSave()
@@ -502,7 +502,7 @@ void mainWindow::systemSave()
             if(!fileName.contains(".GT8_system_syx"))
             {
                 fileName.append(".GT8_system_syx");
-            };
+            }
 
             file.writeSystemFile(fileName);
 
@@ -513,8 +513,8 @@ void mainWindow::systemSave()
                 QString area = "System";
                 sysxIO->setFileSource(area, file.getSystemSource());
                 emit updateSignal();
-            };
-	};
+            }
+	}
     }
     else
     {
@@ -526,7 +526,7 @@ void mainWindow::systemSave()
         msgBox->setText(snork);
         msgBox->setStandardButtons(QMessageBox::Ok);
         msgBox->exec();
-    };
+    }
 }
 
 void mainWindow::bulkLoad()
@@ -547,7 +547,7 @@ void mainWindow::bulkLoad()
         msgBox->setText(snork);
         msgBox->setStandardButtons(QMessageBox::Ok);
         msgBox->exec();
-    };
+    }
 }
 
 void mainWindow::bulkSave()
@@ -568,7 +568,7 @@ void mainWindow::bulkSave()
         msgBox->setText(snork);
         msgBox->setStandardButtons(QMessageBox::Ok);
         msgBox->exec();
-    };
+    }
 }
 
 /* TOOLS MENU */
@@ -596,12 +596,12 @@ void mainWindow::settings()
         if (dialog->languageSettings->chineseButton->isChecked() ) {lang="3"; }
         else if (dialog->languageSettings->germanButton->isChecked() ) {lang="2"; }
         else if (dialog->languageSettings->frenchButton->isChecked() ) {lang="1"; }
-        else /*if (dialog->languageSettings->englishButton->isChecked() )*/ {lang="0"; };
+        else /*if (dialog->languageSettings->englishButton->isChecked() )*/ {lang="0"; }
         preferences->setPreferences("Language", "Locale", "select", lang);
 
 
-        if(midiIn=="-1") { midiIn = ""; };
-        if(midiOut=="-1") {	midiOut = ""; };
+        if(midiIn=="-1") { midiIn = ""; }
+        if(midiOut=="-1") {	midiOut = ""; }
 
         preferences->setPreferences("General", "Files", "dir", dir);
         preferences->setPreferences("Midi", "MidiIn", "device", midiIn);
@@ -618,7 +618,7 @@ void mainWindow::settings()
         preferences->setPreferences("Window", "Restore", "window", window);
         preferences->setPreferences("Window", "Splash", "bool", splash);
         preferences->savePreferences();
-    };
+    }
 }
 
 /* HELP MENU */
@@ -689,7 +689,7 @@ void mainWindow::about()
     {
         QMessageBox::about(this, deviceType + tr(" Fx FloorBoard - About"),
                            deviceType + tr(" Fx FloorBoard, ") + tr("version") + " " + version + "<br>" + file.readAll());
-    };
+    }
 }
 
 void mainWindow::closeEvent(QCloseEvent* ce)

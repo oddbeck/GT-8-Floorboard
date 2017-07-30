@@ -170,7 +170,7 @@ struct CoreMidiData {
   MIDIEndpointRef endpoint;
   MIDIEndpointRef destinationId;
   unsigned long long lastTime;
-};
+}
 
 //*********************************************************************//
 //  API: OS-X

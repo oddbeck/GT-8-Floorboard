@@ -100,7 +100,7 @@ stompBox::stompBox(QWidget *parent, unsigned int id, QString imagePath, QPoint s
   QObject::connect(this->parent(), SIGNAL(pedal_buttonSignal(bool)), this, SLOT(pedal_ButtonSignal(bool) )); 
   QObject::connect(this->parent(), SIGNAL(pedal_buttonSignal(bool)), this->parent(), SLOT(menuButtonSignal()));
 
-};
+}
 
 void stompBox::paintEvent(QPaintEvent *)
 {
@@ -112,12 +112,12 @@ void stompBox::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);
-};
+}
 
 editWindow* stompBox::editDetails()
 {
 	return this->editDialog;
-};
+}
 
 void stompBox::mousePressEvent(QMouseEvent *event) 
 { 
@@ -131,15 +131,15 @@ void stompBox::mousePressEvent(QMouseEvent *event)
 	{
 		this->editDialog->setWindow(this->fxName);
 		emit setEditDialog(this->editDialog);
-	};
-};
+	}
+}
 
 void stompBox::mouseDoubleClickEvent(QMouseEvent *event)
 {
 	//event;
 	this->editDialog->setWindow(this->fxName);
 	emit setEditDialog(this->editDialog);
-};
+}
 
 void stompBox::mouseMoveEvent(QMouseEvent *event)
 {
@@ -183,16 +183,16 @@ void stompBox::mouseMoveEvent(QMouseEvent *event)
 			{
 				event->ignore();
 				show();
-			};
+			}
 
 			if(drag->source() != drag->target())
 			{
 				event->ignore();
 				show();
-			};
-		};
-	};
-};
+			}
+		}
+	}
+}
 
 void stompBox::preamp1_ButtonSignal(bool value)	
 {  
@@ -201,8 +201,8 @@ void stompBox::preamp1_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::distortion_ButtonSignal(bool value)	
 {  
@@ -211,8 +211,8 @@ void stompBox::distortion_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::compressor_ButtonSignal(bool value)	
 {  
@@ -221,8 +221,8 @@ void stompBox::compressor_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::ns1_ButtonSignal(bool value)	
 {  
@@ -231,8 +231,8 @@ void stompBox::ns1_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::ns2_ButtonSignal(bool value)	
 {  
@@ -241,8 +241,8 @@ void stompBox::ns2_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::fx1_ButtonSignal(bool value)	
 {  
@@ -251,8 +251,8 @@ void stompBox::fx1_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::fx2_ButtonSignal(bool value)	
 {  
@@ -261,8 +261,8 @@ void stompBox::fx2_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::reverb_ButtonSignal(bool value)	
 {  
@@ -271,8 +271,8 @@ void stompBox::reverb_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::delay_ButtonSignal(bool value)	
 {  
@@ -281,8 +281,8 @@ void stompBox::delay_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::chorus_ButtonSignal(bool value)	
 {  
@@ -291,8 +291,8 @@ void stompBox::chorus_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::sendreturn_ButtonSignal(bool value)	
 {  
@@ -301,8 +301,8 @@ void stompBox::sendreturn_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::eq_ButtonSignal(bool value)	
 {  
@@ -311,8 +311,8 @@ void stompBox::eq_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::pedal_ButtonSignal(bool value)	
 {  
@@ -321,14 +321,14 @@ void stompBox::pedal_ButtonSignal(bool value)
       emitValueChanged(this->hex1, this->hex2, "00", "void");
 	    this->editDialog->setWindow(this->fxName);
       emit setEditDialog(this->editDialog);
-    };
-};
+    }
+}
 
 void stompBox::setPos(QPoint newPos)
 {
 	this->move(newPos);
 	this->stompPos = newPos;
-};
+}
 
 void stompBox::updatePos(signed int offsetDif)
 {
@@ -336,36 +336,36 @@ void stompBox::updatePos(signed int offsetDif)
         QPoint newPos = stompPos + QPoint(offsetDif, 0);
 	this->move(newPos);
 	this->stompPos = newPos;
-};
+}
 	
 void stompBox::setImage(QString imagePath)
 {
 	this->imagePath = imagePath;
 	this->update();
-};
+}
 
 void stompBox::setSize(QSize newSize)
 {
 	this->stompSize = newSize;
 	this->setFixedSize(stompSize);
-};
+}
 
 void stompBox::setId(unsigned int id)
 {
 	this->id = id;
-};
+}
 
 unsigned int stompBox::getId()
 {
 	return this->id;
-};
+}
 
 void stompBox::setLSB(QString hex1, QString hex2)
 {
 	this->hex1 = hex1;
 	this->hex2 = hex2;
 	this->editDialog->setLSB(hex1, hex2);
-};
+}
 
 void stompBox::setComboBox(QString hex1, QString hex2, QString hex3, QRect geometry)
 {
@@ -392,9 +392,9 @@ void stompBox::setComboBox(QString hex1, QString hex2, QString hex3, QRect geome
 		else
 		{
 			item = desc;
-		};
+		}
 		this->stompComboBox->addItem(item);
-	};
+	}
 
 	this->stompComboBox->setGeometry(geometry);
 	this->stompComboBox->setEditable(false);
@@ -403,61 +403,61 @@ void stompBox::setComboBox(QString hex1, QString hex2, QString hex3, QRect geome
 
 	QObject::connect(this->stompComboBox, SIGNAL(currentIndexChanged(int)),
                 this, SLOT(valueChanged(int)));
-};
+}
 
 void stompBox::setComboBoxCurrentIndex(int index)
 {
 	this->stompComboBox->setCurrentIndex(index);
-};
+}
 
 void stompBox::setKnob1(QString hex1, QString hex2, QString hex3)
 {	
 	MidiTable *midiTable = MidiTable::Instance();
 	int range = midiTable->getRange("Structure", hex1, hex2, hex3);
         knob1 = new customDial(0, 0, range, 1, 10, QPoint(6, 9), this, hex1, hex2, hex3);
-};
+}
 
 void stompBox::setKnob2(QString hex1, QString hex2, QString hex3)
 {	
 	MidiTable *midiTable = MidiTable::Instance();
 	int range = midiTable->getRange("Structure", hex1, hex2, hex3);
         knob2 = new customDial(0, 0, range, 1, 10, QPoint(53, 9), this, hex1, hex2, hex3);
-};
+}
 
 void stompBox::setSlider1(QString hex1, QString hex2, QString hex3)
 {	
 	MidiTable *midiTable = MidiTable::Instance();
 	int range = midiTable->getRange("Structure", hex1, hex2, hex3);
         slider1 = new customSlider(0, 0, range, 1, 10, QPoint(8, 17), this, hex1, hex2, hex3);
-};
+}
 
 void stompBox::setSlider2(QString hex1, QString hex2, QString hex3)
 {	
 	MidiTable *midiTable = MidiTable::Instance();
 	int range = midiTable->getRange("Structure", hex1, hex2, hex3);
         slider2 = new customSlider(0, 0, range, 1, 10, QPoint(24, 17), this, hex1, hex2, hex3);
-};
+}
 
 void stompBox::setSlider3(QString hex1, QString hex2, QString hex3)
 {	
 	MidiTable *midiTable = MidiTable::Instance();
 	int range = midiTable->getRange("Structure", hex1, hex2, hex3);
         slider3 = new customSlider(0, 0, range, 1, 10, QPoint(40, 17), this, hex1, hex2, hex3);
-};
+}
 
 void stompBox::setSlider4(QString hex1, QString hex2, QString hex3)
 {	
 	MidiTable *midiTable = MidiTable::Instance();
 	int range = midiTable->getRange("Structure", hex1, hex2, hex3);
         slider4 = new customSlider(0, 0, range, 1, 10, QPoint(56, 17), this, hex1, hex2, hex3);
-};
+}
 
 void stompBox::setSlider5(QString hex1, QString hex2, QString hex3)
 {	
 	MidiTable *midiTable = MidiTable::Instance();
 	int range = midiTable->getRange("Structure", hex1, hex2, hex3);
         slider5 = new customSlider(0, 0, range, 1, 10, QPoint(79, 17), this, hex1, hex2, hex3);
-};
+}
 
 void stompBox::setButton(QString hex1, QString hex2, QString hex3)
 {
@@ -466,7 +466,7 @@ void stompBox::setButton(QString hex1, QString hex2, QString hex3)
 
 	QObject::connect(button, SIGNAL(valueChanged(bool, QString, QString, QString)),
 				led, SLOT(changeValue(bool)));	
-};
+}
 
 void stompBox::setButton(QString hex1, QString hex2, QString hex3, QPoint pos, QString imagePath)
 {
@@ -475,13 +475,13 @@ void stompBox::setButton(QString hex1, QString hex2, QString hex3, QPoint pos, Q
 
 	QObject::connect(button, SIGNAL(valueChanged(bool, QString, QString, QString)),
 				led, SLOT(changeValue(bool)));	
-};
+}
 
 void stompBox::setSwitch(QString hex1, QString hex2, QString hex3)
 {
 	switchbutton = new customSwitch(false, this, hex1, hex2, hex3);	
         switchbutton->move(QPoint(5, 41));
-};
+}
 
 void stompBox::updateComboBox(QString hex1, QString hex2, QString hex3)
 {	
@@ -494,56 +494,56 @@ void stompBox::updateComboBox(QString hex1, QString hex2, QString hex3)
 
 	QObject::connect(this->stompComboBox, SIGNAL(currentIndexChanged(int)),
                 this, SLOT(valueChanged(int)));
-};
+}
 
 void stompBox::updateKnob1(QString hex1, QString hex2, QString hex3)
 {	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area;
 	knob1->setValue(sysxIO->getSourceValue(area, hex1, hex2, hex3));
-};
+}
 
 void stompBox::updateKnob2(QString hex1, QString hex2, QString hex3)
 {	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area;
 	knob2->setValue(sysxIO->getSourceValue(area, hex1, hex2, hex3));
-};
+}
 
 void stompBox::updateSlider1(QString hex1, QString hex2, QString hex3)
 {	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area;
 	slider1->setValue(sysxIO->getSourceValue(area, hex1, hex2, hex3));
-};
+}
 
 void stompBox::updateSlider2(QString hex1, QString hex2, QString hex3)
 {	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area;
 	slider2->setValue(sysxIO->getSourceValue(area, hex1, hex2, hex3));
-};
+}
 
 void stompBox::updateSlider3(QString hex1, QString hex2, QString hex3)
 {	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area;
 	slider3->setValue(sysxIO->getSourceValue(area, hex1, hex2, hex3));
-};
+}
 
 void stompBox::updateSlider4(QString hex1, QString hex2, QString hex3)
 {	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area;
 	slider4->setValue(sysxIO->getSourceValue(area, hex1, hex2, hex3));
-};
+}
 
 void stompBox::updateSlider5(QString hex1, QString hex2, QString hex3)
 {	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area;
 	slider5->setValue(sysxIO->getSourceValue(area, hex1, hex2, hex3));
-};
+}
 
 void stompBox::updateButton(QString hex1, QString hex2, QString hex3)
 {
@@ -554,10 +554,10 @@ void stompBox::updateButton(QString hex1, QString hex2, QString hex3)
 	{
 		//Exception for the Foot Volume -> it's on when Expresion switch is off.
 		(value==1)?value=0:value=1;
-	};
+	}
 	led->setValue((value==1)?true:false);
 	button->setValue((value==1)?true:false);
-};
+}
 
 void stompBox::updateSwitch(QString hex1, QString hex2, QString hex3)
 {
@@ -565,7 +565,7 @@ void stompBox::updateSwitch(QString hex1, QString hex2, QString hex3)
 	QString area;
 	int value = sysxIO->getSourceValue(area, hex1, hex2, hex3);
 	switchbutton->setValue((value==1)?true:false);
-};
+}
 
 void stompBox::valueChanged(int value, QString hex1, QString hex2, QString hex3)
 {
@@ -591,10 +591,10 @@ void stompBox::valueChanged(int value, QString hex1, QString hex2, QString hex3)
 	{
 	  QString area;
 		sysxIO->setFileSource(area, hex1, hex2, hex3, valueHex);
-	};
+	}
 
 	emitValueChanged(hex1, hex2, hex3, valueHex);
-};
+}
 
 void stompBox::valueChanged(bool value, QString hex1, QString hex2, QString hex3)
 {
@@ -608,7 +608,7 @@ void stompBox::valueChanged(bool value, QString hex1, QString hex2, QString hex3
 	sysxIO->setFileSource(area, hex1, hex2, hex3, valueHex);
 
 	emitValueChanged(hex1, hex2, hex3, valueHex);
-};
+}
 
 void stompBox::valueChanged(int index)
 {
@@ -629,11 +629,11 @@ void stompBox::valueChanged(int index)
 	if(customdesc.isEmpty())
 	{
 		customdesc = desc;
-	};
+	}
 
 	this->stompComboBox->setCurrentIndex(index);
 	this->stompComboBox->setEditText(desc);
-};
+}
 
 void stompBox::emitValueChanged(QString hex1, QString hex2, QString hex3, QString valueHex)
 {
@@ -655,7 +655,7 @@ void stompBox::emitValueChanged(QString hex1, QString hex2, QString hex3, QStrin
 				else
 				{
 					valueName = items.desc.remove("NS :");
-				};
+				}
 			}
 			else
 			{
@@ -667,8 +667,8 @@ void stompBox::emitValueChanged(QString hex1, QString hex2, QString hex3, QStrin
 				else
 				{
 					valueName = items.desc;
-				};
-			};
+				}
+			}
 			valueStr = midiTable->getValue("Structure", hex1, hex2, hex3, valueHex);
 			emit dialogUpdateSignal();
 		}
@@ -685,38 +685,38 @@ void stompBox::emitValueChanged(QString hex1, QString hex2, QString hex3, QStrin
 			else
 			{
 				//this->fxName = midiTable->getMidiMap("Structure", hex1).name;
-			};
-		};
+			}
+		}
 	}
 	else
 	{
 		this->fxName = "Digital Out";
-	};
+	}
 	
-	if (this->id == 0) {this->namedata = "FX1";   this->fxName = tr("FX-1");};
-	if (this->id == 1) {this->namedata = "CS";   this->fxName = tr("Compressor/Limiter");};
-	if (this->id == 2) {this->namedata = "WAH"; this->fxName = tr("Wah");};
-	if (this->id == 3) {this->namedata = "LP"; this->fxName = tr("Loop");};
-	if (this->id == 4) {this->namedata = "OD";   this->fxName = tr("Distortion");};
-	if (this->id == 5) {this->namedata = "PRE";  this->fxName = tr("PreAmp/Speaker");};
-	if (this->id == 6) {this->namedata = "EQ";  this->fxName = tr("Equaliser");};
-	if (this->id == 7) {this->namedata = "FX2";   this->fxName = tr("FX-2");};
-	if (this->id == 8) {this->namedata = "DD";   this->fxName = tr("Delay");};
-	if (this->id == 9) {this->namedata = "CE";   this->fxName = tr("Chorus");};
-	if (this->id == 10){this->namedata = "RV";  this->fxName = tr("Reverb");};
-	if (this->id == 11){this->namedata = "NS";   this->fxName = tr("Noise Suppessor");};
-	if (this->id == 12){this->namedata = "FV"; this->fxName = tr("Foot Volume");};
-	if (this->id == 13){this->namedata = "DGT"; this->fxName = tr("Digital Out");};
-	if (this->id == 14){this->namedata = "LP";   this->fxName = tr("Send/Return");};
-	if (this->id == 15){this->namedata = "DGT";  this->fxName = tr("Digital Out");};
-        //if (this->id == 16){this->namedata = "CN_S"; this->fxName = "Chain Split";};
-        //if (this->id == 17){this->namedata = "CN_M"; this->fxName = "Chain Merge";};
+	if (this->id == 0) {this->namedata = "FX1";   this->fxName = tr("FX-1");}
+	if (this->id == 1) {this->namedata = "CS";   this->fxName = tr("Compressor/Limiter");}
+	if (this->id == 2) {this->namedata = "WAH"; this->fxName = tr("Wah");}
+	if (this->id == 3) {this->namedata = "LP"; this->fxName = tr("Loop");}
+	if (this->id == 4) {this->namedata = "OD";   this->fxName = tr("Distortion");}
+	if (this->id == 5) {this->namedata = "PRE";  this->fxName = tr("PreAmp/Speaker");}
+	if (this->id == 6) {this->namedata = "EQ";  this->fxName = tr("Equaliser");}
+	if (this->id == 7) {this->namedata = "FX2";   this->fxName = tr("FX-2");}
+	if (this->id == 8) {this->namedata = "DD";   this->fxName = tr("Delay");}
+	if (this->id == 9) {this->namedata = "CE";   this->fxName = tr("Chorus");}
+	if (this->id == 10){this->namedata = "RV";  this->fxName = tr("Reverb");}
+	if (this->id == 11){this->namedata = "NS";   this->fxName = tr("Noise Suppessor");}
+	if (this->id == 12){this->namedata = "FV"; this->fxName = tr("Foot Volume");}
+	if (this->id == 13){this->namedata = "DGT"; this->fxName = tr("Digital Out");}
+	if (this->id == 14){this->namedata = "LP";   this->fxName = tr("Send/Return");}
+	if (this->id == 15){this->namedata = "DGT";  this->fxName = tr("Digital Out");}
+        //if (this->id == 16){this->namedata = "CN_S"; this->fxName = "Chain Split";}
+        //if (this->id == 17){this->namedata = "CN_M"; this->fxName = "Chain Merge";}
 	
 
 	emit valueChanged(this->fxName, valueName, valueStr);
-};
+}
 
 void stompBox::setDisplayToFxName()
 {
 	emit valueChanged(this->fxName, "", "");
-};
+}

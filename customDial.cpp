@@ -49,7 +49,7 @@ customDial::customDial(double value, double min, double max, double single, doub
 
 	QObject::connect(this, SIGNAL( valueChanged(int, QString, QString, QString) ),
                 this->parent(), SLOT( valueChanged(int, QString, QString, QString) ));
-};
+}
 
 void customDial::paintEvent(QPaintEvent *)
 {
@@ -61,7 +61,7 @@ void customDial::paintEvent(QPaintEvent *)
 	QPainter painter(this);
 	//painter.setRenderHint(QPainter::Antialiasing, true);
 	painter.drawPixmap(target, image, source);
-};
+}
 
 void customDial::setOffset(double _newValue)
 {
@@ -77,12 +77,12 @@ void customDial::setOffset(double _newValue)
 	else if(imageNr > (int)(imageRange*dialSize.width()))
 	{
 		imageNr = (int)(imageRange*dialSize.width());
-	};
+	}
 	
 	this->value = _newValue;	
 	this->xOffset = imageNr*dialSize.width();	
 	this->update();
-};
+}
 
 void customDial::mousePressEvent(QMouseEvent *event)
 {
@@ -93,8 +93,8 @@ void customDial::mousePressEvent(QMouseEvent *event)
 		this->_lastValue = value;
 		setFocus();
 		emitValue(value);
-	};
-};
+	}
+}
 
 void customDial::mouseMoveEvent(QMouseEvent *event)
 {
@@ -111,7 +111,7 @@ void customDial::mouseMoveEvent(QMouseEvent *event)
 		|| (_startpos.y() > _lastpos.y() && _newValue > max) ) 
 	{
 		this->_startpos =  _lastpos;
-	};
+	}
 	
 	if(_newValue < min)
 	{
@@ -122,12 +122,12 @@ void customDial::mouseMoveEvent(QMouseEvent *event)
 	{
 		_newValue = max;
 		this->_lastValue = value;
-	};
+	}
 	
 	this->_lastpos = event->pos();
 	setOffset(_newValue);
 	emitValue(_newValue);
-};
+}
 
 void customDial::wheelEvent(QWheelEvent *event)
 {
@@ -147,11 +147,11 @@ void customDial::wheelEvent(QWheelEvent *event)
 		else if(_newValue > max)
 		{
 			_newValue = max;
-		};
+		}
 		setOffset(_newValue);
 		emitValue(_newValue);
-    };
-};
+    }
+}
 
 void customDial::keyPressEvent(QKeyEvent *event)
 {
@@ -170,7 +170,7 @@ void customDial::keyPressEvent(QKeyEvent *event)
 
 		case Qt::Key_Right: numSteps = -(max-min);break;
 		case Qt::Key_Left: numSteps = max-min;break;
-	};
+	}
 
 	if (numSteps!=0) 
 	{
@@ -184,21 +184,21 @@ void customDial::keyPressEvent(QKeyEvent *event)
 		{
 			_newValue = max;
 			this->_lastValue = value;
-		};
+		}
 		setOffset(_newValue);
 		emitValue(_newValue);
-	};
-};
+	}
+}
 
 void customDial::emitValue(double value)
 {
     if (value != m_value) {
         this->m_value = value;
-    };
+    }
 	emit valueChanged((int)value, this->hex1, this->hex2, this->hex3);
-};
+}
 
 void customDial::setValue(int value)
 {
 	setOffset((double)value);
-};
+}

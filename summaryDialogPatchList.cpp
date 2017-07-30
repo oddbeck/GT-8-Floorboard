@@ -68,7 +68,7 @@ summaryDialogPatchList::summaryDialogPatchList(QWidget *parent)
 		        	msgBox->setText(snork);
 		        	msgBox->setStandardButtons(QMessageBox::Ok);
 		        	msgBox->exec(); 
-        };
+        }
  
 
   textDialog->setText(patchList);
@@ -108,7 +108,7 @@ summaryDialogPatchList::summaryDialogPatchList(QWidget *parent)
         setLayout(mainLayout);
 
         setWindowTitle(deviceType + tr(" Patch List Summary"));
-};
+}
 
 void summaryDialogPatchList::updatePatchNames(QString name)
 {		SysxIO *sysxIO = SysxIO::Instance();
@@ -116,10 +116,10 @@ QString text;
                 if(!name.isEmpty() && sysxIO->isConnected()) //  If not empty we can assume that we did receive a patch name.
                 {
                         text.append("<b>Constructing List ... Please Wait...</b>");
-                        for (int x=0; x<patch; ++x){ text.append(" > "); };
+                        for (int x=0; x<patch; ++x){ text.append(" > "); }
                         text.append("<br>");
                         QString b = QString::number(this->bank);
-                        if (b.size() < 2) { b.prepend("0"); };
+                        if (b.size() < 2) { b.prepend("0"); }
                         QString p = QString::number(this->patch);
                                
                         this->patchList.append("<br>[U"+b+":"+p+"] ");
@@ -133,9 +133,9 @@ QString text;
                           patch = 1;
                           bank = bank+1;
                           this->patchList.append("<br>");
-                        };                                       
+                        }                                       
                         textDialog->setText(text);                      
-                };
+                }
 
                 if(count < 140) // As long as we have items in the list we continue, duh! :)
                 {
@@ -156,8 +156,8 @@ QString text;
                     //cancelButton->show();
                     //printButton->show();
                     //saveAsButton->show(); 
-                  };
-};
+                  }
+}
 
  void summaryDialogPatchList::cancel()
 {
@@ -168,7 +168,7 @@ QString text;
   emit setStatusSymbol(1);
   emit setStatusMessage(tr("Ready"));
   this->close();
-};
+}
 
  void summaryDialogPatchList::printFile()
  {
@@ -179,9 +179,9 @@ QString text;
      //QPrintPreviewDialog *dialog = new QPrintPreviewDialog(&printer, this);
      dialog->setWindowTitle(tr("Print Document"));
      if (dialog->exec() != QDialog::Accepted) { return; }
-     else { textDialog->print(&printer); };
+     else { textDialog->print(&printer); }
  #endif
- };
+ }
 
  void summaryDialogPatchList::saveAs()
  {
@@ -199,7 +199,7 @@ QString text;
                  if(!fileName.contains(".txt"))
                  {
                          fileName.append(".txt");
-                 };
+                 }
                  QFile file(fileName);
 
                  QByteArray out;
@@ -223,13 +223,13 @@ QString text;
                                  //out[count] = (char)n;
                                  out.append(str);
 
-                         };
+                         }
 
              if (file.open(QIODevice::WriteOnly))
                  {
 
                          file.write(out);
-                 };
+                 }
 
-         };
- };
+         }
+ }

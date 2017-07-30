@@ -42,7 +42,7 @@ MidiTable* MidiTable::Instance()
     {
         _instance = new MidiTable; // create sole instance
         _destroyer.SetMidiTable(_instance);
-    };
+    }
     return _instance; // address of sole instance
 }
 
@@ -124,34 +124,34 @@ void MidiTable::loadMidiMap()
                             level4.id.append(level5.value);
                             level4.level.append(level5);
                             level5Node = level5Node.nextSibling();
-                        };
+                        }
 
                         level3.id.append(level4.value);
                         level3.level.append(level4);
                         level4Node = level4Node.nextSibling();
-                    };
+                    }
 
                     level2.id.append(level3.value);
                     level2.level.append(level3);
                     level3Node = level3Node.nextSibling();
-                };
+                }
 
                 level1.id.append(level2.value);
                 level1.level.append(level2);
                 level2Node = level2Node.nextSibling();
-            };
+            }
 
             section.id.append(level1.value);
             section.level.append(level1);
             level1Node = level1Node.nextSibling();
-        };
+        }
 
         QString test = node.nodeName();
         this->midiMap.id.append(test);
         this->midiMap.level.append(section);
         node = node.nextSibling();
 
-    };
+    }
 }
 
 Midi MidiTable::getMidiMap(QString root)
@@ -188,7 +188,7 @@ Midi MidiTable::getMidiMap(QString root, QString hex1, QString hex2, QString hex
     else
     {
         level3 = level2.level.at( level2.id.indexOf(hex3) );
-    };
+    }
     return level3;
 }
 
@@ -205,7 +205,7 @@ Midi MidiTable::getMidiMap(QString root, QString hex1, QString hex2, QString hex
     else
     {
         level3 = level2.level.at( level2.id.indexOf(hex3) );
-    };
+    }
 
     Midi level4 = level3.level.at( level3.id.indexOf(hex4) );
     return level4;
@@ -251,7 +251,7 @@ int MidiTable::getRange(QString root, QString hex1, QString hex2, QString hex3)
             if(hex3.length() < 2) hex3.prepend("0");
             hex0.remove("System");
             range = getMidiMap("System", hex0, hex1, hex2, hex3);
-        };
+        }
     }
     else
     {
@@ -261,8 +261,8 @@ int MidiTable::getRange(QString root, QString hex1, QString hex2, QString hex3)
         } else {
             hex0.remove("System");
             range = getMidiMap("System", hex0, hex1, hex2, hex3);
-        };
-    };
+        }
+    }
 
     int lastIndex;
     if(range.level.last().value == "range")
@@ -279,7 +279,7 @@ int MidiTable::getRange(QString root, QString hex1, QString hex2, QString hex3)
     else
     {
         lastIndex = range.level.last().value.toInt(&ok, 16);
-    };
+    }
     return lastIndex;
 }
 
@@ -304,7 +304,7 @@ int MidiTable::getRangeMinimum(QString root, QString hex1, QString hex2, QString
             hex3 = QString::number(hex3.toInt(&ok, 16) - (maxRange + 1), 16).toUpper();
             if(hex3.length() < 2) hex3.prepend("0");
             range = getMidiMap(root, hex1, hex2, hex3);
-        };
+        }
     }
     else
     {
@@ -314,8 +314,8 @@ int MidiTable::getRangeMinimum(QString root, QString hex1, QString hex2, QString
         } else {
             hex0.remove("System");
             range = getMidiMap("System", hex0, hex1, hex2, hex3);
-        };
-    };
+        }
+    }
 
     int firstIndex;
     if(range.level.first().value == "range")
@@ -329,7 +329,7 @@ int MidiTable::getRangeMinimum(QString root, QString hex1, QString hex2, QString
     else
     {
         firstIndex = range.level.first().value.toInt(&ok, 16);
-    };
+    }
     return firstIndex;
 }
 
@@ -354,7 +354,7 @@ bool MidiTable::isData(QString root, QString hex1, QString hex2, QString hex3)
             hex3 = QString::number(hex3.toInt(&ok, 16) - (maxRange + 1), 16).toUpper();
             if(hex3.length() < 2) hex3.prepend("0");
             range = getMidiMap(root, hex1, hex2, hex3);
-        };
+        }
     }
     else
     {
@@ -363,8 +363,8 @@ bool MidiTable::isData(QString root, QString hex1, QString hex2, QString hex3)
         else {
             hex0.remove("System");
             range = getMidiMap("System", hex0, hex1, hex2, hex3);
-        };
-    };
+        }
+    }
 
     if(range.level.last().type.contains("DATA"))
     {
@@ -373,7 +373,7 @@ bool MidiTable::isData(QString root, QString hex1, QString hex2, QString hex3)
     else
     {
         return false;
-    };
+    }
 }
 
 QString MidiTable::getValue(QString root, QString hex1, QString hex2, QString hex3, QString hex4)
@@ -385,7 +385,7 @@ QString MidiTable::getValue(QString root, QString hex1, QString hex2, QString he
     } else {
         hex0.remove("System");
         range = getMidiMap("System",hex0, hex1, hex2, hex3);
-    };
+    }
     QString valueStr; bool ok;
     if(range.level.last().type.contains("DATA"))
     {
@@ -403,7 +403,7 @@ QString MidiTable::getValue(QString root, QString hex1, QString hex2, QString he
     else
     {
         valueStr = rangeToValue(range, hex4);
-    };
+    }
     return valueStr;
 }
 
@@ -438,17 +438,17 @@ QString MidiTable::rangeToValue(Midi range, QString hex)
                 else
                 {
                     precision = 0;
-                };
+                }
                 valueStr = QString::number(result, 10, precision) + desc;
                 break;
-            };
+            }
             i++;
-        };
+        }
     }
     else
     {
         valueStr = range.level.at(range.id.indexOf(hex)).name;
-    };
+    }
     return valueStr;
 }
 
@@ -463,11 +463,11 @@ QString MidiTable::getHeader(bool receive)
         if(!receive && i == sysxAddressOffset - 1)
         {
             offset = 1;
-        };
+        }
         Midi level1 = section.level.at(i);
         Midi level2 = level1.level.at(offset);
         header.append(level2.value);
-    };
+    }
 
     return header;
 }
@@ -540,15 +540,15 @@ QString MidiTable::getSize(QString hex1, QString hex2)
                 else
                 {
                     sizeCount += 1;
-                };
+                }
             }
             else
             {
                 sizeCount += 1;
-            };
-        };
+            }
+        }
 
-    };
+    }
 
     QString itemSize = QString::number(sizeCount, 16).toUpper();
     if (itemSize.length() < 2) itemSize.prepend("0");
@@ -584,9 +584,9 @@ QString MidiTable::getCheckSum(int dataSize)
     bool ok;
     QString base = "80";
     int sum = dataSize % base.toInt(&ok, 16);
-    if(sum!=0){ sum = base.toInt(&ok, 16) - sum; };
+    if(sum!=0){ sum = base.toInt(&ok, 16) - sum; }
     QString checksum = QString::number(sum, 16).toUpper();
-    if(checksum.length()<2) { checksum.prepend("0"); };
+    if(checksum.length()<2) { checksum.prepend("0"); }
     return checksum;
 }
 
@@ -622,13 +622,13 @@ QString MidiTable::dataChange(QString area, QString hex1, QString hex2, QString 
         sysxMsg.append(hex1);
         sysxMsg.append(hex2);
         sysxMsg.append(hex3);
-    };
+    }
 
     sysxMsg.append(hex4);
 
     int dataSize = 0; bool ok;
     for(int i=checksumOffset;i<sysxMsg.size()-1;++i)
-    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16); };
+    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16); }
 
     sysxMsg.append(getCheckSum(dataSize));
 
@@ -656,14 +656,14 @@ QString MidiTable::dataChange(QString area, QString hex1, QString hex2, QString 
         sysxMsg.append(hex1);
         sysxMsg.append(hex2);
         sysxMsg.append(hex3);
-    };
+    }
 
     sysxMsg.append(hex4);
     sysxMsg.append(hex5);
 
     int dataSize = 0; bool ok;
     for(int i=checksumOffset;i<sysxMsg.size()-1;++i)
-    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16); };
+    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16); }
 
     sysxMsg.append(getCheckSum(dataSize));
 
@@ -693,7 +693,7 @@ QString MidiTable::nameRequest(int bank, int patch)
     {
         addr1 = "0D";
         addr2 = "00";
-    };
+    }
 
     QString hex1 = "12";
     QString hex2 = "00";
@@ -708,7 +708,7 @@ QString MidiTable::nameRequest(int bank, int patch)
 
     int dataSize = 0;
     for(int i=checksumOffset;i<sysxMsg.size()-1;++i)
-    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16);	};
+    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16);	}
     sysxMsg.append(getCheckSum(dataSize));
     sysxMsg.append(getFooter());
 
@@ -737,7 +737,7 @@ QString MidiTable::patchRequest(int bank, int patch)
     {
         addr1 = "0D";
         addr2 = "00";
-    };
+    }
 
     QString hex1 = "00";
     QString hex2 = "00";
@@ -753,7 +753,7 @@ QString MidiTable::patchRequest(int bank, int patch)
 
     int dataSize = 0;
     for(int i=checksumOffset;i<sysxMsg.size()-1;++i)
-    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16); };
+    { dataSize += sysxMsg.mid(i*2, 2).toInt(&ok, 16); }
     sysxMsg.append(getCheckSum(dataSize));
     sysxMsg.append(getFooter());
 

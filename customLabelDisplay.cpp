@@ -31,7 +31,7 @@ customLabelDisplay::customLabelDisplay(QRect geometry, QWidget *parent)
 	this->font.setFamily("void");
 	this->setGeometry(geometry);
 	this->setLabelPosition();
-}; 
+} 
 
 void customLabelDisplay::paintEvent(QPaintEvent *)
 {
@@ -45,7 +45,7 @@ void customLabelDisplay::paintEvent(QPaintEvent *)
 	else
 	{
 		this->mainLabel->setFont(this->font);
-	};
+	}
 	
 	while(this->mainLabel->geometry().width() < QFontMetrics(this->mainLabel->font()).width(this->mainLabel->text()))
 	{
@@ -57,8 +57,8 @@ void customLabelDisplay::paintEvent(QPaintEvent *)
 		if (fontSize <= 1)
 		{
 			break;
-		};
-	};
+		}
+	}
 	
 	/* This paints the background with the border. */
 	QPen border;
@@ -87,7 +87,7 @@ void customLabelDisplay::paintEvent(QPaintEvent *)
 	roundRectPath.arcTo((geometry.width()-1) - (radius*2), (geometry.height()-1) - (radius*2), radius*2, radius*2, 270.0, 90.0);
 	roundRectPath.closeSubpath();
 	painter.drawPath(roundRectPath);
-};
+}
 
 void customLabelDisplay::setLabelPosition(bool invert)
 {
@@ -109,7 +109,7 @@ void customLabelDisplay::setLabelPosition(bool invert)
 	//{
 //		mainGeometry = QRect(marginWidth, marginHeight, width - (marginWidth * 2), ((height / 2) - marginHeight) + mainExtra);  
 //		subGeometry = QRect(marginWidth, marginHeight + (height / 2), width - (marginWidth * 2), (height / 2) - marginHeight);
-//	};
+//	}
 
 	this->mainLabel = new QLabel(this);
 	this->mainLabel->setObjectName("displaySmall");
@@ -125,38 +125,38 @@ void customLabelDisplay::setLabelPosition(bool invert)
 	this->subLabelRight->setObjectName("displaySmall");
 	this->subLabelRight->setAlignment(Qt::AlignRight);
 	this->subLabelRight->setGeometry(subGeometry);     
-};
+}
 
 
 void customLabelDisplay::setMainText(QString mainText, Qt::Alignment alignment)
 {
 	this->mainLabel->setText(mainText);
 	this->mainLabel->setAlignment(alignment);
-};
+}
 
 void customLabelDisplay::setSubText(QString subTextLeft, QString subTextRight)
 {
 	this->subLabelLeft->setText(subTextLeft);
 	this->subLabelRight->setText(subTextRight);
-};
+}
 
 void customLabelDisplay::clearAll()
 {
 	this->mainLabel->clear();
 	this->subLabelLeft->clear();
 	this->subLabelRight->clear();
-};
+}
 
 void customLabelDisplay::setMainObjectName(QString name)
 {
 	this->mainLabel->setObjectName(name);
-};
+}
 
 void customLabelDisplay::setSubObjectName(QString name)
 {
 	this->subLabelLeft->setObjectName(name);
 	this->subLabelRight->setObjectName(name);
-};
+}
 
 void customLabelDisplay::setAllColor(QColor color)
 {
@@ -167,12 +167,12 @@ void customLabelDisplay::setAllColor(QColor color)
 	this->mainLabel->setStyleSheet("color: rgb("+ red +","+ green +","+ blue +");");
 	this->subLabelLeft->setStyleSheet("color: rgb("+ red +","+ green +","+ blue +");");
 	this->subLabelRight->setStyleSheet("color: rgb("+ red +","+ green +","+ blue +");");
-};
+}
 
 void customLabelDisplay::resetAllColor()
 {
 	this->mainLabel->setPalette(this->mainPal);
 	this->subLabelLeft->setPalette(this->subPal);
 	this->subLabelRight->setPalette(this->subPal);
-};
+}
 

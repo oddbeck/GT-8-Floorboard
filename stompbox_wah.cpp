@@ -33,13 +33,13 @@ stompbox_wah::stompbox_wah(QWidget *parent)
         setButton("03", "00", "00", QPoint(0, 109), ":/images/pedal.png");
 	editDetails()->patchPos(352, 10, "03", "00");
 	setEditPages();
-};
+}
 
 void stompbox_wah::updateSignal()
 {
 	updateComboBox("03", "00", "02");
 	updateButton("03", "00", "00");
-};
+}
                                                                  
 void stompbox_wah::setEditPages()
 {
@@ -57,4 +57,4 @@ void stompbox_wah::setEditPages()
 	editDetails()->page()->addGroupBox(0, 2, 1, 1);
 
 	editDetails()->addPage();	
-};
+}

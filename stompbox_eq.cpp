@@ -37,7 +37,7 @@ stompbox_eq::stompbox_eq(QWidget *parent)
 	setButton("08", "00", "00");
 	editDetails()->patchPos(572, 26, "08", "00");
 	setEditPages();
-};
+}
 
 void stompbox_eq::updateSignal()
 {
@@ -47,7 +47,7 @@ void stompbox_eq::updateSignal()
 	updateSlider4("08", "00", "0A");
 	updateSlider5("08", "00", "0C");
 	updateButton("08", "00", "00");
-};
+}
 
 void stompbox_eq::setEditPages()
 {
@@ -84,4 +84,4 @@ void stompbox_eq::setEditPages()
 	editDetails()->page()->addGroupBox(0, 2, 1, 1);
 
 	editDetails()->addPage();	
-};
+}

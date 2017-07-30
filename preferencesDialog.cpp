@@ -81,7 +81,7 @@ preferencesDialog::preferencesDialog()
 	setLayout(mainLayout);
 
 	setWindowTitle(tr("GT-8 Fx FloorBoard - Preferences"));
-};
+}
 
 void preferencesDialog::createIcons()
 {
@@ -119,6 +119,6 @@ void preferencesDialog::changePage(QListWidgetItem *current, QListWidgetItem *pr
 	if (!current)
 	{
 		current = previous;
-	};
+	}
 	pagesWidget->setCurrentIndex(contentsWidget->row(current));
-};
+}

@@ -55,7 +55,7 @@ customKnobTarget::customKnobTarget(QWidget *parent,
 	{
 		this->range = midiTable->getRange("Structure", hexMsb, hex2, hexLsb); 
 		this->rangeMin = midiTable->getRangeMinimum("Structure", hexMsb, hex2, hexLsb); 
-	};
+	}
 	newBackGround->setPixmap(QPixmap(":/images/knobbgn.png"));
 	newBackGround->move(bgPos);
 
@@ -86,7 +86,7 @@ customKnobTarget::customKnobTarget(QWidget *parent,
   QObject::connect(this->parent(), SIGNAL( updateHex(QString, QString, QString) ),
                 this, SIGNAL( updateHex(QString, QString, QString) ));
  
-};
+}
 
 void customKnobTarget::paintEvent(QPaintEvent *)
 {
@@ -98,7 +98,7 @@ void customKnobTarget::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);*/
-};
+}
 
 void customKnobTarget::knobSignal(QString hexMsb, QString hex2, QString hexLsb)
  {
@@ -106,13 +106,13 @@ void customKnobTarget::knobSignal(QString hexMsb, QString hex2, QString hexLsb)
    { 
 	  this->hexMsb = hexMsb;
 	  this->hexLsb = hexLsb;
-	 }; 
- };
+	 } 
+ }
  
 void customKnobTarget::setValue(int value)
 {
 	this->knob->setValue(value);     // on initialisation only
-};
+}
 
 void customKnobTarget::valueChanged(int value, QString hex1, QString hex2, QString hex3)
 {
@@ -122,7 +122,7 @@ void customKnobTarget::valueChanged(int value, QString hex1, QString hex2, QStri
      this->hexMsb = hexMsb;
 	   this->hex2 = hex2;
 	   this->hexLsb = hexLsb;
-    };
+    }
 	MidiTable *midiTable = MidiTable::Instance();
 	
 	QString valueHex = QString::number(value, 16).toUpper();
@@ -145,7 +145,7 @@ void customKnobTarget::valueChanged(int value, QString hex1, QString hex2, QStri
 	{
 	  QString area;
 		sysxIO->setFileSource(area, hex1, hex2, hex3, valueHex);
-	};
+	}
 	QString valueStr;
 	if (this->background == "target") {valueStr = midiTable->getValue("Structure", hex1, hex2, hex3, valueHex); 
   emit updateDisplayTarget(valueStr);                                                       // updates display values
@@ -155,7 +155,7 @@ void customKnobTarget::valueChanged(int value, QString hex1, QString hex2, QStri
      } else if (this->background == "max") {
      valueStr = midiTable->getValue("Structure", hexMsb, hex2, hexLsb, valueHex); 
 	   emit updateDisplayMax(valueStr);     
-     };                                                  // updates display values
+     }                                                  // updates display values
 	emit updateSignal();
 	
   if (this->background == "target")   // get the currently selected target value & set min/max address
@@ -182,6 +182,6 @@ void customKnobTarget::valueChanged(int value, QString hex1, QString hex2, QStri
   
   emit updateTarget(hexMsb, hex2, hexLsb);                       // hexMsb & hexLsb are lookup address for label value
   emit updateTarget(hexMsb, hex2, hexLsb);
-  };                                                             // updates on knob value change                                            
-};
+  }                                                             // updates on knob value change                                            
+}
 

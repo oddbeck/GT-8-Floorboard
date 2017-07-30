@@ -26,7 +26,7 @@
 
 #include <QString>
 
-class QTextStream;
+#include <QTextStream>
 
 class XmlWriterPrivate
 {

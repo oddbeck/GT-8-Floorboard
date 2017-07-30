@@ -32,7 +32,7 @@ customKnob::customKnob(QWidget *parent, QString hex1, QString hex2, QString hex3
 	this->hex3 = hex3;
   this->area = direction;
 	MidiTable *midiTable = MidiTable::Instance();
-	if (area == "normal" || area == "turbo" || area.isEmpty()){this->area = "Structure";};
+	if (area == "normal" || area == "turbo" || area.isEmpty()){this->area = "Structure";}
 	int range = midiTable->getRange(this->area, hex1, hex2, hex3);
 	int rangeMin = midiTable->getRangeMinimum(this->area, hex1, hex2, hex3);
 	
@@ -51,7 +51,7 @@ customKnob::customKnob(QWidget *parent, QString hex1, QString hex2, QString hex3
 	else
 	{
 		newBackGround->setPixmap(QPixmap(":/images/knobbg.png"));
-	};
+	}
 	newBackGround->move(bgPos);
 
 	QString imagePath(":/images/knob.png");
@@ -64,7 +64,7 @@ customKnob::customKnob(QWidget *parent, QString hex1, QString hex2, QString hex3
 
 	QObject::connect(this, SIGNAL( updateDisplay(QString) ),
                 this->parent(), SIGNAL( updateDisplay(QString) ));
-};
+}
 
 void customKnob::paintEvent(QPaintEvent *)
 {
@@ -76,12 +76,12 @@ void customKnob::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);*/
-};
+}
 
 void customKnob::setValue(int value)
 {
 	this->knob->setValue(value);
-};
+}
 
 void customKnob::valueChanged(int value, QString hex1, QString hex2, QString hex3)
 {
@@ -107,10 +107,10 @@ void customKnob::valueChanged(int value, QString hex1, QString hex2, QString hex
 	{
 	 
 		sysxIO->setFileSource(this->area, hex1, hex2, hex3, valueHex);
-	};
+	}
 
 	QString valueStr = midiTable->getValue(this->area, hex1, hex2, hex3, valueHex);
 
 	emit updateDisplay(valueStr);
 	emit updateSignal();
-};
+}

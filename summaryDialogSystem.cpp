@@ -72,7 +72,7 @@ summaryDialogSystem::summaryDialogSystem(QWidget *parent)
         emit setStatusMessage(tr("No midi connection"));
         emit setStatusSymbol(0);
         generatePage();
-    };
+    }
 
 }
 
@@ -99,12 +99,12 @@ void summaryDialogSystem::systemReply(QString replyMsg)
                 {
                     int dataSize = 0; bool ok;
                     for(int h=checksumOffset;h<hex.size()-1;++h)
-                    { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); };
+                    { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); }
                     QString base = "80";                       // checksum calculate.
                     unsigned int sum = dataSize % base.toInt(&ok, 16);
-                    if(sum!=0) { sum = base.toInt(&ok, 16) - sum; };
+                    if(sum!=0) { sum = base.toInt(&ok, 16) - sum; }
                     QString checksum = QString::number(sum, 16).toUpper();
-                    if(checksum.length()<2) {checksum.prepend("0");};
+                    if(checksum.length()<2) {checksum.prepend("0");}
                     hex.append(checksum);
                     hex.append("F7");
                     reBuild.append(hex);
@@ -112,8 +112,8 @@ void summaryDialogSystem::systemReply(QString replyMsg)
                     hex = "";
                     sysxEOF = "";
                     i=i+2;
-                };
-            };
+                }
+            }
             replyMsg = reBuild.simplified().toUpper();
         } else  {
             QMessageBox *msgBox = new QMessageBox();
@@ -128,8 +128,8 @@ void summaryDialogSystem::systemReply(QString replyMsg)
             msgBox->setText(msgText);
             msgBox->setStandardButtons(QMessageBox::Ok);
             msgBox->exec();
-        };
-    };
+        }
+    }
     emit setStatusMessage(tr("Ready"));
     generatePage();
 }
@@ -148,8 +148,8 @@ void summaryDialogSystem::generatePage()
             hex = data.at(x);
             if (hex.length() < 2) hex.prepend("0");
             system.append(hex);
-        };
-    };
+        }
+    }
     /*********************************************************************/
     /************** The System List **************************************/
     /*********************************************************************/
@@ -428,7 +428,7 @@ void summaryDialogSystem::printFile()
     //QPrintPreviewDialog *dialog = new QPrintPreviewDialog(&printer, this);
     dialog->setWindowTitle(tr("Print Document"));
     if (dialog->exec() != QDialog::Accepted) { return; }
-    else { textDialog->print(&printer); };
+    else { textDialog->print(&printer); }
 #endif
 }
 
@@ -448,7 +448,7 @@ void summaryDialogSystem::saveAs()
         if(!fileName.contains(".txt"))
         {
             fileName.append(".txt");
-        };
+        }
         QFile file(fileName);
 
         QByteArray out;
@@ -467,14 +467,14 @@ void summaryDialogSystem::saveAs()
         {
             QString str(text.at(x));
             out.append(str);
-        };
+        }
 
         if (file.open(QIODevice::WriteOnly))
         {
             file.write(out);
-        };
+        }
 
-    };
+    }
 }
 
 void summaryDialogSystem::makeList()
@@ -484,25 +484,25 @@ void summaryDialogSystem::makeList()
     for(int i=start;i<finish;i++ )
     {
         QString pos = QString::number(i, 16).toUpper();
-        if(pos.size()<2){ pos.prepend("0"); };
+        if(pos.size()<2){ pos.prepend("0"); }
         QString pretxt =  midiTable->getMidiMap("System", address1, address2, address3, pos).desc;
         QString txt =  midiTable->getMidiMap("System", address1, address2, address3, pos).customdesc;
         if(!txt.isEmpty() && txt != "")
         {
             int value = sysxIO->getSourceValue("System"+address1, address2, address3, pos);
             QString valueHex = QString::number(value, 16).toUpper();
-            if(valueHex.length() < 2) {valueHex.prepend("0"); };
+            if(valueHex.length() < 2) {valueHex.prepend("0"); }
             if (txt != "#")
             {
                 text.append("<br>");
                 text.append("[");
-                if(!pretxt.isEmpty() && txt != "") { text.append(pretxt + " "); };
+                if(!pretxt.isEmpty() && txt != "") { text.append(pretxt + " "); }
                 text.append(txt);
                 text.append("] = ");
-            };
+            }
             text.append(midiTable->getValue("System" + address1, address2, address3, pos, valueHex) );
-        };
-    };
+        }
+    }
 }
 
 void summaryDialogSystem::makeMidiMapList()
@@ -510,7 +510,7 @@ void summaryDialogSystem::makeMidiMapList()
 
     SysxIO *sysxIO = SysxIO::Instance();
     MidiTable *midiTable = MidiTable::Instance();
-    if(patch > 128) {patch = 1; };
+    if(patch > 128) {patch = 1; }
     int row = 1;
     bool ok;
     QString address = "0104" + address1;
@@ -520,32 +520,32 @@ void summaryDialogSystem::makeMidiMapList()
     for(int i=0;i<64;i++ )
     {
         QString pos = QString::number(i, 16).toUpper();
-        if(pos.size()<2){ pos.prepend("0"); };
+        if(pos.size()<2){ pos.prepend("0"); }
 
         QString txt =  QString::number(patch, 10);
-        if (txt.size()<2) {txt.prepend("00"); };
-        if (txt.size()<3) {txt.prepend("0"); };
+        if (txt.size()<2) {txt.prepend("00"); }
+        if (txt.size()<3) {txt.prepend("0"); }
         if (count < 129 )               {txt.prepend("[Bank#0:PC#"); }
         else if (count > 128 && count < 257) {txt.prepend("[Bank#1:PC#"); }
         else if (count > 256 && count < 385) {txt.prepend("[Bank#2:PC#"); }
-        else                                 {txt.prepend("[Bank#3:PC#"); };
+        else                                 {txt.prepend("[Bank#3:PC#"); }
         txt.append("] = ");
 
         int value1 = sysxData.at(sysxDataOffset + i).toInt(&ok, 16);;
         int value2 = sysxData.at(sysxDataOffset + i + 1).toInt(&ok, 16);;
         int value = (value1*128) + value2;
         QString valueHex = QString::number(value, 16).toUpper();
-        if(valueHex.length() < 2) {valueHex.prepend("0"); };
+        if(valueHex.length() < 2) {valueHex.prepend("0"); }
 
         text.append(txt);
         text.append(midiTable->getValue("System01", "04", "10", "00", valueHex) );
         text.append(".    .");
         ++row;
-        if (row >= 5) {row = 1; text.append("<br>"); };
+        if (row >= 5) {row = 1; text.append("<br>"); }
         ++count;
         ++patch;
         ++i;
-    };
+    }
 }
 
 

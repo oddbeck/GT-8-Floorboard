@@ -39,7 +39,6 @@ Preferences::Preferences()
 	if(!QFile("preferences.xml").exists())
 	{
 		loadPreferences(":preferences.xml.dist");
-
 	}
 	else
 	{
@@ -47,9 +46,9 @@ Preferences::Preferences()
 		if(this->getPreferences("General", "Application", "version")!=buildVersion)
 		{
 			loadPreferences(":preferences.xml.dist");
-		};
-	};
-};
+		}
+	}
+}
 
 Preferences* Preferences::_instance = 0;// initialize pointer
 PreferencesDestroyer Preferences::_destroyer;
@@ -61,7 +60,7 @@ Preferences* Preferences::Instance()
 	{  
 		_instance = new Preferences; // create sole instance
 		_destroyer.SetPreferences(_instance);
-	};
+	}
 	return _instance; // address of sole instance
 
 	/* Single-threading */
@@ -69,7 +68,7 @@ Preferences* Preferences::Instance()
 	static Preferences inst;
 	return &inst;
 	*/
-};
+}
 
 QString Preferences::getPreferences(QString prefGroupName, QString prefTypeName, QString prefItemName)
 {
@@ -83,9 +82,9 @@ QString Preferences::getPreferences(QString prefGroupName, QString prefTypeName,
 	else
 	{
 		setting = "";
-	};
+	}
 	return setting;
-};
+}
 
 void Preferences::setPreferences(QString prefGroupName, QString prefTypeName, QString prefItemName, QString prefValueData)
 {
@@ -103,8 +102,8 @@ void Preferences::setPreferences(QString prefGroupName, QString prefTypeName, QS
 		this->typeNames.append(prefTypeName);
 		this->itemNames.append(prefItemName);		
 		this->prefValues.append(prefValueData);
-	};
-};
+	}
+}
 
 void Preferences::loadPreferences(QString fileName)
 {	
@@ -144,14 +143,14 @@ void Preferences::loadPreferences(QString fileName)
 				this->groupNames.append(_groupName);
 				this->typeNames.append(_typeName);
 				this->itemNames.append(_itemName);
-			};
+			}
 
 			childNode = childNode.nextSibling();
-		};
+		}
 		
 		node = node.nextSibling();
-	};	
-};
+	}	
+}
 
 struct IndexList // Create a structure of metaSearchData and indexnumbers to sort and match them afterwords
 {
@@ -164,7 +163,7 @@ struct IndexList // Create a structure of metaSearchData and indexnumbers to sor
 bool IndexList::operator<(const IndexList& rhs) const
 {
 	return (metaSearchData < rhs.metaSearchData) ? true : (metaSearchData == rhs.metaSearchData) ? rhs.indexNumber > indexNumber : false;
-};
+}
 
 void Preferences::savePreferences()
 {
@@ -189,7 +188,7 @@ void Preferences::savePreferences()
 		tmp.metaSearchData = this->metaSearch.at(n);
 		tmp.indexNumber = QString::number(n, 10);
 		sortIndexList.append( tmp );
-	};
+	}
 
 	qSort(sortIndexList.begin(), sortIndexList.end());
 
@@ -202,7 +201,7 @@ void Preferences::savePreferences()
 		if( this->groupNames.at(i) != currentGroupName )
 		{
 			xout.writeOpenTag(this->groupNames.at(i));
-		};
+		}
 		currentGroupName = this->groupNames.at(i);
 
 		attrs.insert(this->itemNames.at(i), this->prefValues.at(i));
@@ -213,13 +212,13 @@ void Preferences::savePreferences()
 			{
 				xout.writeAtomTag(this->typeNames.at(i), attrs);
 				attrs.clear();
-			};
+			}
 		}
 		else
 		{
 			xout.writeAtomTag(this->typeNames.at(i), attrs);
 			attrs.clear();
-		};
+		}
 
 		if(n==aSize-1)
 		{
@@ -228,9 +227,9 @@ void Preferences::savePreferences()
 		else if( currentGroupName != this->groupNames.at(a) )
 		{
 			xout.writeCloseTag(currentGroupName);
-		};
-	};
+		}
+	}
 
 	xout.writeCloseTag("Preferences");
 	//file.close();
-};
+}

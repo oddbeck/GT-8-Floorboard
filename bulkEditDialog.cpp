@@ -123,14 +123,14 @@ bulkEditDialog::bulkEditDialog(int partStart, int partLength, QString partHex1, 
   for (int b=0;b<140;++b)  
   {
     QString text = QString::number((b/4)+1, 10).toUpper();
-    if(text.size() < 2){ text.prepend("0"); };
+    if(text.size() < 2){ text.prepend("0"); }
     text.prepend("U");
     text.append(":");
     text.append(QString::number(p, 10).toUpper());
     p++;
-    if (p>4) {p=1;};
+    if (p>4) {p=1;}
     patchList.append(text);
-  }; 
+  } 
   this->startPatchCombo->addItems(patchList);            // add patch names to the combobox lists.
   this->finishPatchCombo->addItems(patchList);     
   this->startPatchCombo->setCurrentIndex(this->start);
@@ -138,7 +138,7 @@ bulkEditDialog::bulkEditDialog(int partStart, int partLength, QString partHex1, 
   
 	failed = false;
 	if (failed == true) 
-	{ this->startButton->hide(); };
+	{ this->startButton->hide(); }
   
   QObject::connect(startPatchCombo, SIGNAL(currentIndexChanged(int)), this, SLOT(comboValueChanged(int)));
   QObject::connect(finishPatchCombo, SIGNAL(currentIndexChanged(int)), this, SLOT(comboValueChanged(int)));	
@@ -155,12 +155,12 @@ void bulkEditDialog::comboValueChanged(int value)
   Preferences *preferences = Preferences::Instance();
   this->start = this->startPatchCombo->currentIndex();
   this->finish = this->finishPatchCombo->currentIndex();
-  if(start>139){start=139; };
-  if(finish<1){finish=1; };
-  if(start>finish){start = finish-1; };
-  if(finish<start){finish = start+1; };
-  if(start<0){start=0; };
-  if(finish>139){finish=139; };
+  if(start>139){start=139; }
+  if(finish<1){finish=1; }
+  if(start>finish){start = finish-1; }
+  if(finish<start){finish = start+1; }
+  if(start<0){start=0; }
+  if(finish>139){finish=139; }
  
   this->startPatchCombo->setCurrentIndex(this->start);
   this->finishPatchCombo->setCurrentIndex(this->finish);
@@ -204,15 +204,15 @@ void bulkEditDialog::sendSequence(QString value)
    QString msg = partialData;
    QString v;
    QString replyMsg;
-    if (patchRange>=128) {patchRange=patchRange-128; addrMSB = "09"; };          // next address range when > 10 7F.
+    if (patchRange>=128) {patchRange=patchRange-128; addrMSB = "09"; }          // next address range when > 10 7F.
     address = QString::number(patchRange, 16).toUpper();
-    if (address.size()<2){ address.prepend("0"); };
+    if (address.size()<2){ address.prepend("0"); }
       
     for (int g=0;g<msg.size()/2;g++)
     {
       v = msg.mid(g*2, 2);
-	    if (v == "F0") {msg.replace((g*2)+(sysxAddressOffset*2), 2, addrMSB); msg.replace((g*2)+((sysxAddressOffset*2)+2), 2, address); };   // replace the message address
-    };                            
+	    if (v == "F0") {msg.replace((g*2)+(sysxAddressOffset*2), 2, addrMSB); msg.replace((g*2)+((sysxAddressOffset*2)+2), 2, address); }   // replace the message address
+    }                            
     replyMsg.append(msg);
   /************ Replace the checksum *********/                      
   QString reBuild = "";       // Add correct checksum to patch strings 
@@ -227,20 +227,20 @@ void bulkEditDialog::sendSequence(QString value)
     {   
   	int dataSize = 0; bool ok;
 	  for(int h=checksumOffset;h<hex.size()-1;++h)
-	  { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); };
+	  { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); }
 	 	QString base = "80";                       // checksum calculate.
 	  unsigned int sum = dataSize % base.toInt(&ok, 16);
-  	if(sum!=0) { sum = base.toInt(&ok, 16) - sum; };
+  	if(sum!=0) { sum = base.toInt(&ok, 16) - sum; }
 	  QString checksum = QString::number(sum, 16).toUpper();
-	   if(checksum.length()<2) {checksum.prepend("0");};
+	   if(checksum.length()<2) {checksum.prepend("0");}
       	hex.append(checksum);
         hex.append("F7");   
         reBuild.append(hex);       
 		hex = "";
 		sysxEOF = "";
 		i=i+2;
-    }; 
-  };   
+    } 
+  }   
 	msg = reBuild.simplified().toUpper();	
      
   progress=progress+range;
@@ -255,7 +255,7 @@ void bulkEditDialog::sendSequence(QString value)
           this->completedButton->show();        
           this->progressLabel->setText(tr("Bulk data transfer completed!!")); 
           this->progress=200;
-        };        
+        }        
     QString patchNumber = QString::number(bank/patchPerBank, 10).toUpper();
     patchNumber.prepend(tr( "User Patch U" ));
     patchNumber.append("-");
@@ -273,7 +273,7 @@ void bulkEditDialog::sendSequence(QString value)
     ++steps;
     ++patch;
     ++patchRange;  
-    if(patch>patchPerBank) {patch=1; bank=bank+patchPerBank;};	  // increment patch.
+    if(patch>patchPerBank) {patch=1; bank=bank+patchPerBank;}	  // increment patch.
     sendPatch(msg);                                 //request the next patch. 
     setStatusMessage(tr("Sending Data")); 
   } else {
@@ -281,7 +281,7 @@ void bulkEditDialog::sendSequence(QString value)
   sysxIO->setDeviceReady(true); // Free the device after finishing interaction.
   setStatusMessage(tr("Ready"));
   DialogClose(); 
-  };        
+  }        
 }
 
 void bulkEditDialog::prepareData()
@@ -298,8 +298,8 @@ void bulkEditDialog::prepareData()
             hex = data.at(x);
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-          };
-        };
+          }
+        }
    if(partialStart>0 && partialLength>0)
         {
         this->patchName = sysxIO->getCurrentPatchName();
@@ -309,14 +309,14 @@ void bulkEditDialog::prepareData()
   QApplication::beep();
   QString size = QString::number(sysxMsg.size()/2, 10);
   sysxIO->emitStatusdBugMessage(tr("in-consistant patch data detected ") + size + tr("bytes: re-save or re-load file to correct"));
-  };
+  }
 }
 
 void bulkEditDialog::bulkStatusProgress(int value)
 {
   value=value/2;
-  if (value >100) {value = 100;};
-  if (value<0) {value = 0; };
+  if (value >100) {value = 100;}
+  if (value<0) {value = 0; }
 	this->progressBar->setValue(value);
 }
 

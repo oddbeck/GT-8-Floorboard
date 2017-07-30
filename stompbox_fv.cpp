@@ -32,12 +32,12 @@ stompbox_fv::stompbox_fv(QWidget *parent)
 	editDetails()->patchPos(1266, 38, "0E", "00");
 	//editDetails()->patchPos(1442, 66, "13", "00");
 	setEditPages();
-};
+}
 
 void stompbox_fv::updateSignal()
 {
 	//updateButton("15", "00", "00");
-};
+}
 
 void stompbox_fv::setEditPages()
 {
@@ -74,4 +74,4 @@ void stompbox_fv::setEditPages()
 	editDetails()->page()->addGroupBox(2, 1, 1, 1);
 
 	editDetails()->addPage();
-};
+}

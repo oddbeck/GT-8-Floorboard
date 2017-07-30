@@ -30,10 +30,10 @@ stompbox_dgt::stompbox_dgt(QWidget *parent)
 	this->setImage(":/images/dgt.png");
 	setLSB("void", "void");
 	setEditPages();
-};
+}
 
 void stompbox_dgt::setEditPages()
 {
     
 	
-};
+}

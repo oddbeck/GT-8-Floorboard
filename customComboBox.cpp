@@ -27,7 +27,7 @@
 customComboBox::customComboBox(QWidget *parent)	: QComboBox(parent)
  {
 
- };
+ }
 
 void customComboBox::showPopup()
 {
@@ -36,7 +36,7 @@ void customComboBox::showPopup()
  	{
  		QString item = this->itemText(i);
  		if(longestItem.size() < item.size()) longestItem = item;
- 	};
+ 	}
  	int popupWidth = QFontMetrics( this->font() ).width( longestItem );
 	
 
@@ -44,15 +44,15 @@ void customComboBox::showPopup()
  	{
  		this->setMaxVisibleItems(this->maxVisibleItems() - 1);
  		popupWidth = popupWidth + 10;
- 	};
+ 	}
 
  	if( this->view()->verticalScrollBar()->isVisibleTo(this) )
  	{
  		this->setMaxVisibleItems(this->maxVisibleItems() - 1);
  		popupWidth = popupWidth + 10;
- 	};
+ 	}
 
-   if(popupWidth < 40) { popupWidth = 40; };
+   if(popupWidth < 40) { popupWidth = 40; }
  	this->view()->setMinimumWidth(popupWidth);
   QComboBox::showPopup();
-};
+}

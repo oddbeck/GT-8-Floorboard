@@ -167,13 +167,13 @@ bulkLoadDialog::bulkLoadDialog()
             QByteArray GTE_default;
             QFile file(":default.syx");           // Read the default GT-8 sysx file .
             if (file.open(QIODevice::ReadOnly))
-            {	default_data = file.readAll(); };
+            {	default_data = file.readAll(); }
             QFile GTEfile(":default.gte");           // Read the default GT-8 GTE file .
             if (GTEfile.open(QIODevice::ReadOnly))
-            {	GTE_default = GTEfile.readAll(); };
+            {	GTE_default = GTEfile.readAll(); }
             QFile hexfile(":HexLookupTable.hex");           // Read the HexLookupTable for the SMF header file .
             if (hexfile.open(QIODevice::ReadOnly))
-            {	this->hextable = hexfile.readAll(); };
+            {	this->hextable = hexfile.readAll(); }
 
             QByteArray default_header = default_data.mid(0, 7);           // copy header from default.syx
             QByteArray file_header = data.mid(0, 7);                      // copy header from read file.syx
@@ -181,25 +181,25 @@ bulkLoadDialog::bulkLoadDialog()
             QByteArray SMF_header = hextable.mid(288,18);
             QByteArray SMF_file = data.mid(0, 18);
             QByteArray patch_text = default_data.mid(1010, 11);
-            if(data.contains(patch_text)) {this->patch_Size = 1241; } else { this->patch_Size = 1010; };
+            if(data.contains(patch_text)) {this->patch_Size = 1241; } else { this->patch_Size = 1010; }
             unsigned char r = (char)data[7];     // find patch number in file (msb))
             bool ok;
             int patchNum;
             patchNum = QString::number(r, 16).toUpper().toInt(&ok, 16);
             bool isPatch = false;
-            if (patchNum >= 8) { isPatch = true; };    // check the sysx file is a valid patch & not system data.
+            if (patchNum >= 8) { isPatch = true; }    // check the sysx file is a valid patch & not system data.
             if (data.size()>141400 && data.contains(default_header) )
             {
                 int x = data.size()-141400;             // if there is temp data or excessive patches, trim off extras.
                 data.remove(0, x);
-            };
+            }
 
             bool isHeader = false;
-            if (default_header == file_header) {isHeader = true;};
+            if (default_header == file_header) {isHeader = true;}
             bool isGTE = false;
-            if (data.contains(GTE_header)){isGTE = true; };             // see if file is a GTE type and set isGTE flag.
+            if (data.contains(GTE_header)){isGTE = true; }             // see if file is a GTE type and set isGTE flag.
             bool isSMF = false;
-            if (data.contains(SMF_header)) {isSMF = true; };
+            if (data.contains(SMF_header)) {isSMF = true; }
             failed = false;
             if (isHeader == true && isPatch == true)
             {
@@ -230,13 +230,13 @@ bulkLoadDialog::bulkLoadDialog()
                 msgBox->setStandardButtons(QMessageBox::Ok);
                 msgBox->exec();
 
-            };
-        };
-    };
+            }
+        }
+    }
     if (failed == true)
     {
         this->startButton->hide();
-    };
+    }
 }
 
 bulkLoadDialog::~bulkLoadDialog()
@@ -249,14 +249,14 @@ void bulkLoadDialog::comboValueChanged(int value)
     this->startList = this->startPatchCombo->currentIndex();
     this->finishList = this->finishPatchCombo->currentIndex();
     if (startList > finishList) {this->startPatchCombo->setCurrentIndex(finishList); }
-    else if (finishList < startList) {this->finishPatchCombo->setCurrentIndex(startList); };
+    else if (finishList < startList) {this->finishPatchCombo->setCurrentIndex(startList); }
     int x = (bankStart+(finishList-startList));
     if (x<0) {x=0; } else if (x>((bankTotalUser*patchPerBank)-1))
     {
         x=((bankTotalUser*patchPerBank)-1);
         bankStart=((bankTotalUser*patchPerBank)-1)-(finishList-startList);
         startRangeComboBox->setCurrentIndex(((bankTotalUser*patchPerBank)-1)-(finishList-startList));
-    };
+    }
     QString text = tr("Finish at U");
     int y = x/patchPerBank; y = y*patchPerBank; y=x-y;
     text.append(QString::number((x/patchPerBank)+1, 10).toUpper() );
@@ -286,19 +286,19 @@ void bulkLoadDialog::sendData()
     QString replyMsg;
     for (int a=startList;a<(finishList+1);a++)
     {
-        if (z>128) {z=z-128; addrMSB = "09"; };          // next address range when > 08 7F.
+        if (z>128) {z=z-128; addrMSB = "09"; }          // next address range when > 08 7F.
         address = QString::number(z-1, 16).toUpper();
-        if (address.size()<2){ address.prepend("0"); };
+        if (address.size()<2){ address.prepend("0"); }
         int b = a*patch_Size;                                // multiples of patch size.
         msg = this->bulk.mid(b*2, patch_Size*2);             // copy next patch from bulk patch list.
         for (int g=0;g<msg.size()/2;g++)
         {
             v = msg.mid(g*2, 2);
-            if (v == "F0") {msg.replace((g*2)+(sysxAddressOffset*2), 2, addrMSB); msg.replace((g*2)+((sysxAddressOffset*2)+2), 2, address); };   // replace the message address
-        };
+            if (v == "F0") {msg.replace((g*2)+(sysxAddressOffset*2), 2, addrMSB); msg.replace((g*2)+((sysxAddressOffset*2)+2), 2, address); }   // replace the message address
+        }
         replyMsg.append(msg);
         ++z;
-    };
+    }
 
     QString reBuild = "";       // Add correct checksum to patch strings
     QString sysxEOF = "";
@@ -312,20 +312,20 @@ void bulkLoadDialog::sendData()
         {
             int dataSize = 0; bool ok;
             for(int h=checksumOffset;h<hex.size()-1;++h)
-            { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); };
+            { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); }
             QString base = "80";                       // checksum calculate.
             unsigned int sum = dataSize % base.toInt(&ok, 16);
-            if(sum!=0) { sum = base.toInt(&ok, 16) - sum; };
+            if(sum!=0) { sum = base.toInt(&ok, 16) - sum; }
             QString checksum = QString::number(sum, 16).toUpper();
-            if(checksum.length()<2) {checksum.prepend("0");};
+            if(checksum.length()<2) {checksum.prepend("0");}
             hex.append(checksum);
             hex.append("F7");
             reBuild.append(hex);
             hex = "";
             sysxEOF = "";
             i=i+2;
-        };
-    };
+        }
+    }
     this->bulk = reBuild.simplified().toUpper();
     bank = (bankStart+(patchPerBank-1));
     patch = bank/patchPerBank; patch = patch*patchPerBank; patch=bank-patch;
@@ -345,7 +345,7 @@ void bulkLoadDialog::sendPatch(QString data)
     else
     {
        DialogClose();
-    };
+    }
 }                                                           
 
 void bulkLoadDialog::sendSequence(QString value)
@@ -367,16 +367,16 @@ void bulkLoadDialog::sendSequence(QString value)
         for (int b=0;b<nameLength;b++)
         {
             x.append(name.mid(b*2, 2));
-        };
+        }
         for (int b=0;b<nameLength;b++)
         {
             QString hexStr = x.at(b);
             patchText.append( (char)(hexStr.toInt(&ok, 16)) );      // convert name to readable text characters.
-        };
+        }
         int bf = (finishList-startList);
         if(steps>bf) {this->completedButton->show();
             this->progressLabel->setText(tr("Bulk data transfer completed!!"));
-            this->progress=100;  };
+            this->progress=100;  }
         
         QString patchNumber = QString::number(bank/4, 10).toUpper();
         patchNumber.prepend(tr("User Patch U" ));
@@ -394,7 +394,7 @@ void bulkLoadDialog::sendSequence(QString value)
         this->bytesLabel->setText(patchNumber);                         //display the bulk data size.
         ++steps;
         ++patch;
-        if(patch>patchPerBank) {patch=1; bank=bank+patchPerBank;};	       // increment patch.
+        if(patch>patchPerBank) {patch=1; bank=bank+patchPerBank;}	       // increment patch.
         sendPatch(msg);                                 //request the next patch.
         setStatusMessage(tr("Sending Data"));
     } else {
@@ -402,7 +402,7 @@ void bulkLoadDialog::sendSequence(QString value)
         sysxIO->setDeviceReady(true); // Free the device after finishing interaction.
         setStatusMessage(tr("Ready"));
         DialogClose();
-    };
+    }
 }
 
 
@@ -421,7 +421,7 @@ void bulkLoadDialog::updatePatch()
         {
             r = (char)sysxPatches[a+b];
             patchText.append(r);
-        };
+        }
         patchNumber = QString::number(h+1, 10).toUpper();
         msgText.append(patchNumber + " : ");
         msgText.append(patchText + "   ");
@@ -429,13 +429,13 @@ void bulkLoadDialog::updatePatch()
         patchText.clear();
         msgText.clear();
         a=a+patch_Size;                                // advance to the next patch in the bulk file.
-    };
+    }
     this->startPatchCombo->addItems(patchList);            // add patch names to the combobox lists.
     this->finishPatchCombo->addItems(patchList);
     this->finishPatchCombo->setCurrentIndex(patchCount-1);     // set the finish combobox index to the end of the list.
     this->startPatchCombo->setCurrentIndex(0);
     QString text = tr("Finish at U");
-    if (patchCount<4) {patchCount=4; };
+    if (patchCount<4) {patchCount=4; }
     text.append(QString::number(patchCount/4, 10).toUpper() );
     text.append("-x");
     this->finishRange->setText(text);
@@ -451,7 +451,7 @@ void bulkLoadDialog::updatePatch()
         this->startRangeComboBox->addItem(bnk);
         bnk = "U" + QString::number(x+1, 10).toUpper() + "-4";
         this->startRangeComboBox->addItem(bnk);
-    };
+    }
     this->startRangeComboBox->setCurrentIndex(0);
 
     QString sysxBuffer;
@@ -462,14 +462,14 @@ void bulkLoadDialog::updatePatch()
         QString hex = QString::number(n, 16).toUpper();     // convert QByteArray to QString
         if (hex.length() < 2) hex.prepend("0");
         sysxBuffer.append(hex);
-    };
+    }
     bulk.append(sysxBuffer);
 }
 
 void bulkLoadDialog::bulkStatusProgress(int value)
 {
-    if (value >100) {value = 100;};
-    if (value<0) {value = 0; };
+    if (value >100) {value = 100;}
+    if (value<0) {value = 0; }
     this->progressBar->setValue(value);
 }
 
@@ -582,7 +582,7 @@ void bulkLoadDialog::loadGTE()         // ************************************ G
 
         a=a+1060;                      // offset is set for next patch.
         this->sysxPatches.append(default_data);
-    };
+    }
     updatePatch();
 }
 
@@ -610,7 +610,7 @@ void bulkLoadDialog::loadSMF()    // **************************** SMF FILE FORMA
         msgBox->setText(msgText);
         msgBox->setStandardButtons(QMessageBox::Ok);
         msgBox->exec();
-    };
+    }
     int count = (data.size()-32)/1806;
     int a=0;                             // offset is set to first patch
     for (int h=0;h<count;h++)
@@ -645,7 +645,7 @@ void bulkLoadDialog::loadSMF()    // **************************** SMF FILE FORMA
         a=a+1806;                      // offset is set in front of marker
         temp = default_data;
         //this->sysxPatches.append(temp);
-    };
+    }
     //updatePatch();
 }
 

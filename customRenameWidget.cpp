@@ -47,7 +47,7 @@ customRenameWidget::customRenameWidget(QWidget *parent, QString hex1, QString he
 	  {this->catagoryDisplay->setFixedWidth(262);} 
     else 
     {this->catagoryDisplay->setFixedWidth(80);
-    };
+    }
 	  this->catagoryDisplay->setFixedHeight(25);
 	  this->catagoryDisplay->setAlignment(Qt::AlignCenter);
 	  this->catagoryDisplay->setDisabled(true);
@@ -57,7 +57,7 @@ customRenameWidget::customRenameWidget(QWidget *parent, QString hex1, QString he
 	  this->label->setText(items.customdesc);
 	  this->label->setUpperCase(true);
     QObject::connect(this->parent(), SIGNAL( dialogUpdateSignal() ), this, SLOT( dialogUpdateSignal() ));
-     };
+     }
 	  
 	  QVBoxLayout *Layout = new QVBoxLayout;
 		Layout->setMargin(0);
@@ -71,8 +71,8 @@ customRenameWidget::customRenameWidget(QWidget *parent, QString hex1, QString he
     
    
       if (this->area == "Structure")
-      { QObject::connect(this->parent()->parent(), SIGNAL(updateSignal()), this, SLOT(dialogUpdateSignal())); };
-};
+      { QObject::connect(this->parent()->parent(), SIGNAL(updateSignal()), this, SLOT(dialogUpdateSignal())); }
+}
 
 void customRenameWidget::mouseReleaseEvent(QMouseEvent *event)
 {
@@ -81,8 +81,8 @@ void customRenameWidget::mouseReleaseEvent(QMouseEvent *event)
 		customRenameDialog *dialog = new customRenameDialog(this, hex1, hex2, hex3, area, length);	
 		connect(dialog, SIGNAL(nameChanged(QString)), this, SLOT(updateName(QString)));
 		dialog->exec();
-	};
-};
+	}
+}
 
 void customRenameWidget::updateName(QString name)
 {
@@ -103,11 +103,11 @@ void customRenameWidget::updateName(QString name)
 		else
 		{
 			hexData.append("20");
-		};
-	};
+		}
+	}
 	this->catagoryDisplay->setText(name);
 	sysxIO->setFileSource(area, hex1, hex2, hex3, hexData);	
-};
+}
 
 void customRenameWidget::dialogUpdateSignal()
 {
@@ -122,7 +122,7 @@ void customRenameWidget::dialogUpdateSignal()
 		{
 		QString hexStr = nameArray.at(i);			
 		name.append( (char)(hexStr.toInt(&ok, 16)) );
-    };	
+    }	
 	QString Name = name.trimmed();
   this->catagoryDisplay->setText(Name);
-};
+}

@@ -78,7 +78,7 @@ public:
 	void setComboBoxCurrentIndex(int index);
 	unsigned int getId();
 
-	virtual void setEditPages() {};
+	virtual void setEditPages() {}
 	editWindow* editDetails();
 
 public slots:
@@ -86,7 +86,7 @@ public slots:
 	void valueChanged(int value, QString hex1, QString hex2, QString hex3);
 	void valueChanged(bool value, QString hex1, QString hex2, QString hex3);
 	void valueChanged(int index);
-	virtual void updateSignal() {};
+	virtual void updateSignal() {}
 	void setDisplayToFxName();
 	//void ch_mode_ButtonSignal(bool value);
 	void preamp1_ButtonSignal(bool value);

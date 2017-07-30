@@ -29,12 +29,12 @@ menuPage_assign1::menuPage_assign1(QWidget *parent)
   setLSB("16", "00");
   editDetails()->patchPos(1534, 34, "16", "00");    //192 sysx file offset and data length of chorus parameters x2,
         setEditPages();
-};
+}
 
 void menuPage_assign1::updateSignal()
 {
 
-};
+}
 
 void menuPage_assign1::setEditPages()
 {
@@ -81,4 +81,4 @@ void menuPage_assign1::setEditPages()
     editDetails()->page()->addKnob(0, 0, 1, 1, "1E", "00", "00", "normal","right", 85);
     editDetails()->page()->addGroupBox(0, 0, 1, 1);
     editDetails()->page()->addStackField();
-};
+}

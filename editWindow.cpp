@@ -199,7 +199,7 @@ void editWindow::addPage(QString hex1, QString hex2, QString hex3, QString hex4,
     this->hex2 = hex2;
     this->hex3 = hex3;
     if (area == "normal" || area == "turbo" || area.isEmpty())
-    {this->area = "Structure";} else {this->area = area; };
+    {this->area = "Structure";} else {this->area = area; }
     this->tempPage->setGridLayout();
     this->editPages.append(this->tempPage);
     this->pagesWidget->addWidget(editPages.last());
@@ -216,11 +216,11 @@ void editWindow::addPage(QString hex1, QString hex2, QString hex3, QString hex4,
         this->temp2_Button->hide();
         this->temp3_Button->hide();
         this->temp4_Button->hide();
-    };
+    }
     if (this->area != "Structure" || this->temp_hex1 != "07")
     {
         this->swap_Button->hide();
-    };
+    }
     if(hex1 != "void" && hex2 != "void" && hex3 != "void")
     {
         MidiTable *midiTable = MidiTable::Instance();
@@ -231,7 +231,7 @@ void editWindow::addPage(QString hex1, QString hex2, QString hex3, QString hex4,
         } else {
             hex0.remove("System");
             items = midiTable->getMidiMap("System", hex0, hex1, hex2, hex3);
-        };
+        }
         int itemsCount;
         if(hex4 == "void")
         {
@@ -241,7 +241,7 @@ void editWindow::addPage(QString hex1, QString hex2, QString hex3, QString hex4,
         {
             bool ok;
             itemsCount = hex4.toInt(&ok, 16);
-        };
+        }
 
         QString item;
         QString desc = items.level.at(itemsCount).desc;
@@ -253,7 +253,7 @@ void editWindow::addPage(QString hex1, QString hex2, QString hex3, QString hex4,
         else
         {
             item = desc;
-        };
+        }
 
 
 
@@ -267,8 +267,8 @@ void editWindow::addPage(QString hex1, QString hex2, QString hex3, QString hex4,
         {
             this->pageComboBox->setVisible(true);
             this->comboBoxLabel->setVisible(true);
-        };
-    };
+        }
+    }
 }
 
 void editWindow::valueChanged(int index)
@@ -283,7 +283,7 @@ void editWindow::valueChanged(int index)
         emit updateDisplay(valueHex);
 
         emit updateSignal();
-    };
+    }
 }
 
 void editWindow::pageUpdateSignal()
@@ -295,7 +295,7 @@ void editWindow::pageUpdateSignal()
         this->pageComboBox->setCurrentIndex(index);
         this->pagesWidget->setCurrentIndex(index);
         this->valueChanged(index);
-    };
+    }
 }
 
 editPage* editWindow::page()
@@ -326,7 +326,7 @@ void editWindow::bulkEdit()
         msgBox->setText(snork);
         msgBox->setStandardButtons(QMessageBox::Ok);
         msgBox->exec();
-    };
+    }
 }
 
 void editWindow::temp1()     // paste partial patch effect only data
@@ -351,11 +351,11 @@ void editWindow::temp1()     // paste partial patch effect only data
                 else if(x == sysxAddressOffset + 1)
                 {	hex = addr2; }
                 else
-                {	hex = data.at(x);	};
+                {	hex = data.at(x);	}
                 if (hex.length() < 2) hex.prepend("0");
                 sysxMsg.append(hex);
-            };
-        };
+            }
+        }
         QString msg;
         int l=temp.size();
         for (int x=0; x<l; x++)
@@ -364,7 +364,7 @@ void editWindow::temp1()     // paste partial patch effect only data
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             msg.append(hex);
-        };
+        }
         sysxMsg = sysxMsg.replace(this->position, this->length, msg);
         sysxIO->setFileSource("Structure", sysxMsg );
         sysxIO->setFileSource("Structure", this->temp_hex1, "00", this->temp_hex3, temp);
@@ -374,7 +374,7 @@ void editWindow::temp1()     // paste partial patch effect only data
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to clipboard first"));
-    };
+    }
 }
 
 void editWindow::temp2()
@@ -399,11 +399,11 @@ void editWindow::temp2()
                 else if(x == sysxAddressOffset + 1)
                 {	hex = addr2; }
                 else
-                {	hex = data.at(x);	};
+                {	hex = data.at(x);	}
                 if (hex.length() < 2) hex.prepend("0");
                 sysxMsg.append(hex);
-            };
-        };
+            }
+        }
         QString msg;
         int l=temp.size();
         for (int x=0; x<l; x++)
@@ -412,7 +412,7 @@ void editWindow::temp2()
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             msg.append(hex);
-        };
+        }
         sysxMsg = sysxMsg.replace(this->position, this->length, msg);
         sysxIO->setFileSource("Structure", sysxMsg );
         sysxIO->setFileSource("Structure", this->temp_hex1, "00", this->temp_hex3, temp);
@@ -422,7 +422,7 @@ void editWindow::temp2()
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to clipboard first"));
-    };
+    }
 }
 
 void editWindow::temp3()
@@ -447,11 +447,11 @@ void editWindow::temp3()
                 else if(x == sysxAddressOffset + 1)
                 {	hex = addr2; }
                 else
-                {	hex = data.at(x);	};
+                {	hex = data.at(x);	}
                 if (hex.length() < 2) hex.prepend("0");
                 sysxMsg.append(hex);
-            };
-        };
+            }
+        }
         QString msg;
         int l=temp.size();
         for (int x=0; x<l; x++)
@@ -460,7 +460,7 @@ void editWindow::temp3()
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             msg.append(hex);
-        };
+        }
         sysxMsg = sysxMsg.replace(this->position, this->length, msg);
         sysxIO->setFileSource("Structure", sysxMsg );
         sysxIO->setFileSource("Structure", this->temp_hex1, "00", this->temp_hex3, temp);
@@ -470,7 +470,7 @@ void editWindow::temp3()
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to clipboard first"));
-    };
+    }
 }
 
 void editWindow::temp4()
@@ -495,11 +495,11 @@ void editWindow::temp4()
                 else if(x == sysxAddressOffset + 1)
                 {	hex = addr2; }
                 else
-                {	hex = data.at(x);	};
+                {	hex = data.at(x);	}
                 if (hex.length() < 2) hex.prepend("0");
                 sysxMsg.append(hex);
-            };
-        };
+            }
+        }
         QString msg;
         int l=temp.size();
         for (int x=0; x<l; x++)
@@ -508,7 +508,7 @@ void editWindow::temp4()
             hex = temp.at(x);
             if (hex.length() < 2) hex.prepend("0");
             msg.append(hex);
-        };
+        }
         sysxMsg = sysxMsg.replace(this->position, this->length, msg);
         sysxIO->setFileSource("Structure", sysxMsg );
         sysxIO->setFileSource("Structure", this->temp_hex1, "00", this->temp_hex3, temp);
@@ -518,7 +518,7 @@ void editWindow::temp4()
     {
         QApplication::beep();
         sysxIO->emitStatusdBugMessage(tr("patch must be copied to clipboard first"));
-    };
+    }
 }
 
 void editWindow::swap_pre()
@@ -541,11 +541,11 @@ void editWindow::swap_pre()
             else if(x == sysxAddressOffset + 1)
             {	hex = addr2; }
             else
-            {	hex = data.at(x);	};
+            {	hex = data.at(x);	}
             if (hex.length() < 2) hex.prepend("0");
             sysxMsg.append(hex);
-        };
-    };
+        }
+    }
     QString pre_A = sysxMsg.mid(478, 34);
     QString pre_B = sysxMsg.mid(512, 34);
     sysxMsg = sysxMsg.replace(478, 34, pre_B);

@@ -87,7 +87,7 @@ void bankTreeList::setClosedItems(QTreeWidgetItem *item)
     else
     {
         closeChildren(item);
-    };
+    }
 }
 
 void bankTreeList::closeChildren(QTreeWidgetItem *item)
@@ -97,9 +97,9 @@ void bankTreeList::closeChildren(QTreeWidgetItem *item)
         for(int n=0;n<item->child(i)->childCount();++n)
         {
             item->child(i)->child(n)->setExpanded(false);
-        };
+        }
         item->child(i)->setExpanded(false);
-    };
+    }
 }
 
 void bankTreeList::setOpenItems(QTreeWidgetItem *item)
@@ -115,7 +115,7 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
     {
         openBankTreeItems.append(item);
         type = "bank";
-    };
+    }
 
     int c = openPatchTreeItems.size();
     int b = openBankTreeItems.size();
@@ -129,7 +129,7 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
             treeList->isExpanded(treeList->model()->index(2, 0)))
     {
         a = 1;
-    };
+    }
 
     int userBankCount = 0;
     for(int i=0;i<openBankTreeItems.size();++i)
@@ -137,8 +137,8 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
         if(openBankTreeItems.at(i)->parent()->text(0).contains("User"))
         {
             userBankCount++;
-        };
-    };
+        }
+    }
 
 
     if(type == "root")
@@ -150,21 +150,21 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
             {
                 openPatchTreeItems.first()->setExpanded(false);
                 c = openPatchTreeItems.size();
-            };
+            }
             switch(c)
             {
             case 0: maxExpandedItems = 30; break;
             case 1: maxExpandedItems = 20; break;
             case 2: maxExpandedItems = 10; break;
             case 3: maxExpandedItems = 10; break;
-            };
+            }
 
             while(b > maxExpandedItems)
             {
                 openBankTreeItems.first()->setExpanded(false);;
                 b = openBankTreeItems.size();
-            };
-        };
+            }
+        }
     }
     else if(type == "bank")
     {
@@ -177,7 +177,7 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
             case 1: maxExpandedItems = 20; break;
             case 2: maxExpandedItems = 10; break;
             case 3: maxExpandedItems = 10; break;
-            };
+            }
         }
         else
         {
@@ -191,7 +191,7 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
                 case 3: maxExpandedItems = 30; break;
                 case 4: maxExpandedItems = 20; break;
                 case 5: maxExpandedItems = 10; break;
-                };
+                }
             }
             else
             {
@@ -203,9 +203,9 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
                 case 3: maxExpandedItems = 30; break;
                 case 4: maxExpandedItems = 10; break;
                 case 5: maxExpandedItems = 10; break;
-                };
-            };
-        };
+                }
+            }
+        }
 
         if(maxExpandedItems == 1)
         {
@@ -215,11 +215,11 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
                 openPatchTreeItems.first()->setExpanded(false);
             }
             maxExpandedItems = 2;
-        };
+        }
         if(b > maxExpandedItems)
         {
             openBankTreeItems.first()->setExpanded(false);;
-        };
+        }
     }
     else if(type == "patch")
     {
@@ -231,15 +231,15 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
                 if(openBankTreeItems.at(i)->child(n)->isExpanded())
                 {
                     allCollapsed = false;
-                };
-            };
+                }
+            }
             if(allCollapsed)
             {
                 openBankTreeItems.at(i)->setExpanded(false);
                 b = openBankTreeItems.size();
                 break;
-            };
-        };
+            }
+        }
 
         int maxExpandedItems = 1;
         if(a > 1)
@@ -249,7 +249,7 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
             case 1: maxExpandedItems = 30; break;
             case 2: maxExpandedItems = 10; break;
             case 3: maxExpandedItems = 0; break;
-            };
+            }
         }
         else
         {
@@ -261,7 +261,7 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
                 case 2: maxExpandedItems = 40; break;
                 case 3: maxExpandedItems = 30; break;
                 case 4: maxExpandedItems = 10; break;
-                };
+                }
             }
             else
             {
@@ -271,20 +271,20 @@ void bankTreeList::setOpenItems(QTreeWidgetItem *item)
                 case 2: maxExpandedItems = 30; break;
                 case 3: maxExpandedItems = 30; break;
                 case 4: maxExpandedItems = 10; break;
-                };
-            };
-        };
+                }
+            }
+        }
 
         if(maxExpandedItems == 0)
         {
             openBankTreeItems.first()->setExpanded(false);
             maxExpandedItems = 1;
-        };
+        }
         if(c > maxExpandedItems)
         {
             openPatchTreeItems.first()->setExpanded(false);
-        };
-    };
+        }
+    }
 }
 
 QTreeWidget* bankTreeList::newTreeList()
@@ -326,11 +326,11 @@ QTreeWidget* bankTreeList::newTreeList()
                 QTreeWidgetItem* patch = new QTreeWidgetItem(bank);
                 patch->setText(0, QString("Patch ").append(QString::number(c, 10)));
                 patch->setWhatsThis(0, tr("User Patches.<br>a single mouse click will only change patch<br>a double mouse click will load the select patch from the GT."));
-            };
-        };
+            }
+        }
         userBankRanges << bankRange;
         a += 4;
-    };
+    }
     user->addChildren(userBankRanges);
 
 
@@ -356,11 +356,11 @@ QTreeWidget* bankTreeList::newTreeList()
                 QTreeWidgetItem* patch = new QTreeWidgetItem(bank);
                 patch->setText(0, QString("Patch ").append(QString::number(c, 10)));
                 patch->setWhatsThis(0, tr("Preset Patches.<br>a single mouse click will only change patch<br>a double mouse click will load the select patch from the GT."));
-            };
-        };
+            }
+        }
         presetBankRanges << bankRange;
         a += 4;
-    };
+    }
     preset->addChildren(presetBankRanges);
 
     newTreeList->setExpanded(newTreeList->model()->index(1, 0), true);
@@ -382,7 +382,7 @@ void bankTreeList::setItemClicked(QTreeWidgetItem *item, int column)
         else
         {
             item->setExpanded(true);
-        };
+        }
     }
     else if (item->childCount() == 0 && item->text(0) != "Temp")
     {
@@ -393,16 +393,16 @@ void bankTreeList::setItemClicked(QTreeWidgetItem *item, int column)
             int bank = item->parent()->text(0).section(" ", 1, 1).trimmed().toInt(&ok, 10);
             int patch = item->parent()->indexOfChild(item) + 1;
             //QString preset = item->parent()->parent()->text(0);
-            //if (preset.contains("P")) { bank = bank + 35; };
+            //if (preset.contains("P")) { bank = bank + 35; }
             emit patchSelectSignal(bank, patch);
             sysxIO->requestPatchChange(bank, patch); // extra to try patch change
             sysxIO->setRequestName(item->text(0));	// Set the name of the patch we have sellected in case we load it.
-        };
+        }
     }
     else
     {
         emit patchSelectSignal(0, 0);
-    };
+    }
 }
 
 /*********************** setItemDoubleClicked() *****************************
@@ -425,12 +425,12 @@ void bankTreeList::setItemDoubleClicked(QTreeWidgetItem *item, int column)
         int bank = item->parent()->text(0).section(" ", 1, 1).trimmed().toInt(&ok, 10); // Get the bank
         int patch = item->parent()->indexOfChild(item) + 1;								// and the patch number.
         //QString preset = item->parent()->parent()->text(0);
-        //if (preset.contains("P")) { bank = bank + 35; };
+        //if (preset.contains("P")) { bank = bank + 35; }
 
         requestPatch(bank, patch);
     }
     if(item->text(0) == "Temp")
-    {  requestPatch(); };
+    {  requestPatch(); }
 }
 /*********************** requestPatch() *******************************
  * Does the actual requesting of the patch data and hands the
@@ -451,7 +451,7 @@ void bankTreeList::requestPatch()
         emit setStatusSymbol(3);
         emit setStatusMessage(tr("Receiving Patch"));
         sysxIO->requestPatch(0, 0);
-    };
+    }
 }
 
 void bankTreeList::requestPatch(int bank, int patch)
@@ -466,7 +466,7 @@ void bankTreeList::requestPatch(int bank, int patch)
         emit setStatusMessage(tr("Receiving Patch"));
 
         sysxIO->requestPatch(bank, patch);
-    };
+    }
 }
 
 /*********************** updatePatch() *******************************
@@ -488,7 +488,7 @@ void bankTreeList::updatePatch(QString replyMsg)
         QByteArray data;
         QFile file(":default.syx");   // Read the default GT-8 sysx file so we don't start empty handed.
         if (file.open(QIODevice::ReadOnly))
-        {	data = file.readAll(); };
+        {	data = file.readAll(); }
         QByteArray temp;
         temp = data.mid(1010, 231);           // copy patch description text from default.syx
 
@@ -500,7 +500,7 @@ void bankTreeList::updatePatch(QString replyMsg)
             QString hex = QString::number(n, 16).toUpper();     // convert QByteArray to QString
             if (hex.length() < 2) hex.prepend("0");
             sysxBuffer.append(hex);
-        };
+        }
         replyMsg.append(sysxBuffer);
 
         QString area = "Structure";
@@ -551,7 +551,7 @@ void bankTreeList::updatePatch(QString replyMsg)
         msgBox->setStandardButtons(QMessageBox::Ok);
         msgBox->exec();
         /* END WARNING */
-    };
+    }
 }
 
 /********************************** connectedSignal() ****************************
@@ -578,7 +578,7 @@ void bankTreeList::connectedSignal()
         //qSort(this->currentPatchTreeItems);
         this->updatePatchNames("");
     }else if (sysxIO->deviceReady() && sysxIO->isConnected())
-    { requestPatch(); };
+    { requestPatch(); }
     //requestPatch();
 }
 
@@ -610,7 +610,7 @@ void bankTreeList::updateTree(QTreeWidgetItem *item)
     else
     {
         this->currentPatchTreeItems.append(item);
-    };
+    }
 }
 
 /***************************** updatePatchNames() ********************************
@@ -630,8 +630,8 @@ void bankTreeList::updatePatchNames(QString name)
             else
             {
                 this->itemIndex++;
-            };
-        };
+            }
+        }
 
             if(listIndex < currentPatchTreeItems.size()) // As long as we have items in the list we continue, duh! :)
             {
@@ -639,7 +639,7 @@ void bankTreeList::updatePatchNames(QString name)
                 int bank = this->currentPatchTreeItems.at(listIndex)->text(0).section(" ", 1, 1).trimmed().toInt(&ok, 10);
                 int patch = itemIndex + 1 ;
                 QString preset = this->currentPatchTreeItems.at(listIndex)->parent()->text(0);
-                //if (preset.contains("P")) { bank = bank + 35; };
+                //if (preset.contains("P")) { bank = bank + 35; }
                 sysxIO->requestPatchName(bank, patch); // The patch name request.
 
                 if(sysxIO->isConnected())
@@ -660,7 +660,7 @@ void bankTreeList::updatePatchNames(QString name)
                     emit setStatusProgress(0);
                     QObject::disconnect(sysxIO, SIGNAL(patchName(QString)),
                                         this, SLOT(updatePatchNames(QString)));
-                };
+                }
             }
             else {SysxIO *sysxIO = SysxIO::Instance();
                 sysxIO->setDeviceReady(true);
@@ -669,5 +669,5 @@ void bankTreeList::updatePatchNames(QString name)
                 QObject::disconnect(sysxIO, SIGNAL(patchName(QString)),
                                     this, SLOT(updatePatchNames(QString)));
                 sysxIO->writeToBuffer();
-            };
+            }
 }

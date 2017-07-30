@@ -78,7 +78,7 @@ public:
 protected:
 	MidiTable();
 	friend class MidiTableDestroyer;
-	virtual ~MidiTable() { };
+	virtual ~MidiTable() { }
 
 private:
 	static MidiTable* _instance;

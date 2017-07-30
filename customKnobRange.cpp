@@ -37,7 +37,7 @@ customKnobRange::customKnobRange(QWidget *parent, QString area, QString hex1, QS
 	int range;
 	int rangeMin;
 	MidiTable *midiTable = MidiTable::Instance();
-	if (area == "normal" || area == "turbo" || area.isEmpty()){this->area = "Structure";};
+	if (area == "normal" || area == "turbo" || area.isEmpty()){this->area = "Structure";}
 	if (this->type == "Min")
   {
     hex3 = hexMin;
@@ -49,7 +49,7 @@ customKnobRange::customKnobRange(QWidget *parent, QString area, QString hex1, QS
     hex3 = hexMax;
     range = midiTable->getRange(this->area, hex1, hex2, hex3);
     rangeMin = QString(this->hexMin).toInt(&ok, 16) + 1;
-  };
+  }
 	
 	
 	
@@ -73,7 +73,7 @@ customKnobRange::customKnobRange(QWidget *parent, QString area, QString hex1, QS
                 
   QObject::connect(this, SIGNAL( updateDisplayMax(QString) ),
                 this->parent(), SIGNAL( updateDisplayMax(QString) ));
-};
+}
 
 void customKnobRange::paintEvent(QPaintEvent *)
 {
@@ -85,12 +85,12 @@ void customKnobRange::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);*/
-};
+}
 
 void customKnobRange::setValue(int value)
 {
 	this->knob->setValue(value);
-};
+}
 
 void customKnobRange::valueChanged(int value, QString hex1, QString hex2, QString hex3)
 {
@@ -116,9 +116,9 @@ void customKnobRange::valueChanged(int value, QString hex1, QString hex2, QStrin
 	{
 	 
 		sysxIO->setFileSource(this->area, hex1, hex2, hex3, valueHex);
-	};
+	}
 
 	QString valueStr = midiTable->getValue(this->area, hex1, hex2, hex3, valueHex);
-  if (this->type == "Min"){	emit updateDisplayMin(valueStr);} else { emit updateDisplayMax(valueStr); };
+  if (this->type == "Min"){	emit updateDisplayMin(valueStr);} else { emit updateDisplayMax(valueStr); }
 	emit updateSignal();
-};
+}

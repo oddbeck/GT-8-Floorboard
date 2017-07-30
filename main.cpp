@@ -50,7 +50,7 @@ int main(int argc, char** argv)
 	if (choice == 3) {translator.load(":language_ch.qm");  }
 	else if (choice ==2) {translator.load(":language_ge.qm"); }
 	else if (choice ==1) {translator.load(":language_fr.qm"); }
-	else {translator.load(":language_en.qm"); };
+	else {translator.load(":language_en.qm"); }
 	
 	app.installTranslator(&translator);
 	
@@ -78,7 +78,7 @@ int main(int argc, char** argv)
 	if(preferences->getPreferences("Window", "Splash", "bool")=="true")
 	{
 		splash->show();
-	};
+	}
 	/* To intercept mousclick to hide spalsh screen. Since the 
 	splash screen is typically displayed before the event loop 
 	has started running, it is necessary to periodically call. */
@@ -98,7 +98,7 @@ int main(int argc, char** argv)
 		QFile file(":license.txt" );
 		file.copy("license.txt");
 		file.close();
-	};
+	}
 	
 	app.processEvents();
 
@@ -134,7 +134,7 @@ int main(int argc, char** argv)
 		else
 		{
 			windowWidth = preferences->getPreferences("Window", "Collapsed", "width").toInt(&ok, 10);
-		};
+		}
 	}
 	else
 	{
@@ -145,7 +145,7 @@ int main(int argc, char** argv)
 		else
 		{
 			windowWidth = preferences->getPreferences("Window", "Size", "width").toInt(&ok, 10);
-		};
+		}
 	}
 
 	app.processEvents(); 
@@ -161,7 +161,7 @@ int main(int argc, char** argv)
 		else
 		{
 			windowHeight = preferences->getPreferences("Window", "Size", "height").toInt(&ok, 10);
-		};
+		}
 		//window.setGeometry(x_str.toInt(&ok, 10), y_str.toInt(&ok, 10), windowWidth, windowHeight);
 		window.resize(QSize(windowWidth, windowHeight));
 		window.move(x_str.toInt(&ok, 10), y_str.toInt(&ok, 10));
@@ -179,7 +179,7 @@ int main(int argc, char** argv)
 		int x = (screenWidth - windowWidth) / 2;
 		int y = (screenHeight - windowHeight) / 2;
 		window.setGeometry(x, y, window.width(), window.height());
-	};
+	}
 	
 	app.processEvents(); 
 

@@ -56,7 +56,7 @@ customRenameDialog::customRenameDialog(QWidget *parent, QString hex1, QString he
     rx = rc;
      dialogLength = 150;
      dialogText = tr("Rename Catagory");
-   };
+   }
 	QValidator *validator = new QRegExpValidator(rx, this);
 	
 	nameLabel = new QLabel(tr("Name:"));
@@ -70,7 +70,7 @@ customRenameDialog::customRenameDialog(QWidget *parent, QString hex1, QString he
 		{
 		QString hexStr = nameArray.at(i);			
 		name.append( (char)(hexStr.toInt(&ok, 16)) );
-    };	
+    }	
 	QString Name = name.trimmed();
 	
 	nameEdit = new QLineEdit(Name);
@@ -108,10 +108,10 @@ customRenameDialog::customRenameDialog(QWidget *parent, QString hex1, QString he
 	mainLayout->addLayout(buttonsLayout);
 	setLayout(mainLayout);
   this->setMinimumWidth(dialogLength);
-};
+}
 
 void customRenameDialog::emitValue()
 {
 	emit nameChanged(nameEdit->text());
 	this->accept();
-};
+}

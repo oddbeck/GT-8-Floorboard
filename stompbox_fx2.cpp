@@ -32,13 +32,13 @@ stompbox_fx2::stompbox_fx2(QWidget *parent)
 	setButton("09", "00", "00");
 	editDetails()->patchPos(624, 440, "09", "00");
 	setEditPages();
-};
+}
 
 void stompbox_fx2::updateSignal()
 {
 	updateComboBox("09", "00", "02");
 	updateButton("09", "00", "00");
-};
+}
 
 void stompbox_fx2::setEditPages()
 {
@@ -743,4 +743,4 @@ void stompbox_fx2::setEditPages()
 	editDetails()->page()->addKnob(0, 0, 1, 1, "0A", "00", "5B");
 	editDetails()->page()->addGroupBox(0, 2, 1, 1);
 	editDetails()->page()->addStackField();    
-};
+}

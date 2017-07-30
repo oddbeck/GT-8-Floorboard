@@ -49,7 +49,7 @@ customSlider::customSlider(double value, double min, double max, double single, 
 
 	QObject::connect(this, SIGNAL( valueChanged(int, QString, QString, QString) ),
                 this->parent(), SLOT( valueChanged(int, QString, QString, QString) ));
-};
+}
 
 void customSlider::paintEvent(QPaintEvent *)
 {
@@ -67,7 +67,7 @@ void customSlider::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(screen, buffer, screen);
-};
+}
 
 void customSlider::setOffset(double _newValue)
 {
@@ -78,7 +78,7 @@ void customSlider::setOffset(double _newValue)
 	this->value = _newValue;	
 	this->yOffset = result;
 	this->update();
-};
+}
 
 void customSlider::mouseTrigger(QPoint mousePos)
 {
@@ -102,10 +102,10 @@ void customSlider::mouseTrigger(QPoint mousePos)
 	{
 		_newValue = min;
 				
-	};
+	}
 	setOffset(_newValue);
 	emitValue(_newValue);
-};
+}
 
 void customSlider::mousePressEvent(QMouseEvent *event)
 {
@@ -114,13 +114,13 @@ void customSlider::mousePressEvent(QMouseEvent *event)
 		setFocus();
 		mouseTrigger(event->pos());
 		emitValue(value);
-	};
-};
+	}
+}
 
 void customSlider::mouseMoveEvent(QMouseEvent *event)
 {
 	mouseTrigger(event->pos());
-};
+}
 
 void customSlider::wheelEvent(QWheelEvent *event)
 {
@@ -140,11 +140,11 @@ void customSlider::wheelEvent(QWheelEvent *event)
 		else if(_newValue > max)
 		{
 			_newValue = max;
-		};
+		}
 		setOffset(_newValue);
 		emitValue(_newValue);	
-    };
-};
+    }
+}
 
 void customSlider::keyPressEvent(QKeyEvent *event)
 {
@@ -163,7 +163,7 @@ void customSlider::keyPressEvent(QKeyEvent *event)
 
 		case Qt::Key_Right: numSteps = -(max-min);break;
 		case Qt::Key_Left: numSteps = max-min;break;
-	};
+	}
 
 	if (numSteps!=0) 
 	{
@@ -177,21 +177,21 @@ void customSlider::keyPressEvent(QKeyEvent *event)
 		{
 			_newValue = max;
 			this->_lastValue = value;
-		};
+		}
 		setOffset(_newValue);
 		emitValue(_newValue);
-	};
-};
+	}
+}
 
 void customSlider::emitValue(double value)
 {
     if (value != m_value) {
         this->m_value = value;
-    };
+    }
 	emit valueChanged((int)value, this->hex1, this->hex2, this->hex3);
-};
+}
 
 void customSlider::setValue(int value)
 {
 	setOffset((double)value);
-};
+}

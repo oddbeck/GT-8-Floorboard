@@ -72,7 +72,7 @@ menuPage::menuPage(QWidget *parent, unsigned int id, QString imagePath, QPoint s
 	QObject::connect(this, SIGNAL(setStatusSymbol(int)), sysxIO, SIGNAL(setStatusSymbol(int)));
 	QObject::connect(this, SIGNAL(setStatusProgress(int)), sysxIO, SIGNAL(setStatusProgress(int)));
 	QObject::connect(this, SIGNAL(setStatusMessage(QString)), sysxIO, SIGNAL(setStatusMessage(QString))); 
-};
+}
 
 void menuPage::paintEvent(QPaintEvent *)
 {
@@ -84,12 +84,12 @@ void menuPage::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);
-};
+}
 
 editWindow* menuPage::editDetails()
 {
 	return this->editDialog;
-};
+}
 
 void menuPage::menuButtonSignal(bool value)	
 {
@@ -99,7 +99,7 @@ void menuPage::menuButtonSignal(bool value)
 	    this->editDialog->setWindow(this->fxName);
 
       emit setEditDialog(this->editDialog);
-    };
+    }
     SysxIO *sysxIO = SysxIO::Instance();
 	  if((this->id == 19 || this->id == 18) && sysxIO->deviceReady())
 	  {
@@ -128,9 +128,9 @@ void menuPage::menuButtonSignal(bool value)
 		        	msgBox->setText(snork);
 		        	msgBox->setStandardButtons(QMessageBox::Ok);
 		        	msgBox->exec(); 
-             };  
-    };
-};
+             }  
+    }
+}
 
 
 void menuPage::systemReply(QString replyMsg)
@@ -146,7 +146,7 @@ void menuPage::systemReply(QString replyMsg)
 		 if(file.readFile())
 	   {	
 			sysxIO->setFileSource("System", file.getSystemSource());
-		 };
+		 }
   
 	if(sysxIO->noError())
 	{ 
@@ -166,12 +166,12 @@ void menuPage::systemReply(QString replyMsg)
     {   
   	int dataSize = 0; bool ok;
 	  for(int h=checksumOffset;h<hex.size()-1;++h)
-	  { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); };
+	  { dataSize += hex.mid(h*2, 2).toInt(&ok, 16); }
 	 	QString base = "80";                       // checksum calculate.
 	  unsigned int sum = dataSize % base.toInt(&ok, 16);
-  	if(sum!=0) { sum = base.toInt(&ok, 16) - sum; };
+  	if(sum!=0) { sum = base.toInt(&ok, 16) - sum; }
 	  QString checksum = QString::number(sum, 16).toUpper();
-	   if(checksum.length()<2) {checksum.prepend("0");};
+	   if(checksum.length()<2) {checksum.prepend("0");}
       	hex.append(checksum);
         hex.append("F7");   
         reBuild.append(hex);   
@@ -179,8 +179,8 @@ void menuPage::systemReply(QString replyMsg)
 		hex = "";
 		sysxEOF = "";
 		i=i+2;
-    }; 
-  };    
+    } 
+  }    
 	replyMsg = reBuild.simplified().toUpper().remove("0X").remove(" ");
 				    
 		QString area = "System";
@@ -204,17 +204,17 @@ void menuPage::systemReply(QString replyMsg)
 			msgBox->setText(msgText);
 			msgBox->setStandardButtons(QMessageBox::Ok);
 			msgBox->exec();
-		}; 
-   };
+		} 
+   }
 		emit setStatusMessage(tr("Ready"));   
 
-};
+}
 
 void menuPage::setPos(QPoint newPos)
 {
 	this->move(newPos);
 	//this->stompPos = newPos;
-};
+}
 
 void menuPage::updatePos(signed int offsetDif)
 { 
@@ -222,42 +222,42 @@ void menuPage::updatePos(signed int offsetDif)
         QPoint newPos = stompPos + QPoint(offsetDif, 0);
 	this->move(newPos);
 	//this->stompPos = newPos;
-};
+}
 	
 void menuPage::setImage(QString imagePath)
 {
 	this->imagePath = imagePath;
 	this->update();
-};
+}
 
 void menuPage::setSize(QSize newSize)
 {
 	this->stompSize = newSize;
 	this->setFixedSize(stompSize);
-};
+}
 
 void menuPage::setId(unsigned int id)
 {
 	this->id = id;
-};
+}
 
 unsigned int menuPage::getId()
 {
 	return this->id;
-};
+}
 
 void menuPage::setLSB(QString hex1, QString hex2)
 {
 	this->hex1 = hex1;
 	this->hex2 = hex2;
 	this->editDialog->setLSB(hex1, hex2);
-};
+}
 
 void menuPage::valueChanged(int value, QString hex1, QString hex2, QString hex3)
 {
 	MidiTable *midiTable = MidiTable::Instance();
 	QString area; 
-	if(this->id == 18 || this->id == 19) {area = "System";} else {area = "Structure";};
+	if(this->id == 18 || this->id == 19) {area = "System";} else {area = "Structure";}
 	QString valueHex = QString::number(value, 16).toUpper();
 	if(valueHex.length() < 2) valueHex.prepend("0");
 
@@ -277,10 +277,10 @@ void menuPage::valueChanged(int value, QString hex1, QString hex2, QString hex3)
 	else
 	{
 		sysxIO->setFileSource(area, hex1, hex2, hex3, valueHex);
-	};
+	}
 
 	emitValueChanged(hex1, hex2, hex3, valueHex);
-};
+}
 
 void menuPage::valueChanged(bool value, QString hex1, QString hex2, QString hex3)
 {
@@ -291,18 +291,18 @@ void menuPage::valueChanged(bool value, QString hex1, QString hex2, QString hex3
 	
 	SysxIO *sysxIO = SysxIO::Instance();
 	QString area; 
-	if(this->id == 18 || this->id == 19) {area = "System";} else {area = "Structure";};
+	if(this->id == 18 || this->id == 19) {area = "System";} else {area = "Structure";}
 	sysxIO->setFileSource(area, hex1, hex2, hex3, valueHex);
 
 
 	emitValueChanged(hex1, hex2, hex3, valueHex);
-};
+}
 
 
 void menuPage::emitValueChanged(QString hex1, QString hex2, QString hex3, QString valueHex)
 {
   QString area; 
-	if(this->id == 18 || this->id == 19) {area = "System";} else {area = "Structure";};
+	if(this->id == 18 || this->id == 19) {area = "System";} else {area = "Structure";}
 	QString valueName, valueStr;
 	if(hex1 != "void" && hex2 != "void")
 	{
@@ -318,26 +318,26 @@ void menuPage::emitValueChanged(QString hex1, QString hex2, QString hex3, QStrin
 		else
 		{
 		 
-		  if (this->id == 18){this->fxName = tr("System settings");  this->area_mode = "System";};
-		  if (this->id == 19){this->fxName = tr("Custom Settings");  this->area_mode = "System";};
-		  if (this->id == 21){this->fxName = tr("Assign 1");         this->area_mode = "Structure";};
-		  if (this->id == 22){this->fxName = tr("Assign 2");         this->area_mode = "Structure";};
-		  if (this->id == 23){this->fxName = tr("Assign 3");         this->area_mode = "Structure";};
-		  if (this->id == 24){this->fxName = tr("Assign 4");         this->area_mode = "Structure";};
-		  if (this->id == 25){this->fxName = tr("Assign 5");         this->area_mode = "Structure";};
-		  if (this->id == 26){this->fxName = tr("Assign 6");         this->area_mode = "Structure";};
-		  if (this->id == 27){this->fxName = tr("Assign 7");         this->area_mode = "Structure";};
-		  if (this->id == 28){this->fxName = tr("Assign 8");         this->area_mode = "Structure";};
+		  if (this->id == 18){this->fxName = tr("System settings");  this->area_mode = "System";}
+		  if (this->id == 19){this->fxName = tr("Custom Settings");  this->area_mode = "System";}
+		  if (this->id == 21){this->fxName = tr("Assign 1");         this->area_mode = "Structure";}
+		  if (this->id == 22){this->fxName = tr("Assign 2");         this->area_mode = "Structure";}
+		  if (this->id == 23){this->fxName = tr("Assign 3");         this->area_mode = "Structure";}
+		  if (this->id == 24){this->fxName = tr("Assign 4");         this->area_mode = "Structure";}
+		  if (this->id == 25){this->fxName = tr("Assign 5");         this->area_mode = "Structure";}
+		  if (this->id == 26){this->fxName = tr("Assign 6");         this->area_mode = "Structure";}
+		  if (this->id == 27){this->fxName = tr("Assign 7");         this->area_mode = "Structure";}
+		  if (this->id == 28){this->fxName = tr("Assign 8");         this->area_mode = "Structure";}
 
-		};
-	};
+		}
+	}
 
 	emit valueChanged(this->fxName, valueName, valueStr);
-};
+}
 
 void menuPage::setDisplayToFxName()
 {
 	emit valueChanged(this->fxName, "", "");
-};
+}
 
 

@@ -166,7 +166,7 @@ customControlTarget::customControlTarget(QWidget *parent,
                 
   QObject::connect(this, SIGNAL( updateTarget(QString, QString, QString) ),
                 this, SIGNAL( updateHex(QString, QString, QString) ));
-};
+}
 
 void customControlTarget::paintEvent(QPaintEvent *)
 {
@@ -178,7 +178,7 @@ void customControlTarget::paintEvent(QPaintEvent *)
 
 	QPainter painter(this);
 	painter.drawPixmap(target, image, source);*/
-};
+}
 
 void customControlTarget::knobSignal(QString hexMsb, QString hex2, QString hexLsb)
  { 
@@ -198,7 +198,7 @@ void customControlTarget::knobSignal(QString hexMsb, QString hex2, QString hexLs
 	if(valueHex.length() < 2) valueHex.prepend("0");
 	valueStr = midiTable->getValue("Structure", hexMsb, hex2, hexLsb, valueHex);
 	emit updateDisplayMax(valueStr);                                                  // initial value only is displayed under knob
- };
+ }
 
 void customControlTarget::dialogUpdateSignal()
 {
@@ -249,4 +249,4 @@ SysxIO *sysxIO = SysxIO::Instance();
 	if(valueHex.length() < 2) valueHex.prepend("0");
 	valueStr = midiTable->getValue("Structure", hexMsb, hex2, hexLsb, valueHex);
 	emit updateDisplayMax(valueStr);                                           // initial value only is displayed under knob
-};
+}
