@@ -1,0 +1,1069 @@
+<!DOCTYPE QPH>
+<QPH language="fr">
+<phrase>
+    <source>Patch folder</source>
+    <target>Dossier de correction</target>
+</phrase>
+<phrase>
+    <source>Finish at U</source>
+    <target>Finition à U</target>
+</phrase>
+<phrase>
+    <source>Default patch folder:</source>
+    <target>Dossier de patch de défaut :</target>
+</phrase>
+<phrase>
+    <source>Browse</source>
+    <target>Passez en revue</target>
+</phrase>
+<phrase>
+    <source>Midi settings</source>
+    <target>Arrangements du Midi</target>
+</phrase>
+<phrase>
+    <source>Select your midi in and out device.</source>
+    <target>Choisissez le votre Midi dans et dehors dispositif.</target>
+</phrase>
+<phrase>
+    <source>Midi in:</source>
+    <target>Le Midi dans :</target>
+</phrase>
+<phrase>
+    <source>Select your midi in and out device.</source>
+    <target>Choisissez le votre Midi dans et dehors dispositif.</target>
+</phrase>
+<phrase>
+    <source>Midi out:</source>
+    <target>Le Midi dehors :</target>
+</phrase>
+<phrase>
+    <source>Select midi-in device</source>
+    <target>Choisissez Midi-dans le dispositif</target>
+</phrase>
+<phrase>
+    <source>Select midi-out device</source>
+    <target>Choisissez le dispositif du Midi-dehors</target>
+</phrase>
+<phrase>
+    <source>dBug and timing</source>
+    <target>dBug et synchronisation</target>
+</phrase>
+<phrase>
+    <source>Debug mode &amp; midi settings.</source>
+    <target>Corrigez le &amp; de mode ; arrangements du Midi.</target>
+</phrase>
+<phrase>
+    <source>System data request size.</source>
+    <target>Taille de demande de données de système.</target>
+</phrase>
+<phrase>
+    <source>Realtime edit send rate.</source>
+    <target>Le temps réel éditent envoient le taux.</target>
+</phrase>
+<phrase>
+    <source>deBug Mode</source>
+    <target>corrigez le mode</target>
+</phrase>
+<phrase>
+    <source> times/second</source>
+    <target>périodes/en second lieu</target>
+</phrase>
+<phrase>
+    <source>= </source>
+    <target>= </target>
+</phrase>
+<phrase>
+    <source>Warning - Patch data received is incorrect!</source>
+    <target>Avertissement - les données de Patch reçues sont incorrectes !</target>
+</phrase>
+<phrase>
+    <source>Patch data transfer wrong size or data error</source>
+    <target>&quot; ; Patch&quot; ; taille de mal de transfert de données ou erreur de données</target>
+</phrase>
+<phrase>
+    <source>Please make sure the </source>
+    <target>Veuillez s&apos;assurer </target>
+</phrase>
+<phrase>
+    <source>Warning - No patch data received!</source>
+    <target>Avertissement - donnée de patch n&apos;a pas reçu !</target>
+</phrase>
+<phrase>
+    <source>Patch data transfer failed, are the correct midi ports selected?</source>
+    <target>Le transfert de données échoué, les ports corrects du Midi raccordent-ils sont-ils choisis ?</target>
+</phrase>
+<phrase>
+    <source>SMF file import</source>
+    <target>Importation de dossier de SMF</target>
+</phrase>
+<phrase>
+    <source>This is not a GT-8 file!</source>
+    <target>Ce n&apos;est pas un dossier GT-8 !</target>
+</phrase>
+<phrase>
+    <source>this file is a GT-Pro version&lt;br&gt;</source>
+    <target>ce dossier est une GT-Pro version&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>*Loading this file may have unpredictable results*.</source>
+    <target>*Loading ce dossier peut avoir le results* imprévisible.</target>
+</phrase>
+<phrase>
+    <source>Initializing...</source>
+    <target>Initialisation…</target>
+</phrase>
+<phrase>
+    <source>Checking license file...</source>
+    <target>Vérifiant le dossier de permis…</target>
+</phrase>
+<phrase>
+    <source>Loading license file...</source>
+    <target>Dossier de permis de chargement…</target>
+</phrase>
+<phrase>
+    <source>Loading midi mapping...</source>
+    <target>Cartographie du Midi de chargement…</target>
+</phrase>
+<phrase>
+    <source>Initializing main window...</source>
+    <target>Fenêtre principale de initialisation…</target>
+</phrase>
+<phrase>
+    <source>Restoring window position...</source>
+    <target>Reconstituant la position de fenêtre…</target>
+</phrase>
+<phrase>
+    <source>Centering main window...</source>
+    <target>Centrant la fenêtre principale…</target>
+</phrase>
+<phrase>
+    <source>Finished Initializing...</source>
+    <target>Initialisation de finition…</target>
+</phrase>
+<phrase>
+    <source>File compatibility Error!</source>
+    <target>Erreur de compatibilité de dossier !</target>
+</phrase>
+<phrase>
+    <source>This is not recognised as a supported </source>
+    <target>Ceci n&apos;est pas identifié en tant que soutenu </target>
+</phrase>
+<phrase>
+    <source> patch file</source>
+    <target>dossier de patch</target>
+</phrase>
+<phrase>
+    <source>but appears to be a GT-Manager proprietry format&lt;br&gt;</source>
+    <target>mais semble être un format proprietry de GT-Directeur&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>please try another file.</source>
+    <target>veuillez essayer un autre dossier.</target>
+</phrase>
+<phrase>
+    <source>Select Patch</source>
+    <target>Choisissez la Patch</target>
+</phrase>
+<phrase>
+    <source>Patch size Error!</source>
+    <target>Erreur de taille de correction !</target>
+</phrase>
+<phrase>
+    <source>This is not recognised as a </source>
+    <target>Ceci n&apos;est pas identifié comme a </target>
+</phrase>
+<phrase>
+    <source>but appears to be a GT-6 patch&lt;br&gt;</source>
+    <target>mais semble être une Patch GT-6&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>but appears to be a GT-3 patch&lt;br&gt;</source>
+    <target>mais semble être une Patch GT-3&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>Patch size is </source>
+    <target>La taille de correction est </target>
+</phrase>
+<phrase>
+    <source> bytes, please try another file.</source>
+    <target>les bytes, essayent svp un autre dossier.</target>
+</phrase>
+<phrase>
+    <source>Select your midi in and out device.</source>
+    <target>Choisissez le votre Midi dans et dehors dispositif.</target>
+</phrase>
+<phrase>
+    <source>Select your midi in and out device.</source>
+    <target>Choisissez le votre Midi dans et dehors dispositif.</target>
+</phrase>
+<phrase>
+    <source>Midi in:</source>
+    <target>Le Midi dans :</target>
+</phrase>
+<phrase>
+    <source>Midi out:</source>
+    <target>Le Midi dehors :</target>
+</phrase>
+<phrase>
+    <source>Select midi-in device</source>
+    <target>Choisissez Midi-dans le dispositif</target>
+</phrase>
+<phrase>
+    <source>Select midi-out device</source>
+    <target>Choisissez le dispositif du Midi-dehors</target>
+</phrase>
+<phrase>
+    <source>dBug and timing</source>
+    <target>dBug et synchronisation</target>
+</phrase>
+<phrase>
+    <source>Debug mode &amp; midi settings.</source>
+    <target>Corrigez le &amp; de mode ; arrangements du Midi.</target>
+</phrase>
+<phrase>
+    <source>Realtime edit send rate.</source>
+    <target>Le temps réel éditent envoient le taux.</target>
+</phrase>
+<phrase>
+    <source>deBug Mode</source>
+    <target>corrigez le mode</target>
+</phrase>
+<phrase>
+    <source>= </source>
+    <target>= </target>
+</phrase>
+<phrase>
+    <source> times/second</source>
+    <target>périodes/en second lieu</target>
+</phrase>
+<phrase>
+    <source>Window settings</source>
+    <target>Arrangements de fenêtre</target>
+</phrase>
+<phrase>
+    <source>Select if you want the window position to be saved on exit.</source>
+    <target>Choisissez si vous voulez que la position de fenêtre soit sauvée sur la sortie.</target>
+</phrase>
+<phrase>
+    <source>Restore window</source>
+    <target>Fenêtre de restauration</target>
+</phrase>
+<phrase>
+    <source>Restore sidepanel</source>
+    <target>Sidepanel de restauration</target>
+</phrase>
+<phrase>
+    <source>Show splash screen</source>
+    <target>Montrez l&apos;écran d&apos;éclaboussure</target>
+</phrase>
+<phrase>
+    <source>Disable or enable the splash screen.</source>
+    <target>Désactivez ou permettez l&apos;écran d&apos;éclaboussure.</target>
+</phrase>
+<phrase>
+    <source>Splash screen</source>
+    <target>
+Écran d&apos;éclaboussure</target>
+</phrase>
+<phrase>
+    <source>Select the default folder for storing patches.</source>
+    <target>Choisissez le dossier de défaut pour stocker des Patches.</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard</source>
+    <target>Planche de Fx</target>
+</phrase>
+<phrase>
+    <source>The file opened contains one or more incorrect checksums.</source>
+    <target>Le dossier ouvert contient un ou plusieurs sommes incorrectes.</target>
+</phrase>
+<phrase>
+    <source>The incorrect values have been corrected where possible.&lt;br&gt;If correction was impossible then some settings might have been reset to zero.&lt;br&gt;</source>
+    <target>Les valeurs incorrectes ont été corrigées si possible. Si la correction était impossible&lt;br&gt; puis quelques arrangements pourraient avoir été remis à zéro.&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>Be aware of possible inconsistencies in this patch!</source>
+    <target>Rendez-vous compte des contradictions possibles dans cette correction !</target>
+</phrase>
+<phrase>
+    <source>Sending</source>
+    <target>Envoi</target>
+</phrase>
+<phrase>
+    <source>Location = </source>
+    <target>Endroit = </target>
+</phrase>
+<phrase>
+    <source>: bad data = </source>
+    <target>: mauvaises données = </target>
+</phrase>
+<phrase>
+    <source>: new data = </source>
+    <target>: nouvelles données = </target>
+</phrase>
+<phrase>
+    <source>bad data has been repaired with default values&lt;br&gt;</source>
+    <target>de mauvaises données ont été réparées avec des valeurs par défaut&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>loaction of bad data was at </source>
+    <target>le loaction de mauvaises données était à </target>
+</phrase>
+<phrase>
+    <source>File contains out of range data</source>
+    <target>Le dossier contient hors des données de gamme</target>
+</phrase>
+<phrase>
+    <source>Patch change</source>
+    <target>Changement de Patch</target>
+</phrase>
+<phrase>
+    <source>dBug Result for formatted syx message</source>
+    <target>résultat de dBug pour le message composé de syx</target>
+</phrase>
+<phrase>
+    <source>bad data</source>
+    <target>mauvaises données</target>
+</phrase>
+<phrase>
+    <source>no reply</source>
+    <target>aucune réponse</target>
+</phrase>
+<phrase>
+    <source>Request System data</source>
+    <target>Données de système de demande</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is active&lt;br&gt;</source>
+    <target>Assurez que le raccordement est en activité&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> and retry</source>
+    <target> et tentative</target>
+</phrase>
+<phrase>
+    <source> not connected !!</source>
+    <target>non relié ! !</target>
+</phrase>
+<phrase>
+    <source>System Data from </source>
+    <target>Données de système de </target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard connection Error !!</source>
+    <target>Erreur de raccordement de planche de Fx ! !</target>
+</phrase>
+<phrase>
+    <source>The Boss </source>
+    <target>Le Boss </target>
+</phrase>
+<phrase>
+    <source> Effects Processor was not found.</source>
+    <target> Le processeur d&apos;effets n&apos;a pas été trouvé.</target>
+</phrase>
+<phrase>
+    <source>Splash screen</source>
+    <target>Écran d&apos;éclaboussure</target>
+</phrase>
+<phrase>
+    <source>Select the default folder for storing patches.</source>
+    <target>Choisissez le dossier de défaut pour stocker des Patches.</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard</source>
+    <target>Planche de Fx</target>
+</phrase>
+<phrase>
+    <source>The file opened contains one or more incorrect checksums.</source>
+    <target>Le dossier ouvert contient un ou plusieurs sommes incorrectes.</target>
+</phrase>
+<phrase>
+    <source>The incorrect values have been corrected where possible.&lt;br&gt;If correction was impossible then some settings might have been reset to zero.&lt;br&gt;</source>
+    <target>Les valeurs incorrectes ont été corrigées si possible. Si la correction était impossible&lt;br&gt; puis quelques arrangements pourraient avoir été remis à zéro.&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>Be aware of possible inconsistencies in this patch!</source>
+    <target>Rendez-vous compte des contradictions possibles dans cette correction !</target>
+</phrase>
+<phrase>
+    <source>Sending</source>
+    <target>Envoi</target>
+</phrase>
+<phrase>
+    <source>Location = </source>
+    <target>Endroit = </target>
+</phrase>
+<phrase>
+    <source>: bad data = </source>
+    <target>: mauvaises données = </target>
+</phrase>
+<phrase>
+    <source>: new data = </source>
+    <target>: nouvelles données = </target>
+</phrase>
+<phrase>
+    <source>: new data = </source>
+    <target>: nouvelles données = </target>
+</phrase>
+<phrase>
+    <source>bad data has been repaired with default values&lt;br&gt;</source>
+    <target>de mauvaises données ont été réparées avec des valeurs par défaut&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>loaction of bad data was at </source>
+    <target>le loaction de mauvaises données était à </target>
+</phrase>
+<phrase>
+    <source>File contains out of range data</source>
+    <target>Le dossier contient hors des données de gamme</target>
+</phrase>
+<phrase>
+    <source>Patch change</source>
+    <target>Changement de Patch</target>
+</phrase>
+<phrase>
+    <source>dBug Result for formatted syx message</source>
+    <target>résultat de dBug pour le message composé de syx</target>
+</phrase>
+<phrase>
+    <source>bad data</source>
+    <target>mauvaises données</target>
+</phrase>
+<phrase>
+    <source>no reply</source>
+    <target>aucune réponse</target>
+</phrase>
+<phrase>
+    <source>Request System data</source>
+    <target>Données de système de demande</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is active&lt;br&gt;</source>
+    <target>Assurez que le raccordement est en activité&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> and retry</source>
+    <target> et tentative</target>
+</phrase>
+<phrase>
+    <source> not connected !!</source>
+    <target>non relié ! !</target>
+</phrase>
+<phrase>
+    <source>System Data from </source>
+    <target>Données de système de </target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard connection Error !!</source>
+    <target>Erreur de raccordement de planche de Fx ! !</target>
+</phrase>
+<phrase>
+    <source>The Boss </source>
+    <target>Le Boss </target>
+</phrase>
+<phrase>
+    <source> Effects Processor was not found.</source>
+    <target> Le processeur d&apos;effets n&apos;a pas été trouvé.</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard Data Error !!</source>
+    <target>Erreur de données de planche de Fx ! !</target>
+</phrase>
+<phrase>
+    <source> reports a Data Error occured during transfer.&lt;br&gt;</source>
+    <target> rapporte qu&apos;une erreur de données s&apos;est produite pendant le transfert.&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> please try again.</source>
+    <target>essayez svp encore.</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>Prêt</target>
+</phrase>
+<phrase>
+    <source>Sync to </source>
+    <target>Synchro à </target>
+</phrase>
+<phrase>
+    <source>Window settings</source>
+    <target>Arrangements de fenêtre</target>
+</phrase>
+<phrase>
+    <source>Select if you want the window position to be saved on exit.</source>
+    <target>Choisissez si vous voulez que la position de fenêtre soit sauvée sur la sortie.</target>
+</phrase>
+<phrase>
+    <source>Restore window</source>
+    <target>Fenêtre de restauration</target>
+</phrase>
+<phrase>
+    <source>Restore sidepanel</source>
+    <target>Sidepanel de restauration</target>
+</phrase>
+<phrase>
+    <source>Show splash screen</source>
+    <target>Montrez l&apos;écran d&apos;éclaboussure</target>
+</phrase>
+<phrase>
+    <source>Disable or enable the splash screen.</source>
+    <target>Désactivez ou permettez l&apos;écran d&apos;éclaboussure.</target>
+</phrase>
+<phrase>
+    <source>Double-click tree item to load patch</source>
+    <target>Article d&apos;arbre de Double-click à la charge</target>
+</phrase>
+<phrase>
+    <source>Patch request</source>
+    <target>Demande de correction</target>
+</phrase>
+<phrase>
+    <source>Receiving Patch</source>
+    <target>Réception de la correction</target>
+</phrase>
+<phrase>
+    <source>Patch from </source>
+    <target>Correction de </target>
+</phrase>
+<phrase>
+    <source>Reading names</source>
+    <target>Noms de lecture</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>Prêt</target>
+</phrase>
+<phrase>
+    <source>Starting from</source>
+    <target>À partir de</target>
+</phrase>
+<phrase>
+    <source>Finishing at</source>
+    <target>Finir à</target>
+</phrase>
+<phrase>
+    <source>Set the Range of Patch data to restore</source>
+    <target>Placez la gamme des données de correction à la restauration</target>
+</phrase>
+<phrase>
+    <source>Start Bank.</source>
+    <target>Mettez sur pied la banque.</target>
+</phrase>
+<phrase>
+    <source>Finish Bank.</source>
+    <target>Banque de finition.</target>
+</phrase>
+<phrase>
+    <source>Set start location of Patch data to restore</source>
+    <target>Endroit réglé de début des données de correction à reconstituer</target>
+</phrase>
+<phrase>
+    <source>Start</source>
+    <target>Début</target>
+</phrase>
+<phrase>
+    <source>DATA TRANSFER COMPLETED</source>
+    <target>TRANSFERT DE DONNÉES ACCOMPLI</target>
+</phrase>
+<phrase>
+    <source>Full Restoration may take up to 2 minutes</source>
+    <target>La pleine restauration peut prendre à 2 minutes</target>
+</phrase>
+<phrase>
+    <source>Bulk File Restoration</source>
+    <target>Restauration actualisée de fichier en bloc</target>
+</phrase>
+<phrase>
+    <source>Choose a file</source>
+    <target>Choisissez un dossier</target>
+</phrase>
+<phrase>
+    <source>GT-8 Bulk Data File (*.gte *.syx *.mid)</source>
+    <target>Fichier des données GT-8 en bloc (*.gte *.syx *.mid)</target>
+</phrase>
+<phrase>
+    <source>Bulk data transfer completed!!</source>
+    <target>Transfert de données en bloc accompli ! !</target>
+</phrase>
+<phrase>
+    <source>User Patch U</source>
+    <target>User Patch U</target>
+</phrase>
+<phrase>
+    <source>File build size = </source>
+    <target>Taille de construction de dossier = </target>
+</phrase>
+<phrase>
+    <source>Bulk Patch transfer in progress - please wait until finished</source>
+    <target>Transfert en bloc de correction en marche - attendez svp jusqu&apos;à ce que fini</target>
+</phrase>
+<phrase>
+    <source>Bulk Upload</source>
+    <target>Téléchargement en bloc</target>
+</phrase>
+<phrase>
+    <source>Bulk Patch transfer completed !!</source>
+    <target>Transfert en bloc de correction accompli ! !</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>Prêt</target>
+</phrase>
+<phrase>
+    <source>Finish at U</source>
+    <target>Finition à U</target>
+</phrase>
+<phrase>
+    <source>Start Bank.</source>
+    <target>Mettez sur pied la banque.</target>
+</phrase>
+<phrase>
+    <source>Finish Bank.</source>
+    <target>Banque de finition.</target>
+</phrase>
+<phrase>
+    <source>*.gte Librarian file</source>
+    <target>Dossier de bibliothécaire de *.gte</target>
+</phrase>
+<phrase>
+    <source>*.syx System Exclusive file</source>
+    <target>Dossier d&apos;exclusivité de système de *.syx</target>
+</phrase>
+<phrase>
+    <source>*.mid Standard Midi (SMF) file</source>
+    <target>Dossier standard de *.mid Midi (SMF)</target>
+</phrase>
+<phrase>
+    <source>Save System Data</source>
+    <target>Sauf des données de système</target>
+</phrase>
+<phrase>
+    <source>Start at U</source>
+    <target>Commencez à U</target>
+</phrase>
+<phrase>
+    <source>Finish at U</source>
+    <target>Finition à U</target>
+</phrase>
+<phrase>
+    <source>Set range of Patch data to save</source>
+    <target>Placez la gamme des données de correction à sauf</target>
+</phrase>
+<phrase>
+    <source>DATA TRANSFER COMPLETED</source>
+    <target>TRANSFERT DE DONNÉES ACCOMPLI</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>Annulation</target>
+</phrase>
+<phrase>
+    <source>Full Backup may take up to 2 minutes</source>
+    <target>Le plein support peut prendre à 2 minutes</target>
+</phrase>
+<phrase>
+    <source>Select File format to save</source>
+    <target>Choisissez le format de fichier pour sauver</target>
+</phrase>
+<phrase>
+    <source>Bulk File Backup</source>
+    <target>Support de dossier en bloc</target>
+</phrase>
+<phrase>
+    <source>Bulk data transfer completed!!</source>
+    <target>Transfert de données en bloc accompli ! !</target>
+</phrase>
+<phrase>
+    <source>User Patch U</source>
+    <target>User Patch U</target>
+</phrase>
+<phrase>
+    <source> bytes</source>
+    <target> bytes</target>
+</phrase>
+<phrase>
+    <source>Bulk Download</source>
+    <target>Téléchargement en bloc</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>Prêt</target>
+</phrase>
+<phrase>
+    <source>Save Bulk Data</source>
+    <target>Sauf des données en bloc</target>
+</phrase>
+<phrase>
+    <source>Librarian Backup File (*.gxb)</source>
+    <target>Dossier de secours de bibliothécaire (*.gxb)</target>
+</phrase>
+<phrase>
+    <source>System Exclusive Backup File (*.syx)</source>
+    <target>Dossier de secours exclusif de système (*.syx)</target>
+</phrase>
+<phrase>
+    <source>Standard Midi Backup File (*.mid)</source>
+    <target>Dossier de secours standard du Midi (*.mid)</target>
+</phrase>
+<phrase>
+    <source>Patch Description</source>
+    <target>Description de Patch</target>
+</phrase>
+<phrase>
+    <source>Patch created by</source>
+    <target>Patch créée près</target>
+</phrase>
+<phrase>
+    <source>Rename Catagory</source>
+    <target>Retitrez la catégorie</target>
+</phrase>
+<phrase>
+    <source>Name:</source>
+    <target>Nom:</target>
+</phrase>
+<phrase>
+    <source>Insert :</source>
+    <target>Insertion :</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>Annulation</target>
+</phrase>
+<phrase>
+    <source>Apply</source>
+    <target>Appliquez</target>
+</phrase>
+<phrase>
+    <source>Select</source>
+    <target>Choisi</target>
+</phrase>
+<phrase>
+    <source>Pre A/B swap</source>
+    <target>Pré échange d&apos;A/B</target>
+</phrase>
+<phrase>
+    <source>Temp 1 Partial</source>
+    <target>Temp 1 partiel</target>
+</phrase>
+<phrase>
+    <source>Temp 2 Partial</source>
+    <target>Temp 2 partiel</target>
+</phrase>
+<phrase>
+    <source>Temp 3 Partial</source>
+    <target>Temp 3 partiel</target>
+</phrase>
+<phrase>
+    <source>Temp 4 Partial</source>
+    <target>Temp 4 partiel</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to clipboard first</source>
+    <target>la Patch doit être copiée au presse-papiers d&apos;abord</target>
+</phrase>
+<phrase>
+    <source>Select patch to load</source>
+    <target>Choisissez la correction pour charger</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>Annulation</target>
+</phrase>
+<phrase>
+    <source>Bulk File Patch Extraction</source>
+    <target>Extraction en bloc de correction de dossier</target>
+</phrase>
+<phrase>
+    <source>Connect</source>
+    <target>Reliez</target>
+</phrase>
+<phrase>
+    <source>Write/Sync</source>
+    <target>Écrivent/sync</target>
+</phrase>
+<phrase>
+    <source>Assigns</source>
+    <target>Assigne</target>
+</phrase>
+<phrase>
+    <source>Custom Settings</source>
+    <target>Coutume</target>
+</phrase>
+<phrase>
+    <source>System Settings</source>
+    <target>Système</target>
+</phrase>
+<phrase>
+    <source>FV/Pedal</source>
+    <target>FV/Pedal</target>
+</phrase>
+<phrase>
+    <source>PreAmp/Spkr</source>
+    <target>PreAmp/Spkr</target>
+</phrase>
+<phrase>
+    <source>Compressor</source>
+    <target>Compresseur</target>
+</phrase>
+<phrase>
+    <source>Distortion</source>
+    <target>Déformation</target>
+</phrase>
+<phrase>
+    <source>Noise.Sup.</source>
+    <target>Noise.Sup.</target>
+</phrase>
+<phrase>
+    <source>FX 1</source>
+    <target>FX 1</target>
+</phrase>
+<phrase>
+    <source>FX 2</source>
+    <target>FX 2</target>
+</phrase>
+<phrase>
+    <source>Reverb</source>
+    <target>Reverb</target>
+</phrase>
+<phrase>
+    <source>Delay</source>
+    <target>Retard</target>
+</phrase>
+<phrase>
+    <source>Chorus</source>
+    <target>Choeur</target>
+</phrase>
+<phrase>
+    <source>Loop</source>
+    <target>Boucle</target>
+</phrase>
+<phrase>
+    <source>Equaliser</source>
+    <target>Égaliseur</target>
+</phrase>
+<phrase>
+    <source>Wah</source>
+    <target>Wah</target>
+</phrase>
+<phrase>
+    <source>Temp-1 Copy</source>
+    <target>Copie Temp-1</target>
+</phrase>
+<phrase>
+    <source>Temp-2 Copy</source>
+    <target>Copie Temp-2</target>
+</phrase>
+<phrase>
+    <source>Temp-2 Paste</source>
+    <target>Pâte Temp-2</target>
+</phrase>
+<phrase>
+    <source>Temp-3 Copy</source>
+    <target>Copie Temp-3</target>
+</phrase>
+<phrase>
+    <source>Temp-3 Paste</source>
+    <target>Pâte Temp-3</target>
+</phrase>
+<phrase>
+    <source>Temp-4 Copy</source>
+    <target>Copie Temp-4</target>
+</phrase>
+<phrase>
+    <source>init patch</source>
+    <target>correction d&apos;init</target>
+</phrase>
+<phrase>
+    <source> patch</source>
+    <target>correction</target>
+</phrase>
+<phrase>
+    <source>Empty</source>
+    <target>Vide</target>
+</phrase>
+<phrase>
+    <source>version</source>
+    <target>version</target>
+</phrase>
+<phrase>
+    <source>Error while changing banks.</source>
+    <target>Erreur tout en changeant encaisse.</target>
+</phrase>
+<phrase>
+    <source>An incorrect patch has been loaded. Please try to load the patch again.</source>
+    <target>Une correction incorrecte a été chargée. Essayez svp de charger la correction encore.</target>
+</phrase>
+<phrase>
+    <source>User</source>
+    <target>User</target>
+</phrase>
+<phrase>
+    <source>Preset</source>
+    <target>Preset</target>
+</phrase>
+<phrase>
+    <source>Temp</source>
+    <target>Temp</target>
+</phrase>
+<phrase>
+    <source>Buffer</source>
+    <target>Buffer</target>
+</phrase>
+<phrase>
+    <source>in-consistant patch data detected </source>
+    <target>dans-consistant la correction les données ont détecté </target>
+</phrase>
+<phrase>
+    <source>bytes: re-save or re-load file to correct</source>
+    <target>bytes : re-sauvez ou rechargez le dossier pour corriger</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-1 clipboard first</source>
+    <target>la Patch doit être copiée au presse-papiers Temp-1 d&apos;abord</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-2 clipboard first</source>
+    <target>la Patch doit être copiée au presse-papiers Temp-2 d&apos;abord</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-3 clipboard first</source>
+    <target>la Patch doit être copiée au presse-papiers Temp-3 d&apos;abord</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-4 clipboard first</source>
+    <target>la Patch doit être copiée au presse-papiers Temp-4 d&apos;abord</target>
+</phrase>
+<phrase>
+    <source>Connecting</source>
+    <target>Se relier</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>Prêt</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard connection Error !!</source>
+    <target>Erreur de raccordement de planche de Fx ! !</target>
+</phrase>
+<phrase>
+    <source>The device connected is not a Boss </source>
+    <target>Le dispositif relié n&apos;est pas un patron </target>
+</phrase>
+<phrase>
+    <source>&lt;br&gt;Midi loopback detected, ensure midi device &apos;thru&apos; is switched off.</source>
+    <target>&lt;br&gt;La réalimentation du Midi détectée, assurent le dispositif &apos; du Midi ;&lt;br&gt; through&apos; ; est commuté au loin.</target>
+</phrase>
+<phrase>
+    <source>Not connected</source>
+    <target>Non relié</target>
+</phrase>
+<phrase>
+    <source>The Boss </source>
+    <target>Le Boss </target>
+</phrase>
+<phrase>
+    <source>&lt;br&gt;&lt;br&gt;Ensure correct midi device is selected in Menu, </source>
+    <target>&lt;br&gt;&lt;br&gt;Assurez que le dispositif correct du Midi est choisi dans le menu, </target>
+</phrase>
+<phrase>
+    <source>&lt;br&gt;midi cables are connected and the GT-8 is switched on,</source>
+    <target>&lt;br&gt;des câbles du Midi sont reliés et le GT-8 est branché,</target>
+</phrase>
+<phrase>
+    <source>You can&apos;t write to the preset banks.</source>
+    <target>Vous can&apos; ; t écrivent aux banques de préréglage.</target>
+</phrase>
+<phrase>
+    <source>Please select a user bank to write this patch to and try again.</source>
+    <target>Veuillez choisir une banque d&apos;utilisateur écrire cette correction à et essayer encore.</target>
+</phrase>
+<phrase>
+    <source>You have chosen to write the patch permanently into </source>
+    <target>Vous avez choisi d&apos;écrire la correction de manière permanente dans </target>
+</phrase>
+<phrase>
+    <source>This will overwrite the patch currently stored at patch location
+</source>
+    <target>Ceci recouvrira la correction actuellement stockée à l&apos;endroit de correction&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> and can&apos;t be undone. </source>
+    <target>et can&apos; ; t soit défait. </target>
+</phrase>
+<phrase>
+    <source>Are you sure you want to continue?</source>
+    <target>Êtes-vous sûr vous voulez-vous continuer ?</target>
+</phrase>
+<phrase>
+    <source>Writing to Patch</source>
+    <target>Inscription à la correction</target>
+</phrase>
+<phrase>
+    <source>[ INIT Patches ]</source>
+    <target>Patches d&apos;INIT</target>
+</phrase>
+<phrase>
+    <source>(My INIT) </source>
+    <target>(Mon INIT) </target>
+</phrase>
+<phrase>
+    <source>init patch</source>
+    <target>Patch d&apos;init</target>
+</phrase>
+<phrase>
+    <source>&amp;Load Patch File... *.syx *.gte *.mid</source>
+    <target>&amp;Dossier de correction de charge... *.syx *.gte *.mid</target>
+</phrase>
+<phrase>
+    <source>Ctrl+O</source>
+    <target>Ctrl+O</target>
+</phrase>
+<phrase>
+    <source>Open an existing file</source>
+    <target>Ouvrez un dossier existant</target>
+</phrase>
+<phrase>
+    <source>Window settings</source>
+    <target>Arrangements de fenêtre</target>
+</phrase>
+<phrase>
+    <source>Language Selection</source>
+    <target>Choix de langue</target>
+</phrase>
+<phrase>
+    <source>Language Selection</source>
+    <target>Choix de langue</target>
+</phrase>
+<phrase>
+    <source>English</source>
+    <target>Anglais</target>
+</phrase>
+<phrase>
+    <source>French</source>
+    <target>Français</target>
+</phrase>
+<phrase>
+    <source>German</source>
+    <target>Allemand</target>
+</phrase>
+<phrase>
+    <source>Chinese (simplified)</source>
+    <target>Chinois (simplifiés)</target>
+</phrase>
+<phrase>
+    <source>Changes take effect on next startup</source>
+    <target>Les changements entrent en vigueur sur le prochain démarrage</target>
+</phrase>
+<phrase>
+    <source> is connected correctly and re-try.</source>
+    <target> est relié correctement et tentative.</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard, </source>
+    <target>Planche de Fx, </target>
+</phrase>
+<phrase>
+    <source>Language</source>
+    <target>Langue</target>
+</phrase>
+</QPH>

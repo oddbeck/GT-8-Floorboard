@@ -1,0 +1,1336 @@
+<!DOCTYPE QPH>
+<QPH sourcelanguage="en" language="zh">
+<phrase>
+    <source>Patch folder</source>
+    <target>补丁文件夹</target>
+</phrase>
+<phrase>
+    <source>Select the default folder for storing patches.</source>
+    <target>为存放补丁选择缺省文件夹。</target>
+</phrase>
+<phrase>
+    <source>Default patch folder:</source>
+    <target>缺省补丁文件夹：</target>
+</phrase>
+<phrase>
+    <source>Browse</source>
+    <target>浏览</target>
+</phrase>
+<phrase>
+    <source>Midi settings</source>
+    <target>密地设置</target>
+</phrase>
+<phrase>
+    <source>Warning - Patch data received is incorrect!</source>
+    <target>警告-被接受的补丁数据是不正确的!</target>
+</phrase>
+<phrase>
+    <source>Patch data transfer wrong size or data error</source>
+    <target>修补数据传送错误大小或数据错误</target>
+</phrase>
+<phrase>
+    <source>Please make sure the </source>
+    <target>请确定 </target>
+</phrase>
+<phrase>
+    <source>Warning - No patch data received!</source>
+    <target>警告-补丁数据没有接受!</target>
+</phrase>
+<phrase>
+    <source>Patch data transfer failed, are the correct midi ports selected?</source>
+    <target>修补发生故障的数据传送，正确密地口岸被选择？</target>
+</phrase>
+<phrase>
+    <source>SMF file import</source>
+    <target>SMF文件进口</target>
+</phrase>
+<phrase>
+    <source>This is not a GT-8 file!</source>
+    <target>这不是GT-8文件!</target>
+</phrase>
+<phrase>
+    <source>this file is a GT-Pro version&lt;br&gt;</source>
+    <target>这个文件是一个GT赞成版本&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>*Loading this file may have unpredictable results*.</source>
+    <target>装载这个文件也许有变化莫测的结果。</target>
+</phrase>
+<phrase>
+    <source>Initializing...</source>
+    <target>初始化…</target>
+</phrase>
+<phrase>
+    <source>Checking license file...</source>
+    <target>检查执照文件…</target>
+</phrase>
+<phrase>
+    <source>Loading license file...</source>
+    <target>装货执照文件…</target>
+</phrase>
+<phrase>
+    <source>Loading midi mapping...</source>
+    <target>Loading midi mapping...</target>
+</phrase>
+<phrase>
+    <source>Initializing main window...</source>
+    <target>Initializing main window...</target>
+</phrase>
+<phrase>
+    <source>Restoring window position...</source>
+    <target>恢复窗口位置…</target>
+</phrase>
+<phrase>
+    <source>Centering main window...</source>
+    <target>集中主窗口…</target>
+</phrase>
+<phrase>
+    <source>Finished Initializing...</source>
+    <target>完成初始化…</target>
+</phrase>
+<phrase>
+    <source>Select your midi in and out device.</source>
+    <target>里里外外选择您的密地设备。</target>
+</phrase>
+<phrase>
+    <source>Midi in:</source>
+    <target>密地在：</target>
+</phrase>
+<phrase>
+    <source>Midi out:</source>
+    <target>密地：</target>
+</phrase>
+<phrase>
+    <source>Select midi-in device</source>
+    <target>选择密地在设备</target>
+</phrase>
+<phrase>
+    <source>Select midi-in device</source>
+    <target>选择密地在设备</target>
+</phrase>
+<phrase>
+    <source>Select midi-in device</source>
+    <target>选择密地在设备</target>
+</phrase>
+<phrase>
+    <source>Select midi-out device</source>
+    <target>选择密地设备</target>
+</phrase>
+<phrase>
+    <source>dBug and timing</source>
+    <target>调试和时间</target>
+</phrase>
+<phrase>
+    <source>Debug mode &amp; midi settings.</source>
+    <target>调试方式&amp; 密地设置。</target>
+</phrase>
+<phrase>
+    <source>Realtime edit send rate.</source>
+    <target>实时编辑送率。</target>
+</phrase>
+<phrase>
+    <source>deBug Mode</source>
+    <target>调试方式</target>
+</phrase>
+<phrase>
+    <source>= </source>
+    <target>= </target>
+</phrase>
+<phrase>
+    <source> times/second</source>
+    <target>时期或其次</target>
+</phrase>
+<phrase>
+    <source>Window settings</source>
+    <target>窗口设置</target>
+</phrase>
+<phrase>
+    <source>Select if you want the window position to be saved on exit.</source>
+    <target>如果您在出口，要窗口位置被保存选择。</target>
+</phrase>
+<phrase>
+    <source>Restore window</source>
+    <target>恢复窗口</target>
+</phrase>
+<phrase>
+    <source>Restore sidepanel</source>
+    <target>恢复侧面板</target>
+</phrase>
+<phrase>
+    <source>Show splash screen</source>
+    <target>显示飞溅屏幕</target>
+</phrase>
+<phrase>
+    <source>Disable or enable the splash screen.</source>
+    <target>使或使能飞溅屏幕失去能力。</target>
+</phrase>
+<phrase>
+    <source>Splash screen</source>
+    <target>飞溅屏幕</target>
+</phrase>
+<phrase>
+    <source>Select the default folder for storing patches.</source>
+    <target>为存放补丁选择缺省文件夹。</target>
+</phrase>
+<phrase>
+    <source>File compatibility Error!</source>
+    <target>文件兼容性错误!</target>
+</phrase>
+<phrase>
+    <source>This is not recognised as a supported </source>
+    <target>这没有被认可作为支持的 </target>
+</phrase>
+<phrase>
+    <source> patch file</source>
+    <target>补丁文件</target>
+</phrase>
+<phrase>
+    <source>but appears to be a GT-Manager proprietry format&lt;br&gt;</source>
+    <target>但是看来是格式的GT经理类型</target>
+</phrase>
+<phrase>
+    <source>please try another file.</source>
+    <target>请尝试另一个文件。</target>
+</phrase>
+<phrase>
+    <source>Select Patch</source>
+    <target>选择补丁</target>
+</phrase>
+<phrase>
+    <source>Patch size Error!</source>
+    <target>补丁长度误差!</target>
+</phrase>
+<phrase>
+    <source>This is not recognised as a </source>
+    <target>这没有被认可作为 </target>
+</phrase>
+<phrase>
+    <source>but appears to be a GT-6 patch&lt;br&gt;</source>
+    <target>但是看来是GT-6补丁</target>
+</phrase>
+<phrase>
+    <source>but appears to be a GT-3 patch&lt;br&gt;</source>
+    <target>但是看来是GT-3补丁</target>
+</phrase>
+<phrase>
+    <source>Patch size is </source>
+    <target>补丁大小是 </target>
+</phrase>
+<phrase>
+    <source> bytes, please try another file.</source>
+    <target>字节，请尝试另一个文件。</target>
+</phrase>
+<phrase>
+    <source> is connected correctly and re-try.</source>
+    <target>恰当地被连接和再试。</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard</source>
+    <target>Fx地板</target>
+</phrase>
+<phrase>
+    <source>The file opened contains one or more incorrect checksums.</source>
+    <target>被打开的文件包含一个或更多不正确检查和。</target>
+</phrase>
+<phrase>
+    <source>The incorrect values have been corrected where possible.&lt;br&gt;If correction was impossible then some settings might have been reset to zero.&lt;br&gt;</source>
+    <target>尽可能改正了不正确价值。如果更正是不&lt;br&gt;可能的那么有些设置也许已经被重设到零。&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>Be aware of possible inconsistencies in this patch!</source>
+    <target>注意在这个补丁的可能的不一致!</target>
+</phrase>
+<phrase>
+    <source>Sending</source>
+    <target>送</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备好</target>
+</phrase>
+<phrase>
+    <source>Location = </source>
+    <target>地点= </target>
+</phrase>
+<phrase>
+    <source>: bad data = </source>
+    <target>： 坏数据= </target>
+</phrase>
+<phrase>
+    <source>: new data = </source>
+    <target>： 新的数据= </target>
+</phrase>
+<phrase>
+    <source>bad data has been repaired with default values&lt;br&gt;</source>
+    <target>坏数据修理了与缺省值&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>loaction of bad data was at </source>
+    <target>坏数据的地点在 </target>
+</phrase>
+<phrase>
+    <source>File contains out of range data</source>
+    <target>文件包含出于范围数据</target>
+</phrase>
+<phrase>
+    <source>Patch change</source>
+    <target>补丁变动</target>
+</phrase>
+<phrase>
+    <source>dBug Result for formatted syx message</source>
+    <target>调试格式化的系统独家新闻消息的结果</target>
+</phrase>
+<phrase>
+    <source>bad data</source>
+    <target>坏数据</target>
+</phrase>
+<phrase>
+    <source>no reply</source>
+    <target>没有回复</target>
+</phrase>
+<phrase>
+    <source>Request System data</source>
+    <target>请求系统数据</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is active&lt;br&gt;</source>
+    <target>保证连接是活跃的&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> and retry</source>
+    <target>并且再试</target>
+</phrase>
+<phrase>
+    <source> not connected !!</source>
+    <target>没连接!!</target>
+</phrase>
+<phrase>
+    <source>System Data from </source>
+    <target>系统数据从 </target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard connection Error !!</source>
+    <target>Fx地板连接错误!!</target>
+</phrase>
+<phrase>
+    <source>The Boss </source>
+    <target>上司 </target>
+</phrase>
+<phrase>
+    <source> Effects Processor was not found.</source>
+    <target>未找到作用处理器。</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard Data Error !!</source>
+    <target>Fx地板数据错误!!</target>
+</phrase>
+<phrase>
+    <source> reports a Data Error occured during transfer.&lt;br&gt;</source>
+    <target>报告在调动期间，数据错误生成了。&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> please try again.</source>
+    <target>请再试试。</target>
+</phrase>
+<phrase>
+    <source>Sync to </source>
+    <target>更新 </target>
+</phrase>
+<phrase>
+    <source>Double-click tree item to load patch</source>
+    <target>双击装载补丁的树项目</target>
+</phrase>
+<phrase>
+    <source>Patch request</source>
+    <target>补丁请求</target>
+</phrase>
+<phrase>
+    <source>Receiving Patch</source>
+    <target>接受补丁</target>
+</phrase>
+<phrase>
+    <source>Patch from </source>
+    <target>补丁从 </target>
+</phrase>
+<phrase>
+    <source>Reading names</source>
+    <target>读书名字</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备好</target>
+</phrase>
+<phrase>
+    <source>Starting from</source>
+    <target>从开始</target>
+</phrase>
+<phrase>
+    <source>Finishing at</source>
+    <target>完成在</target>
+</phrase>
+<phrase>
+    <source>Set the Range of Patch data to restore</source>
+    <target>设置补丁数据的范围对恢复</target>
+</phrase>
+<phrase>
+    <source>Start Bank.</source>
+    <target>开始银行。</target>
+</phrase>
+<phrase>
+    <source>Finish Bank.</source>
+    <target>结束银行。</target>
+</phrase>
+<phrase>
+    <source>Set start location of Patch data to restore</source>
+    <target>补丁数据的集合起动地点恢复的</target>
+</phrase>
+<phrase>
+    <source>Start</source>
+    <target>开始</target>
+</phrase>
+<phrase>
+    <source>DATA TRANSFER COMPLETED</source>
+    <target>完成的数据传送</target>
+</phrase>
+<phrase>
+    <source>Full Restoration may take up to 2 minutes</source>
+    <target>充分的恢复也许花费二分钟</target>
+</phrase>
+<phrase>
+    <source>Bulk File Restoration</source>
+    <target>大块文件恢复</target>
+</phrase>
+<phrase>
+    <source>Choose a file</source>
+    <target>选择文件</target>
+</phrase>
+<phrase>
+    <source>GT-8 Bulk Data File (*.gte *.syx *.mid)</source>
+    <target>大块文件恢复</target>
+</phrase>
+<phrase>
+    <source>Bulk data transfer completed!!</source>
+    <target>完成的大块数据传送!!</target>
+</phrase>
+<phrase>
+    <source>User Patch U</source>
+    <target>用户补丁U</target>
+</phrase>
+<phrase>
+    <source>File build size = </source>
+    <target>文件修造大小= </target>
+</phrase>
+<phrase>
+    <source>Bulk Patch transfer in progress - please wait until finished</source>
+    <target>过程中大块补丁的调动-请等待，直到完成</target>
+</phrase>
+<phrase>
+    <source>Bulk Upload</source>
+    <target>大块加载</target>
+</phrase>
+<phrase>
+    <source>Bulk Patch transfer completed !!</source>
+    <target>完成的大块补丁调动!!</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备好</target>
+</phrase>
+<phrase>
+    <source>Finish at U</source>
+    <target>在U的结束</target>
+</phrase>
+<phrase>
+    <source>Start Bank.</source>
+    <target>开始银行。</target>
+</phrase>
+<phrase>
+    <source>Finish Bank.</source>
+    <target>结束银行。</target>
+</phrase>
+<phrase>
+    <source>*.gte Librarian file</source>
+    <target>*.gte图书管理员文件</target>
+</phrase>
+<phrase>
+    <source>*.syx System Exclusive file</source>
+    <target>*.syx系统独家新闻文件</target>
+</phrase>
+<phrase>
+    <source>*.mid Standard Midi (SMF) file</source>
+    <target>*.mid标准密地(SMF)文件</target>
+</phrase>
+<phrase>
+    <source>Save System Data</source>
+    <target>除系统数据之外</target>
+</phrase>
+<phrase>
+    <source>Start at U</source>
+    <target>开始在U</target>
+</phrase>
+<phrase>
+    <source>Finish at U</source>
+    <target>在U的结束</target>
+</phrase>
+<phrase>
+    <source>Set range of Patch data to save</source>
+    <target>设置补丁数据的范围对除之外</target>
+</phrase>
+<phrase>
+    <source>DATA TRANSFER COMPLETED</source>
+    <target>数据传送完成了</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>Full Backup may take up to 2 minutes</source>
+    <target>完全备份也许花费二分钟</target>
+</phrase>
+<phrase>
+    <source>Select File format to save</source>
+    <target>选择文件格式保存</target>
+</phrase>
+<phrase>
+    <source>Bulk File Backup</source>
+    <target>大块文件备份</target>
+</phrase>
+<phrase>
+    <source>Bulk data transfer completed!!</source>
+    <target>完成的大块数据传送!!</target>
+</phrase>
+<phrase>
+    <source>User Patch U</source>
+    <target>用户补丁U</target>
+</phrase>
+<phrase>
+    <source> bytes</source>
+    <target>字节</target>
+</phrase>
+<phrase>
+    <source>Bulk Download</source>
+    <target>大块下载</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备好</target>
+</phrase>
+<phrase>
+    <source>Save Bulk Data</source>
+    <target>除大块数据之外</target>
+</phrase>
+<phrase>
+    <source>Librarian Backup File (*.gxb)</source>
+    <target>图书管理员备用文件(*.gte)</target>
+</phrase>
+<phrase>
+    <source>System Exclusive Backup File (*.syx)</source>
+    <target>系统专属备用文件(*.syx)</target>
+</phrase>
+<phrase>
+    <source>Standard Midi Backup File (*.mid)</source>
+    <target>标准密地备用文件(*.mid)</target>
+</phrase>
+<phrase>
+    <source>Patch Description</source>
+    <target>补丁描述</target>
+</phrase>
+<phrase>
+    <source>Patch created by</source>
+    <target>被创造的补丁 </target>
+</phrase>
+<phrase>
+    <source>Rename Catagory</source>
+    <target>给类别改名</target>
+</phrase>
+<phrase>
+    <source>Name:</source>
+    <target>名字：</target>
+</phrase>
+<phrase>
+    <source>Insert :</source>
+    <target>插入物：</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>Apply</source>
+    <target>申请</target>
+</phrase>
+<phrase>
+    <source>Select</source>
+    <target>精选</target>
+</phrase>
+<phrase>
+    <source>Pre A/B swap</source>
+    <target>前A/B交换</target>
+</phrase>
+<phrase>
+    <source>Temp 1 Partial</source>
+    <target>部份的临时雇员1</target>
+</phrase>
+<phrase>
+    <source>Temp 2 Partial</source>
+    <target>部份的临时雇员2</target>
+</phrase>
+<phrase>
+    <source>Temp 3 Partial</source>
+    <target>部份的临时雇员3</target>
+</phrase>
+<phrase>
+    <source>Temp 4 Partial</source>
+    <target>部份的临时雇员4</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to clipboard first</source>
+    <target>必须首先复制补丁到剪贴板</target>
+</phrase>
+<phrase>
+    <source>Select patch to load</source>
+    <target>选择补丁装载</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>Bulk File Patch Extraction</source>
+    <target>大块文件补丁提取</target>
+</phrase>
+<phrase>
+    <source>Empty</source>
+    <target>空</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard</source>
+    <target>Fx地板</target>
+</phrase>
+<phrase>
+    <source>version</source>
+    <target>版本</target>
+</phrase>
+<phrase>
+    <source>Connect</source>
+    <target>连接</target>
+</phrase>
+<phrase>
+    <source>Write/Sync</source>
+    <target>写或/更新</target>
+</phrase>
+<phrase>
+    <source>Assigns</source>
+    <target>分配</target>
+</phrase>
+<phrase>
+    <source>Custom Settings</source>
+    <target>习惯设置</target>
+</phrase>
+<phrase>
+    <source>System Settings</source>
+    <target>系统设置</target>
+</phrase>
+<phrase>
+    <source>FV/Pedal</source>
+    <target>脚容量/脚蹬</target>
+</phrase>
+<phrase>
+    <source>PreAmp/Spkr</source>
+    <target>前置放大器/报告人</target>
+</phrase>
+<phrase>
+    <source>Compressor</source>
+    <target>压缩机</target>
+</phrase>
+<phrase>
+    <source>Distortion</source>
+    <target>畸变</target>
+</phrase>
+<phrase>
+    <source>Noise.Sup.</source>
+    <target>噪声遏抑器。</target>
+</phrase>
+<phrase>
+    <source>FX 1</source>
+    <target>FX 1</target>
+</phrase>
+<phrase>
+    <source>FX 2</source>
+    <target>FX 2</target>
+</phrase>
+<phrase>
+    <source>Reverb</source>
+    <target>回荡</target>
+</phrase>
+<phrase>
+    <source>Delay</source>
+    <target>延迟</target>
+</phrase>
+<phrase>
+    <source>Chorus</source>
+    <target>合唱</target>
+</phrase>
+<phrase>
+    <source>Loop</source>
+    <target>圈</target>
+</phrase>
+<phrase>
+    <source>Equaliser</source>
+    <target>调平器</target>
+</phrase>
+<phrase>
+    <source>Wah</source>
+    <target>Wah</target>
+</phrase>
+<phrase>
+    <source>Temp-1 Copy</source>
+    <target>临时雇员1拷贝</target>
+</phrase>
+<phrase>
+    <source>Temp-1 Paste</source>
+    <target>临时雇员1浆糊</target>
+</phrase>
+<phrase>
+    <source>Temp-2 Copy</source>
+    <target>临时雇员2拷贝</target>
+</phrase>
+<phrase>
+    <source>Temp-2 Paste</source>
+    <target>临时雇员2浆糊</target>
+</phrase>
+<phrase>
+    <source>Temp-3 Copy</source>
+    <target>临时雇员3拷贝</target>
+</phrase>
+<phrase>
+    <source>Temp-3 Paste</source>
+    <target>临时雇员3浆糊</target>
+</phrase>
+<phrase>
+    <source>Temp-4 Copy</source>
+    <target>临时雇员4拷贝</target>
+</phrase>
+<phrase>
+    <source>Temp-4 Paste</source>
+    <target>临时雇员4浆糊</target>
+</phrase>
+<phrase>
+    <source>init patch</source>
+    <target>初始化补丁</target>
+</phrase>
+<phrase>
+    <source> patch</source>
+    <target>补丁</target>
+</phrase>
+<phrase>
+    <source>Error while changing banks.</source>
+    <target>错误，当改变开户时。</target>
+</phrase>
+<phrase>
+    <source>An incorrect patch has been loaded. Please try to load the patch again.</source>
+    <target>一个不正确补丁被装载了。 请设法再装载补丁。</target>
+</phrase>
+<phrase>
+    <source>User</source>
+    <target>用户</target>
+</phrase>
+<phrase>
+    <source>Preset</source>
+    <target>边框形式</target>
+</phrase>
+<phrase>
+    <source>Temp</source>
+    <target>临时雇员</target>
+</phrase>
+<phrase>
+    <source>Buffer</source>
+    <target>缓冲</target>
+</phrase>
+<phrase>
+    <source>in-consistant patch data detected </source>
+    <target>坏补丁数据查出了 </target>
+</phrase>
+<phrase>
+    <source>bytes: re-save or re-load file to correct</source>
+    <target>字节： 再保存或再装文件改正</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-1 clipboard first</source>
+    <target>必须首先复制补丁到临时雇员1剪贴板</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-2 clipboard first</source>
+    <target>必须首先复制补丁到临时雇员2剪贴板</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-3 clipboard first</source>
+    <target>必须首先复制补丁到临时雇员3剪贴板</target>
+</phrase>
+<phrase>
+    <source>patch must be copied to Temp-4 clipboard first</source>
+    <target>必须首先复制补丁到临时雇员4剪贴板</target>
+</phrase>
+<phrase>
+    <source>Connecting</source>
+    <target>连接</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备好</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard connection Error !!</source>
+    <target>Fx地板连接错误!!</target>
+</phrase>
+<phrase>
+    <source>The device connected is not a Boss </source>
+    <target>被连接的设备不是上司 </target>
+</phrase>
+<phrase>
+    <source>&lt;br&gt;Midi loopback detected, ensure midi device &apos;thru&apos; is switched off.</source>
+    <target>&lt;br&gt;检测的密地回环，保证密地设备直通连接关闭。</target>
+</phrase>
+<phrase>
+    <source>Not connected</source>
+    <target>没连接</target>
+</phrase>
+<phrase>
+    <source>The Boss </source>
+    <target>上司 </target>
+</phrase>
+<phrase>
+    <source>&lt;br&gt;&lt;br&gt;Ensure correct midi device is selected in Menu, </source>
+    <target>&lt;br&gt;&lt;br&gt;保证正确密地设备在菜单被选择，</target>
+</phrase>
+<phrase>
+    <source>&lt;br&gt;midi cables are connected and the GT-8 is switched on,</source>
+    <target>&lt;br&gt;密地缆绳被连接，并且GT-8被接通，</target>
+</phrase>
+<phrase>
+    <source>You can&apos;t write to the preset banks.</source>
+    <target>您不可能给边框形式银行写。</target>
+</phrase>
+<phrase>
+    <source>You can&apos;t write to the preset banks.</source>
+    <target>您不可能给边框形式银行写。</target>
+</phrase>
+<phrase>
+    <source>Please select a user bank to write this patch to and try again.</source>
+    <target>请选择一家用户银行写这个补丁对和再试一次。</target>
+</phrase>
+<phrase>
+    <source>You have chosen to write the patch permanently into </source>
+    <target>您选择永久地写补丁入 </target>
+</phrase>
+<phrase>
+    <source>This will overwrite the patch currently stored at patch location
+</source>
+    <target>这将重写补丁当前被存放在补丁地点&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> and can&apos;t be undone. </source>
+    <target>并且不能被取消。 </target>
+</phrase>
+<phrase>
+    <source>Are you sure you want to continue?</source>
+    <target>是否是继续？</target>
+</phrase>
+<phrase>
+    <source>Writing to Patch</source>
+    <target>写给补丁</target>
+</phrase>
+<phrase>
+    <source>[ INIT Patches ]</source>
+    <target>[初始化补丁]</target>
+</phrase>
+<phrase>
+    <source>(My INIT) </source>
+    <target>(我的初始化) </target>
+</phrase>
+<phrase>
+    <source>init patch</source>
+    <target>初始化补丁</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard</source>
+    <target>Fx地板</target>
+</phrase>
+<phrase>
+    <source>&amp;Load Patch File... *.syx *.gte *.mid</source>
+    <target>&amp;装载补丁文件… *.syx *.gte *.mid</target>
+</phrase>
+<phrase>
+    <source>Ctrl+O</source>
+    <target>Ctrl+O</target>
+</phrase>
+<phrase>
+    <source>Open an existing file</source>
+    <target>打开一个现有文件</target>
+</phrase>
+<phrase>
+    <source>&amp;Save Patch...</source>
+    <target>&amp;除补丁之外…</target>
+</phrase>
+<phrase>
+    <source>Ctrl+S</source>
+    <target>Ctrl+S</target>
+</phrase>
+<phrase>
+    <source>Save the document to disk</source>
+    <target>除对盘的本文之外</target>
+</phrase>
+<phrase>
+    <source>Save &amp;As Patch...</source>
+    <target>除&amp;之外; 作为补丁…</target>
+</phrase>
+<phrase>
+    <source>Ctrl+Shift+S</source>
+    <target>Ctrl+Shift+S</target>
+</phrase>
+<phrase>
+    <source>Save the document under a new name</source>
+    <target>除本文之外以一个新的名字</target>
+</phrase>
+<phrase>
+    <source>&amp;Load System and Global Data...</source>
+    <target>&amp; 装载系统和全球性数据…</target>
+</phrase>
+<phrase>
+    <source>Ctrl+L</source>
+    <target>Ctrl+L</target>
+</phrase>
+<phrase>
+    <source>Load System Data to GT-8</source>
+    <target>装载对GT-8的系统数据</target>
+</phrase>
+<phrase>
+    <source>Save System and Global Data...</source>
+    <target>除系统和全球性数据之外…</target>
+</phrase>
+<phrase>
+    <source>Ctrl+D</source>
+    <target>Ctrl+D</target>
+</phrase>
+<phrase>
+    <source>Save System Data to File</source>
+    <target>除对文件的系统数据之外</target>
+</phrase>
+<phrase>
+    <source>&amp;Load Bulk Patch File to GT-8...</source>
+    <target>&amp; 对GT-8的装载大块补丁文件…</target>
+</phrase>
+<phrase>
+    <source>Ctrl+B</source>
+    <target>Ctrl+B</target>
+</phrase>
+<phrase>
+    <source>Load Bulk Data to GT-10B</source>
+    <target>对GT-8的装载大块数据</target>
+</phrase>
+<phrase>
+    <source>Save Bulk GT-8 Patches to File...</source>
+    <target>除归档的大块GT-8补丁之外…</target>
+</phrase>
+<phrase>
+    <source>Ctrl+G</source>
+    <target>Ctrl+G</target>
+</phrase>
+<phrase>
+    <source>Save Bulk Data to File</source>
+    <target>除对文件的大块数据之外</target>
+</phrase>
+<phrase>
+    <source>E&amp;xit</source>
+    <target>&amp;出口</target>
+</phrase>
+<phrase>
+    <source>Ctrl+Q</source>
+    <target>Ctrl+Q</target>
+</phrase>
+<phrase>
+    <source>Exit the application</source>
+    <target>退出应用</target>
+</phrase>
+<phrase>
+    <source>&amp;Preferences</source>
+    <target>&amp; 特选</target>
+</phrase>
+<phrase>
+    <source>Ctrl+P</source>
+    <target>Ctrl+P</target>
+</phrase>
+<phrase>
+    <source>....</source>
+    <target>....</target>
+</phrase>
+<phrase>
+    <source>Upload patch to GT-Central</source>
+    <target>对GT中央的加载补丁</target>
+</phrase>
+<phrase>
+    <source>........</source>
+    <target>........</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard &amp;Help</source>
+    <target>Fx地板&amp; 帮助</target>
+</phrase>
+<phrase>
+    <source>Ctrl+F1</source>
+    <target>Ctrl+F1</target>
+</phrase>
+<phrase>
+    <source>.....</source>
+    <target>.....</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard &amp;Webpage</source>
+    <target>Fx地板&amp; 网页</target>
+</phrase>
+<phrase>
+    <source>Make a &amp;Donation</source>
+    <target>做一&amp; 捐赠</target>
+</phrase>
+<phrase>
+    <source>&amp;License</source>
+    <target>&amp; 执照</target>
+</phrase>
+<phrase>
+    <source>&amp;About FxFloorBoard</source>
+    <target>&amp; 关于Fx地板</target>
+</phrase>
+<phrase>
+    <source>Show the application&apos;s About box</source>
+    <target>显示关于箱子的应用</target>
+</phrase>
+<phrase>
+    <source>About &amp;Qt</source>
+    <target>关于&amp; Qt</target>
+</phrase>
+<phrase>
+    <source>Show the Qt library&apos;s About box</source>
+    <target>显示关于箱子的Qt图书馆</target>
+</phrase>
+<phrase>
+    <source>&amp;File</source>
+    <target>&amp; 文件</target>
+</phrase>
+<phrase>
+    <source>&amp;Tools</source>
+    <target>&amp; 工具</target>
+</phrase>
+<phrase>
+    <source>&amp;Help</source>
+    <target>&amp; 帮助</target>
+</phrase>
+<phrase>
+    <source>Not Connected</source>
+    <target>没连接</target>
+</phrase>
+<phrase>
+    <source>Choose a file</source>
+    <target>选择文件</target>
+</phrase>
+<phrase>
+    <source>System Exclusive (*.syx)</source>
+    <target>系统独家新闻(*.syx)</target>
+</phrase>
+<phrase>
+    <source>GT-8 System Data File (*.GT8_system_syx)</source>
+    <target>GT-8系统数据文件(*.GT8_system_syx)</target>
+</phrase>
+<phrase>
+    <source>You have chosen to load a SYSTEM DATA file.</source>
+    <target>您选择装载系统数据文件。</target>
+</phrase>
+<phrase>
+    <source>This will overwrite the SYSTEM DATA currently stored in the GT-8&lt;br&gt;</source>
+    <target>这将重写在GT-8当前存放的系统数据&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> and can&apos;t be undone.&lt;br&gt;</source>
+    <target>并且不能被取消。&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>Select &apos;NO&apos; to only update the Editor - Select &apos;YES&apos; to update the GT-8 memory&lt;br&gt;</source>
+    <target>只更新编辑的精选的没有-是选择更新GT-8记忆</target>
+</phrase>
+<phrase>
+    <source>Are you sure you want to write to the GT-8?</source>
+    <target>是否是给GT-8写？</target>
+</phrase>
+<phrase>
+    <source>DATA TRANSFER REQUIRED&lt;br&gt;</source>
+    <target>数据传送要求&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is active, and&lt;br&gt;</source>
+    <target>保证连接是活跃的，和&lt;br&gt;</target>
+</phrase>
+<phrase>
+    <source> Connection required!!</source>
+    <target>需要的连接!!</target>
+</phrase>
+<phrase>
+    <source>System Exclusive File (*.GT8_system_syx)</source>
+    <target>系统专属文件(*.GT8_system_syx)</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is active</source>
+    <target>保证连接是活跃的</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is active</source>
+    <target>保证连接是活跃的</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is active and retry</source>
+    <target>保证连接是活跃和再试</target>
+</phrase>
+<phrase>
+    <source> not connected !!</source>
+    <target>没连接!!</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard - About</source>
+    <target>Fx地板- </target>
+</phrase>
+<phrase>
+    <source>version</source>
+    <target>版本</target>
+</phrase>
+<phrase>
+    <source>Requesting System data</source>
+    <target>请求系统数据</target>
+</phrase>
+<phrase>
+    <source>Ensure connection is set and retry</source>
+    <target>保证设置连接并且再试</target>
+</phrase>
+<phrase>
+    <source> not connected !!</source>
+    <target>没连接!!</target>
+</phrase>
+<phrase>
+    <source>System Data from </source>
+    <target>系统数据从 </target>
+</phrase>
+<phrase>
+    <source> SYSTEM DATA WAS NOT CORRECTLY RECEIVED from the GT-8!!</source>
+    <target>系统数据从GT-8未恰当地被接受!!</target>
+</phrase>
+<phrase>
+    <source>The </source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>To retrieve System Data, ensure the GT-8 and Editor are &apos;connected&apos;.</source>
+    <target>要检索系统数据，保证GT-8和编辑被连接。</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备好</target>
+</phrase>
+<phrase>
+    <source>System settings</source>
+    <target>系统设置</target>
+</phrase>
+<phrase>
+    <source>Custom Settings</source>
+    <target>习惯设置</target>
+</phrase>
+<phrase>
+    <source>Assigns</source>
+    <target>分配</target>
+</phrase>
+<phrase>
+    <source>Assigns</source>
+    <target>分配</target>
+</phrase>
+<phrase>
+    <source>Assign 1-8</source>
+    <target>分配 1-8</target>
+</phrase>
+<phrase>
+    <source>Midi Output Error</source>
+    <target>密地输出错误</target>
+</phrase>
+<phrase>
+    <source>port error</source>
+    <target>港错误</target>
+</phrase>
+<phrase>
+    <source>data error</source>
+    <target>数据错误</target>
+</phrase>
+<phrase>
+    <source>un-named midi device: </source>
+    <target>无提名的密地设备： </target>
+</phrase>
+<phrase>
+    <source>no midi device available</source>
+    <target>可利用没有密地的设备</target>
+</phrase>
+<phrase>
+    <source>Midi Input Error</source>
+    <target>密地输入错误</target>
+</phrase>
+<phrase>
+    <source>Sending</source>
+    <target>送</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备好</target>
+</phrase>
+<phrase>
+    <source>no midi device set</source>
+    <target>没有密地设备集合</target>
+</phrase>
+<phrase>
+    <source>Ok</source>
+    <target>好</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>GT-8 Fx FloorBoard - Preferences</source>
+    <target>6GT-8 Fx地板-特选</target>
+</phrase>
+<phrase>
+    <source>General</source>
+    <target>一般</target>
+</phrase>
+<phrase>
+    <source>Midi</source>
+    <target>密地</target>
+</phrase>
+<phrase>
+    <source>Window</source>
+    <target>窗口</target>
+</phrase>
+<phrase>
+    <source>Name:</source>
+    <target>名字：</target>
+</phrase>
+<phrase>
+    <source>Insert :</source>
+    <target>插入物：</target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>Apply</source>
+    <target>申请</target>
+</phrase>
+<phrase>
+    <source>Rename patch</source>
+    <target>给补丁改名</target>
+</phrase>
+<phrase>
+    <source>FX-1</source>
+    <target>作用1</target>
+</phrase>
+<phrase>
+    <source>Compressor/Limiter</source>
+    <target>压缩机或防幅器</target>
+</phrase>
+<phrase>
+    <source>Wah</source>
+    <target>脚蹬过滤器</target>
+</phrase>
+<phrase>
+    <source>Loop</source>
+    <target>圈</target>
+</phrase>
+<phrase>
+    <source>Distortion</source>
+    <target>畸变</target>
+</phrase>
+<phrase>
+    <source>PreAmp/Speaker</source>
+    <target>前置放大器或报告人</target>
+</phrase>
+<phrase>
+    <source>Equaliser</source>
+    <target>调平器</target>
+</phrase>
+<phrase>
+    <source>FX-2</source>
+    <target>作用2</target>
+</phrase>
+<phrase>
+    <source>Delay</source>
+    <target>延迟</target>
+</phrase>
+<phrase>
+    <source>Chorus</source>
+    <target>合唱</target>
+</phrase>
+<phrase>
+    <source>Reverb</source>
+    <target>回荡</target>
+</phrase>
+<phrase>
+    <source>Noise Suppessor</source>
+    <target>噪声遏抑器</target>
+</phrase>
+<phrase>
+    <source>Foot Volume</source>
+    <target>脚容量</target>
+</phrase>
+<phrase>
+    <source>Digital Out</source>
+    <target>数字式</target>
+</phrase>
+<phrase>
+    <source>Send/Return</source>
+    <target>送或返回</target>
+</phrase>
+<phrase>
+    <source>Patch folder</source>
+    <target>补丁文件夹</target>
+</phrase>
+<phrase>
+    <source>Select the default folder for storing patches.</source>
+    <target>为存放补丁选择缺省文件夹。</target>
+</phrase>
+<phrase>
+    <source>Language Selection</source>
+    <target>语言选择</target>
+</phrase>
+<phrase>
+    <source>English</source>
+    <target>英语</target>
+</phrase>
+<phrase>
+    <source>French</source>
+    <target>法语</target>
+</phrase>
+<phrase>
+    <source>German</source>
+    <target>德语</target>
+</phrase>
+<phrase>
+    <source>Chinese (simplified)</source>
+    <target>汉语(被简化)</target>
+</phrase>
+<phrase>
+    <source>Changes take effect on next startup</source>
+    <target>变动起对下起动的作用</target>
+</phrase>
+<phrase>
+    <source>Language</source>
+    <target>语言</target>
+</phrase>
+<phrase>
+    <source> Fx FloorBoard, </source>
+    <target>Fx地板， </target>
+</phrase>
+</QPH>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Preferences of the GT-8 Fx FloorBoard application. -->
+<Preferences>
+	<General>
+		<Application version="20121020"/>
+		<Donate url="http://sourceforge.net/project/project_donations.php?group_id=171049"/>
+		<Files dir=""/>
+		<Help url="GT-8EditorManual_E.htm"/>
+		<Language code="en"/>
+		<Upload url="http://www.bossgtcentral.com/dm"/>
+		<Webpage url="http://sourceforge.net/projects/fxfloorboard/"/>
+	</General>
+	<Midi>
+	  <BulkFinish patch="140"/>
+	  <BulkStart patch="1"/>
+	  <DBug bool="false"/>
+	  <Delay set="20"/>
+		<MidiIn device=""/>
+		<MidiOut device=""/>		
+		<System byte1="3" byte2="0" byte3="0" byte4="0"/>		
+	</Midi>
+	<Window>
+    <Collapsed bool="true" defaultwidth="975" width="1000"/>
+    <Position x="" y=""/>
+    <Restore sidepanel="true" window="false"/>
+    <Size height="" minheight="548" minwidth="788" width=""/>
+    <Splash bool="true"/>
+  </Window> 
+  <Language>
+    <Locale select="0"/>
+  </Language>
+</Preferences>

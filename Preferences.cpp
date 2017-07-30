@@ -39,6 +39,7 @@ Preferences::Preferences()
 	if(!QFile("preferences.xml").exists())
 	{
 		loadPreferences(":preferences.xml.dist");
+
 	}
 	else
 	{

@@ -44,7 +44,7 @@ public:
 protected :
 	Preferences();
 	friend class PreferencesDestroyer;
-	virtual ~Preferences() { };
+    virtual ~Preferences() { }
 
 private:
 	static Preferences* _instance;

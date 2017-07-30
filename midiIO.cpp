@@ -71,7 +71,7 @@ void midiIO::queryMidiOutDevices()
     else {
         try
         {
-            QScopedPointer<RtMidiOut> midiout (new RtMidiOut(clientName));
+            QSharedPointer<RtMidiOut> midiout (new RtMidiOut(clientName));
             //shared_ptr<RtMidiOut> midiout(new RtMidiOut(clientName));    /* RtMidiOut constructor */
             outPorts = midiout->getPortCount();      /* Check outputs. */
             for ( unsigned int i=0; i<outPorts; i++ )
